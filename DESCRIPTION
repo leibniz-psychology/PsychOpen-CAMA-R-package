@@ -1,11 +1,10 @@
 Package: psychOpenCama
 Type: Package
 Title: What the Package Does (Title Case)
-Version: 0.1.0
+Version: 0.2.0
 Author: RS
 Maintainer: The package maintainer <rs@leibniz-psychology.org>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: More about what it does (maybe more than one line) Use four spaces when indenting paragraphs within the Description.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
