@@ -8,8 +8,10 @@ funnelPLot <- function(yi,vi,measure,d) {
 
   dat<-get(d)
 
-  overall_forest <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure, data=dat)
+  funnel_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure)
+  RTest <-regtest(x=funnel_model)
 
-  metafor::funnel(overall_forest, yaxis="sei", xlab="SMD") # 'label'
+  metafor::funnel(funnel_model, yaxis="sei", xlab=measure) # 'label'
 
+  return(RTest)
 }

@@ -12,7 +12,8 @@
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
 
-forest <- function(yi,vi,measure,d,effect="Effect") {
+cumulforest <- function(yi,vi,measure,d,effectName) {
+
 
   library('metafor')
   library("ggplot2")
@@ -24,30 +25,23 @@ forest <- function(yi,vi,measure,d,effect="Effect") {
 
 
   # 1. Overall-Effekt und Cumulative forest ####
-  tmp <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
+  overall_forest <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
 
-  fp <- viz_forest(x = tmp,
-                   variant = "classic",
-                   study_labels = tmp$slab,
-                   text_size =4,
-                   xlab = effect,
-                   annotate_CI = TRUE,
-                   type = "standard")
+  tmp<-cumul(overall_forest, order=order(dat$r_year))
 
-  rainfp <-viz_forest(x = tmp,
-                      variant = "rain",
-                      study_labels = tmp$slab,
-                      text_size =4,
-                      xlab = effect,
-                      annotate_CI = TRUE,
-                      type = "standard")
+  fp <- viz_forest(x = data.frame("estimate"=tmp$estimate,"se"=tmp$se),
+             variant = "classic",
+             study_labels = tmp$slab,
+             text_size =4,
+             xlab = effectName,
+             annotate_CI = TRUE,
+             type = "cumulative")
 
 
-  height<-list("height" = length(tmp$yi))
+  height<-list("height" = length(tmp$estimate))
   write_json(height, "imgHeight.json")
 
   print(fp)
-  print(rainfp)
 
   invisible();
 

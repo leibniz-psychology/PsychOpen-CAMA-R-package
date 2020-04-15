@@ -8,7 +8,8 @@ rmaModel <- function(yi,vi,measure,moderators,random,d) {
   dat<-get(d)
 
 
-  overall_forest <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure, data=dat)
+
+  overall_forest <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure)
   return(summary(overall_forest))
 
 }
