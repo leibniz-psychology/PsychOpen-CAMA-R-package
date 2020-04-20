@@ -18,44 +18,77 @@ forest <- function(yi,vi,measure,d,effect="Effect") {
   library("ggplot2")
   library("metaviz")
   library('jsonlite')
+  library('psych')
 
   #par(mar=c(1,0,1,0))
   dat<-get(d)
 
 
-  # 1. Overall-Effekt und Cumulative forest ####
-  tmp <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
-
-  fp <- viz_forest(x = tmp,
-                   variant = "classic",
-                   study_labels = tmp$slab,
-                   text_size =4,
-                   xlab = effect,
-                   annotate_CI = TRUE,
-                   type = "standard")
-
-  rainfp <-viz_forest(x = tmp,
-                      variant = "rain",
-                      study_labels = tmp$slab,
-                      text_size =4,
-                      xlab = effect,
-                      annotate_CI = TRUE,
-                      type = "standard")
+  if(measure == "COR") {
 
 
-  height<-list("height" = length(tmp$yi))
-  write_json(height, "imgHeight.json")
-
-  print(fp)
-  print(rainfp)
-
-  invisible();
-
-  #yi=o_g_calc,vi=o_g_var_calc,measure="SMD",slab=paste(r_author, r_year),xlab="Response Rates",xlim=c(-1,1.8),cex=1, data="CAMA_Math"
-  #ForestPlot(o_g_calc,o_g_var_calc,"SMD",paste(r_author, r_year),"Response Rates",c(-1,1.8),1,'CAMA_Math')
-
-}
+    rma_model <- rma.uni(yi=transf.rtoz(dat[,yi],dat[,o_ni]), vi=transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
 
 
+    fp <- viz_forest(x = rma_model,
+                     variant = "classic",
+                     study_labels = rma_model$slab,
+                     text_size =4,
+                     xlab = effect,
+                     annotate_CI = TRUE,
+                     method = "REML",
+                     x_trans_function = tanh,
+                     type = "standard")
 
+    rainfp <-viz_forest(x = rma_model,
+                        variant = "rain",
+                        study_labels = rma_model$slab,
+                        text_size =4,
+                        xlab = effect,
+                        annotate_CI = TRUE,
+                        method = "REML",
+                        x_trans_function = tanh,
+                        type = "standard")
+
+
+    height<-list("height" = length(rma_model$yi))
+    write_json(height, "imgHeight.json")
+
+    print(fp)
+    print(rainfp)
+
+    invisible();
+
+
+  }else{
+    rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
+
+
+
+    fp <- viz_forest(x = rma_model,
+                     variant = "classic",
+                     study_labels = rma_model$slab,
+                     text_size =4,
+                     xlab = effect,
+                     annotate_CI = TRUE,
+                     type = "standard")
+
+    rainfp <-viz_forest(x = rma_model,
+                        variant = "rain",
+                        study_labels = rma_model$slab,
+                        text_size =4,
+                        xlab = effect,
+                        annotate_CI = TRUE,
+                        type = "standard")
+
+    height<-list("height" = length(rma_model$yi))
+    write_json(height, "imgHeight.json")
+
+    print(fp)
+    print(rainfp)
+
+    invisible();
+
+  }
+  }
 
