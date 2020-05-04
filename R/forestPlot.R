@@ -64,7 +64,6 @@ forest <- function(yi,vi,measure,d,effect="Effect") {
     rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
 
 
-
     fp <- viz_forest(x = rma_model,
                      variant = "classic",
                      study_labels = rma_model$slab,
