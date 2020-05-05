@@ -1,7 +1,7 @@
 Package: psychOpenCama
 Type: Package
 Title: psychopencama.zpid.de
-Version: 0.3.4
+Version: 0.3.5
 Author: RS
 Maintainer: The package maintainer <rs@leibniz-psychology.org>
 Description: More about what it does (maybe more than one line) Use four spaces when indenting paragraphs within the Description.
