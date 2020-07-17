@@ -94,6 +94,7 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
       }
       if(measure == "COR") {
         somedata<-cbind(scale(dat[,numerical["value"]])[,1],factor(dat[,categorical["value"]]))
+
         colnames(somedata)[1]<-numerical["label"]
         colnames(somedata)[2]<-categorical["label"]
         rma_model <- rma.uni(transf.rtoz(dat[,yi],dat[,o_ni]), transf.rtoz(dat[,vi],dat[,o_ni]),mods=somedata, measure="ZCOR",data=dat)
@@ -107,6 +108,7 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
 
       }else{
         somedata<-cbind(scale(dat[,numerical["value"]])[,1],factor(dat[,categorical["value"]]))
+
         colnames(somedata)[1]<-pred1["label"]
         colnames(somedata)[2]<-pred2["label"]
         rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],mods=somedata,measure=measure,data=dat)
