@@ -3,8 +3,7 @@ scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
 
   library(metafor)
   library(ggplot2)
-  #library(car)
-  #library(GGally)
+  library(GGally)
   #pred1<-as.vector(pred1)
 
 
@@ -19,7 +18,7 @@ scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
     if(pred1["type"]=="num" && pred2["type"]=="num"){
 
       # Scatter, 2 predictors,  num/num
-      ggscatmat(dat, columns=c(dat[,yi],dat[,pred1["value"]],dat[,pred2["value"]])) +
+      ggscatmat(dat, columns=c(yi,pred1["value"],pred2["value"])) +
         geom_point(colour="#34B4D8", shape=19) +
         labs(title="scatterplot matrix")
 
@@ -72,11 +71,17 @@ scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
   }else if(is.null(pred1)&&is.null(pred2)) {
     # Scatter, no predictor
 
-    ggplot(dat, aes(x=seq_along(dat[,yi]), y = dat[,yi])) +
+    dat.cleared<- subset(x = dat, subset = !is.na(dat[,yi]))
+    print(dat.cleared)
+
+
+    ggplot(dat = dat, aes(x=seq_along(dat[,yi]), y=dat[,yi])) +
       geom_violin(draw_quantiles = c(0.2,0.4,0.6,0.8), color="#0480A3") +
       geom_point(size=2, color="#34B4D8") +
       labs(title="Violin Plot",x="", y=effectName) +
       theme(plot.title = element_text(hjust = 0.5))
   }
 }
+
+
 
