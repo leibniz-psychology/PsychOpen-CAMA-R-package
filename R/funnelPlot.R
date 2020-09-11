@@ -15,18 +15,8 @@ funnelPLot <- function(yi,vi,measure,d,effectName="Effect") {
   rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure)
   RTest <-regtest(x=rma_model)
 
-    #fp <- viz_funnel(x=rma_model,
-    #                 text_size =4,
-    #                 xlab = effectName,
-    #                 method = "REML",
-    #                 x_trans_function = tanh,
-    #                 contours_type="REM"
-    #                 )
-
-    #rma_model$yi<-fisherz2r(rma_model$yi)
-    #rma_model$sei<-fisherz2r(rma_model$sei)
   metafor::funnel(rma_model, yaxis="sei", xlab=measure) # 'label'
-
+  metafor::funnel(rma_model, level=c(90, 95, 99), shade=c("white", "orange", "red"), refline=0, legend=TRUE)
 
   return(RTest)
 }

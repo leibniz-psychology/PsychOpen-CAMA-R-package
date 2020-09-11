@@ -4,6 +4,11 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
   library(psych)
   library(jsonlite)
   library(labelVector)
+
+  yi<-"o_g_corr"
+  vi<-"o_g_var_corr"
+  measure<-"SMD"
+  d<-"CAMA_sexdiff_P"
   dat<-get(d)
   pred1<-unlist(pred1)
   pred2<-unlist(pred2)
@@ -18,12 +23,14 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
       #rma_model$yi<-fisherz2r(rma_model$yi)
 
       theRealModel<-predict(rma_model, digits = 3, transf = transf.ztor)
-
+      rma_model.tidy
       return(paste(print(rma_model),print(theRealModel)))
 
     }else{
       rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure)
+
       return(summary(rma_model))
+
     }
   }
 

@@ -2,7 +2,7 @@ powersim <- function(yi,vi,measure,d,n,pval=0.05) {
   library(metafor)
   library(meta)
   library(pwr)
-  library(dmetar)
+  #library(dmetar)
   library(metapower)
   library(ggplot2)
 
