@@ -5,14 +5,6 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
   library(jsonlite)
   library(labelVector)
 
-  yi<-"o_g_corr"
-  vi<-"o_g_var_corr"
-  measure<-"SMD"
-  d<-"CAMA_sexdiff_P"
-  dat<-get(d)
-  pred1<-unlist(pred1)
-  pred2<-unlist(pred2)
-
   if( is.null(pred1) && is.null(pred2)){
 
 
