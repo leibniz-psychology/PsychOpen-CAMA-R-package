@@ -5,6 +5,7 @@ powersim <- function(yi,vi,measure,d,n,pval=0.05) {
   #library(dmetar)
   library(metapower)
   library(ggplot2)
+  library('jsonlite')
 
   dat<-get(d)
 
@@ -19,12 +20,24 @@ powersim <- function(yi,vi,measure,d,n,pval=0.05) {
     for (i in 1:length(nvec)) {power.lb[i] <- pwr.t.test(nvec[i],d=lb,sig.level=pval)$power}
 
     power.est = vector()   ## Estimate
+
     for (i in 1:length(nvec)) {power.est[i] <- pwr.t.test(nvec[i],d=estimate,sig.level=pval)$power}
 
     power.ub = vector()   ## Upper bound estimate
     for (i in 1:length(nvec)) {power.ub[i] <- pwr.t.test(nvec[i],ub,sig.level=pval)$power}
 
     power <- power.est[nvec==n]
+
+
+    #Wird nur für den Ausgabetext benötigt
+    ID=c("power","Samplesize")
+    VALUE=c(round(power*100,1),round(pwr.t.test(d=estimate,sig.level=pval, power=0.8)$n,0))
+
+    df <- data.frame(ID, VALUE)
+
+    print(df)
+
+    write_json(df, "output.json")
 
     # Generate plot
 
