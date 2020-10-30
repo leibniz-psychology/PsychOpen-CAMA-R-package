@@ -37,7 +37,9 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
 
       if(measure == "COR") {
         mod1<-scale(dat[,pred1["value"]])[,1]
+        mod1 <- set_label(mod1,pred1["label"])
         mod2<-scale(dat[,pred2["value"]])[,1]
+        mod2 <- set_label(mod2,pred2["label"])
 
         rma_model <- rma.uni(transf.rtoz(dat[,yi],dat[,o_ni]), transf.rtoz(dat[,vi],dat[,o_ni]),mods=~mod1+mod2, measure="ZCOR",data=dat)
 
@@ -51,7 +53,9 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
       }else{
 
         mod1<-scale(dat[,pred1["value"]])[,1]
+        mod1 <- set_label(mod1,pred1["label"])
         mod2<-scale(dat[,pred2["value"]])[,1]
+        mod2 <- set_label(mod2,pred2["label"])
 
         rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],mods=~mod1+mod2,measure=measure,data=dat)
 
@@ -97,7 +101,9 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
       }
       if(measure == "COR") {
         mod1<-scale(dat[,numerical["value"]])[,1]
+        mod1 <- set_label(mod1,pred1["label"])
         mod2<-factor(dat[,categorical["value"]])
+        mod2 <- set_label(mod2,pred2["label"])
 
         rma_model <- rma.uni(transf.rtoz(dat[,yi],dat[,o_ni]), transf.rtoz(dat[,vi],dat[,o_ni]),mods=~mod1+mod2, measure="ZCOR",data=dat)
 
@@ -114,8 +120,11 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
         #   "label1"=scale(dat[,numerical["value"]])[,1],
         #   "label2"=factor(dat[,categorical["value"]])
         # )
+
         mod1<-scale(dat[,numerical["value"]])[,1]
+        mod1 <- set_label(mod1,pred1["label"])
         mod2<-factor(dat[,categorical["value"]])
+        mod2 <- set_label(mod2,pred2["label"])
 
         rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],mods=~mod1+mod2 ,measure=measure,data=dat)
         return(rma_model)
@@ -125,11 +134,13 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
         #Es gibt einen Prädiktor
         if(pred1["type"]=="cat"){
           mod<-factor(dat[,pred1["value"]])
+          mod <- set_label(mod,pred1["label"])
+
           rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],mods=mod,measure=measure,data=dat)
           return(rma_model)
         }else{
           mod<-scale(dat[,pred1["value"]])[,1]
-
+          mod <- set_label(mod,pred1["label"])
           rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],mods=mod,measure=measure,data=dat)
           return(rma_model)
         }

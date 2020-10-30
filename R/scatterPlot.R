@@ -4,7 +4,7 @@ scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
   library(metafor)
   library(ggplot2)
   library(GGally)
-  #pred1<-as.vector(pred1)
+
 
 
   dat<-get(d)
