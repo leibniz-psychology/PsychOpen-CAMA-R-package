@@ -13,7 +13,7 @@
 #   Test Package:              'Ctrl + Shift + T'
 
 forest <- function(yi,vi,measure,d,effect="Effect") {
-
+  start_time <- Sys.time()
   library('metafor')
   library("ggplot2")
   library("metaviz")
@@ -25,7 +25,6 @@ forest <- function(yi,vi,measure,d,effect="Effect") {
 
 
   if(measure == "COR") {
-
 
     rma_model <- rma.uni(yi=transf.rtoz(dat[,yi],dat[,o_ni]), vi=transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
 
@@ -62,7 +61,7 @@ forest <- function(yi,vi,measure,d,effect="Effect") {
 
   }else{
     rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
-
+    #rma_model<-get("CAMA_Mispron_rma")
 
     fp <- viz_forest(x = rma_model,
                      variant = "classic",
@@ -87,6 +86,8 @@ forest <- function(yi,vi,measure,d,effect="Effect") {
     print(rainfp)
 
     invisible();
+    end_time <- Sys.time()
+    end_time - start_time
 
   }
   }
