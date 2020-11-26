@@ -13,7 +13,6 @@ powersim <- function(yi,vi,measure,d,n,pval=0.05) {
     lb<-uni$ci.lb
     estimate<-uni$beta[[1]]
     ub<-uni$ci.ub
-
     nvec = 1:200
 
     power.lb = vector()  ## Lower bound estimate
@@ -28,29 +27,32 @@ powersim <- function(yi,vi,measure,d,n,pval=0.05) {
 
     power <- power.est[nvec==n]
 
-
     #Wird nur für den Ausgabetext benötigt
     ID=c("power","Samplesize")
     VALUE=c(round(power*100,1),round(pwr.t.test(d=estimate,sig.level=pval, power=0.8)$n,0))
 
     df <- data.frame(ID, VALUE)
 
-    print(df)
-
     write_json(df, "output.json")
 
     # Generate plot
-
     plotdat = rbind(
       as.data.frame(cbind(nvec=as.numeric(nvec), powvect=power.lb,estvec=rep(1,200))),
       as.data.frame(cbind(nvec=as.numeric(nvec), powvect=power.est,estvec=rep(2,200))),
       as.data.frame(cbind(nvec=as.numeric(nvec), powvect=power.ub,estvec=rep(3,200))))
 
+    text.estimate<-paste("Estimate: ",round(estimate,2))
+    text.lowerbound<-paste("Lower bound: ",round(lb,2))
+    text.upperbound<-paste("Upper bound: ",round(ub,2))
+    #print(c(text.lowerbound,text.estimate,text.upperbound))
+    #print(c("Lower bound", "Estimate","Upper bound"))
+
     ggplot(data = plotdat, aes(x = nvec, y = powvect, group=factor(estvec), color=factor(estvec))) +
       geom_line(size=1.2) +
       geom_point(aes(x = n, y = power), color = "black", size = 3) +
       theme_minimal() +
-      scale_color_discrete(name="Assumed effect size",labels=c("Lower bound", "Estimate", "Upper bound")) +
+      scale_color_discrete(name="Assumed effect size",labels=c(text.lowerbound,text.estimate,text.upperbound)) +
+      theme(legend.position="bottom") +
       geom_hline(yintercept = 0.8,color = "grey", linetype = "dotdash") +
       geom_vline(xintercept = pwr.t.test(d=estimate,sig.level=pval, power=0.8)$n,color = "grey", linetype = "dotdash") +
       geom_vline(xintercept=n, color = "black", linetype = "longdash") +
