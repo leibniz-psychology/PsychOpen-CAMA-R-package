@@ -15,7 +15,9 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
       if(measure == "COR") {
         rma_model <- rma.uni(transf.rtoz(dat[,yi],dat[,o_ni]), transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",data=dat)
         theRealModel<-predict(rma_model, digits = 3, transf = transf.ztor)
-        return(paste(print(rma_model),print(theRealModel)))
+        print(rma_model)
+        print(theRealModel)
+
       }else{
         rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,data=dat)
         return(summary(rma_model))
