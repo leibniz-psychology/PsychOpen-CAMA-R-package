@@ -1,14 +1,9 @@
-
-
-
-
 funnelPLot <- function(yi,vi,measure,d,effectName="Effect") {
 
   library(metafor)
   library(metaviz)
 
   dat<-get(d)
-
 
     #rma_model <- rma.uni(transf.rtoz(dat[,yi],dat[,o_ni]), transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",data=dat)
 

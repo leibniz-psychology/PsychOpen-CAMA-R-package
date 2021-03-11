@@ -2,7 +2,6 @@ powersim <- function(yi,vi,measure,d,n,pval=0.05) {
   library(metafor)
   library(meta)
   library(pwr)
-  #library(dmetar)
   library(metapower)
   library(ggplot2)
   library('jsonlite')
@@ -32,8 +31,10 @@ powersim <- function(yi,vi,measure,d,n,pval=0.05) {
     VALUE=c(round(power*100,1),round(pwr.t.test(d=estimate,sig.level=pval, power=0.8)$n,0))
 
     df <- data.frame(ID, VALUE)
-
+    print(df)
     write_json(df, "output.json")
+
+
 
     # Generate plot
     plotdat = rbind(
@@ -42,20 +43,31 @@ powersim <- function(yi,vi,measure,d,n,pval=0.05) {
       as.data.frame(cbind(nvec=as.numeric(nvec), powvect=power.ub,estvec=rep(3,200))))
 
     text.estimate<-paste("Estimate: ",round(estimate,2))
-    text.lowerbound<-paste("Lower bound: ",round(lb,2))
-    text.upperbound<-paste("Upper bound: ",round(ub,2))
-    #print(c(text.lowerbound,text.estimate,text.upperbound))
-    #print(c("Lower bound", "Estimate","Upper bound"))
+    text.lowerbound<-paste("Lo bound: ",round(lb,2))
+    text.upperbound<-paste("Up bound: ",round(ub,2))
 
-    ggplot(data = plotdat, aes(x = nvec, y = powvect, group=factor(estvec), color=factor(estvec))) +
-      geom_line(size=1.2) +
-      geom_point(aes(x = n, y = power), color = "black", size = 3) +
-      theme_minimal() +
-      scale_color_discrete(name="Assumed effect size",labels=c(text.lowerbound,text.estimate,text.upperbound)) +
-      theme(legend.position="bottom") +
-      geom_hline(yintercept = 0.8,color = "grey", linetype = "dotdash") +
-      geom_vline(xintercept = pwr.t.test(d=estimate,sig.level=pval, power=0.8)$n,color = "grey", linetype = "dotdash") +
-      geom_vline(xintercept=n, color = "black", linetype = "longdash") +
-      geom_hline(yintercept=power, color = "black", linetype = "longdash") +
-      labs(y="Power", x="Sample size")
+
+    if(pwr.t.test(d=estimate,sig.level=pval, power=0.8)<300){
+      ggplot(data = plotdat, aes(x = nvec, y = powvect, group=factor(estvec), color=factor(estvec))) +
+        geom_line(size=1.2) +
+        geom_point(aes(x = n, y = power), color = "black", size = 3) +
+        theme_minimal() +
+        scale_color_discrete(name="Assumed effect",labels=c(text.lowerbound,text.estimate,text.upperbound)) +
+        theme(legend.position="bottom") +
+        geom_hline(yintercept = 0.8,color = "grey", linetype = "dotdash") +
+        geom_vline(xintercept = pwr.t.test(d=estimate,sig.level=pval, power=0.8)$n,color = "grey", linetype = "dotdash") +
+        geom_vline(xintercept=n, color = "black", linetype = "longdash") +
+        geom_hline(yintercept=power, color = "black", linetype = "longdash") +
+        labs(y="Power", x="Sample size")
+    }else{
+      ggplot(data = plotdat, aes(x = nvec, y = powvect, group=factor(estvec), color=factor(estvec))) +
+        geom_line(size=1.2) +
+        geom_point(aes(x = n, y = power), color = "black", size = 3) +
+        theme_minimal() +
+        scale_color_discrete(name="Assumed effect",labels=c(text.lowerbound,text.estimate,text.upperbound)) +
+        theme(legend.position="bottom") +
+        geom_vline(xintercept=n, color = "black", linetype = "longdash") +
+        geom_hline(yintercept=power, color = "black", linetype = "longdash") +
+        labs(y="Power", x="Sample size")
+    }
 }

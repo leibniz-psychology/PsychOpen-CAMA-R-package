@@ -1,3 +1,20 @@
+###### Documentation #######
+# Using metafor rma.mv function to fit and return a meta-analytic multivariate/multilevel fixed- and random/mixed-effects model with or without moderators for the given dataset. See Documentation of metafor package for details.
+#
+
+## Input variables ##
+
+# yi -> string of the variable which holds the vector of length k with the observed effect sizes or outcomes in the selected dataset (d)
+# vi ->
+# measure
+# d -> string of dataset name that should be used for fitting
+# pred1 -> optional parameter of type string, wich represents the name of the variable which holds the vectors used as input for the metafor mods argument in the selected dataset (d)
+# pred2 -> optional parameter of type string, wich represents the name of the variable which holds the vectors used as input for the metafor mods argument in the selected dataset (d)
+
+## Output ##
+
+# returns a fitted rma_mv model
+
 rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
 
   library(metafor)
