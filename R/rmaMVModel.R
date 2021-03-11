@@ -35,7 +35,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
                             measure="ZCOR",data=dat)
 
       theRealModel<-predict( rma_mvmodel, digits = 3, transf = transf.ztor)
-      print(rma_model)
+      print(rma_mvmodel)
       print(theRealModel)
       #return(paste(print( rma_mvmodel),print(theRealModel)))
 
