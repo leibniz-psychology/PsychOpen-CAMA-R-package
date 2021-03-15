@@ -10,12 +10,13 @@
 # d -> string of dataset name that should be used for fitting
 # pred1 -> optional parameter of type string, wich represents the name of the variable which holds the vectors used as input for the metafor mods argument in the selected dataset (d)
 # pred2 -> optional parameter of type string, wich represents the name of the variable which holds the vectors used as input for the metafor mods argument in the selected dataset (d)
+# nesting -> optional parameter of type string containing a list of nesting parameter
 
 ## Output ##
 
 # returns a fitted rma_mv model
 
-rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
+rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
 
   library(metafor)
   library(psych)
@@ -27,21 +28,32 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
   pred1<-unlist(pred1)
   pred2<-unlist(pred2)
 
+  if(is.null(nesting)){
+    nest<-list(~1 | outcome_ID ,~1 | sample_ID ,~1 | report_ID)
+  }else{
+    nest<-list()
+    i=1
+    for(p in nesting){
+      nest[i] <-paste("~1 |", p)
+      i=i+1
+    }
+    nest<-lapply(nest, as.formula)
+  }
+
   #es gibt keinen Moderator*****************************************************
   if( is.null(pred1) && is.null(pred2)){
     if(measure == "COR") {
       rma_mvmodel <- rma.mv(transf.rtoz(dat[,yi],dat[,o_ni]), transf.rtoz(dat[,vi],dat[,o_ni]),
-                            random=list(~1 | outcome_ID ,~1 | sample_ID ,~1 | report_ID),
+                            random=nest,
                             measure="ZCOR",data=dat)
 
       theRealModel<-predict( rma_mvmodel, digits = 3, transf = transf.ztor)
       print(rma_mvmodel)
       print(theRealModel)
-      #return(paste(print( rma_mvmodel),print(theRealModel)))
 
     }else{
       rma_mvmodel <- rma.mv(yi=dat[,yi],V=dat[,vi],
-                            random=list(~1 | outcome_ID ,~1 | sample_ID ,~1 | report_ID),
+                            random=nest,
                             measure=measure,data=dat)
       return(summary(rma_mvmodel))
     }
@@ -75,7 +87,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
       rma_formula <- as.formula(sprintf("%s ~ %s", "cor_yi",mods))
 
       rma_mvmodel <- rma.mv(rma_formula, V=moddat[,"cor_vi"],
-                          random=list(~1 | outcome_ID ,~1 | sample_ID ,~1 | report_ID),
+                          random=nest,
                           measure="ZCOR",data=moddat)
 
       return(rma_mvmodel)
@@ -84,7 +96,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
 
       rma_formula <- as.formula(sprintf("%s ~ %s", yi,mods))
       rma_mvmodel <- rma.mv(rma_formula,V=dat[,vi],
-                            random=list(~1 | outcome_ID ,~1 | sample_ID ,~1 | report_ID),
+                            random=nest,
                             measure=measure,data=moddat)
       return(summary(rma_mvmodel))
     }
@@ -113,7 +125,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
 
       rma_formula <- as.formula(sprintf("%s ~ %s", "cor_yi",pred1["value"]))
       rma_mvmodel <- rma.mv(rma_formula,V=moddat[,"cor_vi"],
-                            random=list(~1 | outcome_ID ,~1 | sample_ID ,~1 | report_ID),
+                            random=nest,
                             measure="ZCOR",data=moddat)
 
       return(rma_mvmodel)
@@ -121,7 +133,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
     }else{
 
       rma_mvmodel <- rma.mv(rma_formula, V=dat[,vi],
-                            random=list(~1 | outcome_ID ,~1 | sample_ID ,~1 | report_ID),
+                            random=nest,
                             measure=measure,data=moddat)
       return(rma_mvmodel)
     }

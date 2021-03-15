@@ -1,7 +1,7 @@
 Package: psychOpenCama
 Type: Package
 Title: psychopencama.zpid.de
-Version: 0.4.94
+Version: 0.4.95
 Author: RS
 Maintainer: The package maintainer <rs@leibniz-psychology.org>
 Description: R package for the PsychOpen CAMA project (https://cama.psychopen.eu) - PsychOpen CAMA enables accessing meta-analytic datasets, reproducing meta-analyses and dynamically updating evidence from new primary studies collaboratively. 
