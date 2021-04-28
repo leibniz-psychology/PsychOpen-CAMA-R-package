@@ -1,23 +1,21 @@
+###### Documentation #######
 #
-# This is an example function named 'hello'
-# which prints 'Hello, world!'.
+# Code developed by Tanja Burgard and Robert Studtrucker
 #
-# You can learn more about package authoring with RStudio at:
-#
-#   http://r-pkgs.had.co.nz/
-#
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Install Package:           'Ctrl + Shift + B'
-#   Check Package:             'Ctrl + Shift + E'
-#   Test Package:              'Ctrl + Shift + T'
+
+## Input variables ##
+
+# d -> string of dataset name which json representation should be returned
+
+## Output ##
+
+# returns a json representation of an included dataset
 
 jsonSummary <- function(d) {
 
   dat<-get(d)
-
   val <-jsonlite::toJSON(lapply(dat, function(x){as.list(summary(x))}), pretty = TRUE, auto_unbox = TRUE)
-
+  gc() # Force R to release memory it is no longer using
   return(val)
 
 }

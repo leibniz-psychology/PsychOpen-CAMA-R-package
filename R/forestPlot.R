@@ -13,7 +13,6 @@
 #   Test Package:              'Ctrl + Shift + T'
 
 forest <- function(yi,vi,measure,d,effect="Effect") {
-  start_time <- Sys.time()
   library('metafor')
   library("ggplot2")
   library("metaviz")
@@ -86,8 +85,6 @@ forest <- function(yi,vi,measure,d,effect="Effect") {
     print(rainfp)
 
     invisible();
-    end_time <- Sys.time()
-    end_time - start_time
 
   }
   }

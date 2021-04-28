@@ -1,12 +1,12 @@
 ###### Documentation #######
-# Using metafor rma.mv function to fit and return a meta-analytic multivariate/multilevel fixed- and random/mixed-effects model with or without moderators for the given dataset. See Documentation of metafor package for details.
-#
+# Using metafor rma.mv function to fit and return a meta-analytic multivariate/multilevel fixed- and random/mixed-effects model with or without moderators for the given dataset.
+# See Documentation of metafor package for details.
+# Code developed by Tanja Burgard and Robert Studtrucker
 
 ## Input variables ##
 
 # yi -> string of the variable which holds the vector of length k with the observed effect sizes or outcomes in the selected dataset (d)
-# vi ->
-# measure
+# vi -> string of the variable which holds the vector of length k with the corresponding sampling variances in the selected dataset (d)
 # d -> string of dataset name that should be used for fitting
 # pred1 -> optional parameter of type string, wich represents the name of the variable which holds the vectors used as input for the metafor mods argument in the selected dataset (d)
 # pred2 -> optional parameter of type string, wich represents the name of the variable which holds the vectors used as input for the metafor mods argument in the selected dataset (d)
@@ -18,16 +18,19 @@
 
 rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
 
+  #load needed dependencies
   library(metafor)
   library(psych)
   library(jsonlite)
   library(labelVector)
 
+  #load the in variable d defined dataset from the package
   dat<-get(d)
 
   pred1<-unlist(pred1)
   pred2<-unlist(pred2)
 
+  #check if the choosen dataset has a nesting and prepare corresponding rma_mv model input if so
   if(is.null(nesting)){
     nest<-list(~1 | outcome_ID ,~1 | sample_ID ,~1 | report_ID)
   }else{
@@ -40,12 +43,11 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
     nest<-lapply(nest, as.formula)
   }
 
-  #es gibt keinen Moderator*****************************************************
+  # there is no moderator defined*****************************************************
   if( is.null(pred1) && is.null(pred2)){
     if(measure == "COR") {
       rma_mvmodel <- rma.mv(transf.rtoz(dat[,yi],dat[,o_ni]), transf.rtoz(dat[,vi],dat[,o_ni]),
-                            random=nest,
-                            measure="ZCOR",data=dat)
+                            random=nest,data=dat)
 
       theRealModel<-predict( rma_mvmodel, digits = 3, transf = transf.ztor)
       print(rma_mvmodel)
@@ -55,14 +57,18 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
       rma_mvmodel <- rma.mv(yi=dat[,yi],V=dat[,vi],
                             random=nest,
                             measure=measure,data=dat)
+      gc() # Force R to release memory it is no longer using
       return(summary(rma_mvmodel))
     }
+
+
   }
 
-  #es gibt zwei Moderatoren*****************************************************
+  # there are two moderators defined *****************************************************
   if( !is.null(pred1) && !is.null(pred2)){
     moddat<-dat
-    #Moderatoren transformieren
+
+    # Moderatoren transformieren
     if(pred1["type"]=="num"){
       mod1<-scale(dat[,pred1["value"]])[,1]
     }else{
@@ -79,7 +85,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
     moddat[pred2["value"]]<-mod2
     mods <- paste(c(pred1["value"],pred2["value"]), collapse = "+")
 
-    #Model berechnen je nach measure
+    # calculate model depending on given measure
     if(measure == "COR") {
 
       moddat["cor_yi"]<-transf.rtoz(dat[,yi],dat[,o_ni])
@@ -89,7 +95,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
       rma_mvmodel <- rma.mv(rma_formula, V=moddat[,"cor_vi"],
                           random=nest,
                           measure="ZCOR",data=moddat)
-
+      gc() # Force R to release memory it is no longer using
       return(rma_mvmodel)
 
     }else{
@@ -98,11 +104,12 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
       rma_mvmodel <- rma.mv(rma_formula,V=dat[,vi],
                             random=nest,
                             measure=measure,data=moddat)
+      gc() # Force R to release memory it is no longer using
       return(summary(rma_mvmodel))
     }
   }
 
-  #es gibt einen Moderator******************************************************
+  # there is one moderator defined******************************************************
   if(!is.null(pred1) && is.null(pred2)){
 
     #Moderatoren transformieren
@@ -118,7 +125,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
       rma_formula <- as.formula(sprintf("%s ~ %s", yi,pred1["value"]))
     }
 
-    #Model berechnen je nach measure
+    # fitting model depending on defined measure
     if(measure == "COR") {
       moddat["cor_yi"]<-transf.rtoz(dat[,yi],dat[,o_ni])
       moddat["cor_vi"]<-transf.rtoz(dat[,vi],dat[,o_ni])
@@ -128,6 +135,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
                             random=nest,
                             measure="ZCOR",data=moddat)
 
+      gc() # Force R to release memory it is no longer using
       return(rma_mvmodel)
 
     }else{
@@ -135,6 +143,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
       rma_mvmodel <- rma.mv(rma_formula, V=dat[,vi],
                             random=nest,
                             measure=measure,data=moddat)
+      gc() # Force R to release memory it is no longer using
       return(rma_mvmodel)
     }
   }

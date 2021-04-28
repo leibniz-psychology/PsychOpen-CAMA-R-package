@@ -1,3 +1,23 @@
+###### Documentation #######
+#
+#
+# Code developed by Tanja Burgard and Robert Studtrucker
+#
+
+## Input variables ##
+
+# yi -> string of the variable which holds the vector of length k with the observed effect sizes or outcomes in the selected dataset (d)
+# vi ->
+# measure
+# d -> string of dataset name that should be used for fitting
+# n
+# pval
+
+## Output ##
+
+#
+
+
 powersim <- function(yi,vi,measure,d,n,pval=0.05) {
   library(metafor)
   library(meta)
