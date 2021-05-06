@@ -1,28 +1,22 @@
+###### Documentation #######
+#
+# Code developed by Tanja Burgard and Robert Studtrucker
+#
+
+## Input variables ##
+
+# model
+
+## Output ##
 
 
-
-netMetaMatrix <- function(d,reference) {
+netMetaMatrix <- function(model) {
 
   #load needed dependencies
   library(netmeta)
 
-
-  #load the in variable d defined dataset from the package
-  dat<-get(d)
-
-  combined_treat<-c()
-  for(i in names(dat)){
-    if(substr(i,0,7) == "t_treat"){
-      combined_treat<-c(combined_treat,dat[i],recursive = TRUE,use.names=FALSE)
-    }
-  }
-  trts<-unique(combined_treat)[!is.na(unique(combined_treat))]
-
-  nma1<-netmeta(dat, comb.fixed = FALSE, seq = trts, ref = reference)
-
   # Output 2: Matrix of all pairwise comparisons
-  res.matrix<-round(nma1$TE.fixed,3)
+  res.matrix<-round(model$TE.fixed,3)
   res.matrix[lower.tri(res.matrix, diag=FALSE)] <- "."
-  res.matrix
-
-}
+  print(res.matrix)
+  }
