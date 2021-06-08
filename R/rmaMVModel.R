@@ -1,21 +1,22 @@
-###### Documentation #######
-# Using metafor rma.mv function to fit and return a meta-analytic multivariate/multilevel fixed- and random/mixed-effects model with or without moderators for the given dataset.
-# See Documentation of metafor package for details.
-# Code developed by Tanja Burgard and Robert Studtrucker
-
-## Input variables ##
-
-# yi -> string of the variable which holds the vector of length k with the observed effect sizes or outcomes in the selected dataset (d)
-# vi -> string of the variable which holds the vector of length k with the corresponding sampling variances in the selected dataset (d)
-# d -> string of dataset name that should be used for fitting
-# pred1 -> optional parameter of type string, wich represents the name of the variable which holds the vectors used as input for the metafor mods argument in the selected dataset (d)
-# pred2 -> optional parameter of type string, wich represents the name of the variable which holds the vectors used as input for the metafor mods argument in the selected dataset (d)
-# nesting -> optional parameter of type string containing a list of nesting parameter
-
-## Output ##
-
-# returns a fitted rma_mv model
-
+#' @title rma MVModel
+#' @description
+#' Using metafor rma.mv function to fit and return a meta-analytic multivariate/multilevel fixed- and random/mixed-effects model with or without moderators for the given dataset.
+#' See Documentation of metafor package for details.
+#' @param yi
+#' A \code{string} of the variable which holds the vector of length k with the observed effect sizes or outcomes in the selected dataset (d)
+#' @param vi
+#' A \code{string} of the variable which holds the vector of length k with the corresponding sampling variances in the selected dataset (d)
+#' @param d
+#' A \code{string} representing the dataset name that should be used for fitting.
+#' @param pred1
+#' Optional parameter of type \code{String}, wich represents the name of the variable which holds the vectors used as input for the metafor mods argument in the selected dataset (d).
+#' @param pred2
+#' Optional parameter of type \code{String}, wich represents the name of the variable which holds the vectors used as input for the metafor mods argument in the selected dataset (d).
+#' @param nesting
+#' Optional parameter of type \code{list}, containing nesting parameter
+#' @return returns a fitted rma_mv model
+#' @author Robert Studtrucker
+#' @export
 rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
 
   #load needed dependencies
@@ -25,7 +26,22 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
   library(labelVector)
 
   #load the in variable d defined dataset from the package
-  dat<-get(d)
+  dat <- tryCatch(
+    {get(d)},
+    error=function(cond) {
+      message(paste("This dataset does not exist:", d))
+      message("Here's the original error message:")
+      message(cond)
+      return(NULL)
+    },
+    warning=function(cond) {
+      message(paste("input caused a warning:", d))
+      message("Here's the original warning message:")
+      message(cond)
+      # Choose a return value in case of warning
+      return(NULL)
+    }
+  )
 
   pred1<-unlist(pred1)
   pred2<-unlist(pred2)
@@ -43,7 +59,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
     nest<-lapply(nest, as.formula)
   }
 
-  # there is no moderator defined*****************************************************
+  # there is no moderator defined
   if( is.null(pred1) && is.null(pred2)){
     if(measure == "COR") {
       rma_mvmodel <- rma.mv(transf.rtoz(dat[,yi],dat[,o_ni]), transf.rtoz(dat[,vi],dat[,o_ni]),
@@ -60,11 +76,9 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
       gc() # Force R to release memory it is no longer using
       return(summary(rma_mvmodel))
     }
-
-
   }
 
-  # there are two moderators defined *****************************************************
+  # there are two moderators defined
   if( !is.null(pred1) && !is.null(pred2)){
     moddat<-dat
 
@@ -109,7 +123,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
     }
   }
 
-  # there is one moderator defined******************************************************
+  # there is one moderator defined
   if(!is.null(pred1) && is.null(pred2)){
 
     #Moderatoren transformieren

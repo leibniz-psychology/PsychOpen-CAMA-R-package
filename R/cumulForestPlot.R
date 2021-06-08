@@ -1,22 +1,21 @@
-###### Documentation #######
-# Using metafor rma.uni function to fit a meta-analytic multivariate/multilevel fixed- and random/mixed-effects model for the given dataset.
-# The model then is used as input for the metaviz viz_forest function to print a forrest plot
-# See Documentation of metafor and metaviz packages for details.
-# Code developed by Tanja Burgard and Robert Studtrucker
-#
-
-## Input variables ##
-
-# yi -> string of the variable which holds the vector of length k with the observed effect sizes or outcomes in the selected dataset (d)
-# vi -> string of the variable which holds the vector of length k with the corresponding sampling variances in the selected dataset (d)
-# measure -> string, used to define wether the data used for the rma fitting needs to be z transformed
-# d -> string of dataset name that should be used for fitting
-# effectName -> string of the effect name used as input for xlab parameter in the plot function
-
-## Output ##
-
-# creates a cumulative forest plot
-
+#' @title cumulative Forest plot
+#' @description
+#' Using metafor rma.uni function to fit a meta-analytic multivariate/multilevel fixed- and random/mixed-effects model for the given dataset.
+#' The model then is used as input for the metaviz viz_forest function to print a forrest plot
+#' See Documentation of metafor and metaviz packages for details.
+#' @param yi
+#' A \code{string} of the variable which holds the vector of length k with the observed effect sizes or outcomes in the selected dataset (d)
+#' @param vi
+#' A \code{string} of the variable which holds the vector of length k with the corresponding sampling variances in the selected dataset (d)
+#' @param d
+#' A \code{string} representing the dataset name that should be used for fitting.
+#' @param measure
+#' A character string indicating underlying summary measure.
+#' @return
+#' creates a cumulative forest plot
+#' also creates a json file (imgHeight.json) that is used in a later api call to define the height of the plots
+#' @author Robert Studtrucker
+#' @export
 cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
 
   #load needed dependencies
@@ -28,8 +27,23 @@ cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
   #load the in variable d defined dataset from the package
   dat<-get(d)
 
-  #order the loaded data depending on the r_year column
-  dat <- dat[order(dat$r_year),]
+  #load the in variable d defined dataset from the package
+  dat <- tryCatch(
+    {get(d)},
+    error=function(cond) {
+      message(paste("This dataset does not exist:", d))
+      message("Here's the original error message:")
+      message(cond)
+      return(NULL)
+    },
+    warning=function(cond) {
+      message(paste("input caused a warning:", d))
+      message("Here's the original warning message:")
+      message(cond)
+      # Choose a return value in case of warning
+      return(NULL)
+    }
+  )
 
   # depending on the given measure the input for rma.uni model is z transformed
   if(measure == "COR") {
