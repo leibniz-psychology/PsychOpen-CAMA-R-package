@@ -1,4 +1,4 @@
-# camaR
+# PsychOpen-CAMA-R-package
 
 R package for the PsychOpen CAMA project (https://cama.psychopen.eu) - PsychOpen CAMA enables accessing meta-analytic datasets, reproducing meta-analyses and dynamically 
 updating evidence from new primary studies collaboratively. Functions from the package are used to generate content for the php based gui of the application. 

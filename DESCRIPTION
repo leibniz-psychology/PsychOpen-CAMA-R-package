@@ -1,7 +1,7 @@
 Package: psychOpenCama
 Type: Package
 Title: psychopencama.zpid.de
-Version: 0.6.0
+Version: 1.0.0
 Authors@R: c(
     person("Robert", "Studtrucker", email = "rs@leibniz-psychology.org", role = c("aut","cre")),
     person("Tanja", "Burgard",email = "tb@leibniz-psychology.org", role = "aut")
