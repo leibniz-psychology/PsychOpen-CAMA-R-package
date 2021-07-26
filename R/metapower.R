@@ -1,4 +1,21 @@
-
+#' @title meta power plot
+#' @description
+#' creates a metapower plot.
+#' Not used at the moment
+#' @param d
+#' A \code{string} representing the dataset name.
+#' @param yi
+#' A \code{string} of the variable which holds the vector of length k with the observed effect sizes or outcomes in the selected dataset (d)
+#' @param vi
+#' A \code{string} of the variable which holds the vector of length k with the corresponding sampling variances in the selected dataset (d)
+#' @param measure
+#' A character string indicating underlying summary measure
+#' @param pval
+#' A \code{Numeric} representing the significance level which should be used for the power simulation.
+#' @return
+#' A metapower plot
+#' @author Robert Studtrucker
+#' @export
 metapower <- function(yi,vi,measure,d, pval=0.05) {
   library(metafor)
   library(meta)
@@ -7,8 +24,23 @@ metapower <- function(yi,vi,measure,d, pval=0.05) {
   library(metapower)
   library(ggplot2)
 
-  dat<-get(d)
-
+   #load the in variable d defined dataset from the package
+   dat <- tryCatch(
+      {get(d)},
+      error=function(cond) {
+         message(paste("This dataset does not exist:", d))
+         message("Here's the original error message:")
+         message(cond)
+         return(NULL)
+      },
+      warning=function(cond) {
+         message(paste("input caused a warning:", d))
+         message("Here's the original warning message:")
+         message(cond)
+         # Choose a return value in case of warning
+         return(NULL)
+      }
+   )
 
   uni <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure)
 

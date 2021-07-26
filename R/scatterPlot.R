@@ -1,13 +1,38 @@
-
+#' @title Scatter Plot
+#' @description
+#' Produces a scatterplot depending of given dataset and optionally predictors.
+#' @param d
+#' A \code{string} representing the dataset name.
+#' @param pred1
+#' A \code{list} for first predictor containing entries for type and value.
+#' @param pred2
+#' A \code{list} for first predictor containing entries for type and value.
+#' @return
+#' returns a scatterplot for the given dataset and predictor variables.
+#' @author Robert Studtrucker
+#' @export
 scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
-
   library(metafor)
   library(ggplot2)
   library(GGally)
 
-
-
-  dat<-get(d)
+  #load the in variable d defined dataset from the package
+  dat <- tryCatch(
+    {get(d)},
+    error=function(cond) {
+      message(paste("This dataset does not exist:", d))
+      message("Here's the original error message:")
+      message(cond)
+      return(NULL)
+    },
+    warning=function(cond) {
+      message(paste("input caused a warning:", d))
+      message("Here's the original warning message:")
+      message(cond)
+      # Choose a return value in case of warning
+      return(NULL)
+    }
+  )
 
   pred1<-unlist(pred1)
   pred2<-unlist(pred2)
