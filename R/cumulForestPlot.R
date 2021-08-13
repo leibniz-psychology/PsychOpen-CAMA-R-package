@@ -51,28 +51,31 @@ cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
     #fitting the rma.uni model based on z transformed data
     rma_model <- rma.uni(yi=transf.rtoz(dat[,yi],dat[,o_ni]), vi=transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
 
+
+    tmp<-cumul(rma_model, order=order(dat$r_year))
     #creating a cumulative forest plot based on the fitted rma.uni model
     fp <- viz_forest(x = rma_model,
                      variant = "classic",
-                     study_labels = rma_model$slab,
+                     study_labels = tmp$slab,
                      text_size =4,
                      xlab = effectName,
                      annotate_CI = TRUE,
-                     x_limit = c(0,2),
+                     #x_limit = c(0,2),
                      method = "REML",
                      x_trans_function = tanh,
                      type = "cumulative")
-
 
   }else{
     # 1. Overall-Effekt und Cumulative forest ####
     #fitting the rma.uni model
     rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
 
+    tmp<-cumul(rma_model, order=order(dat$r_year))
+
     #creating a cumulative forest plot based on the fitted rma.uni model
     fp <- viz_forest(x = rma_model,
                      variant = "classic",
-                     study_labels = rma_model$slab,
+                     study_labels = tmp$slab,
                      text_size =4,
                      xlab = effectName,
                      annotate_CI = TRUE,
