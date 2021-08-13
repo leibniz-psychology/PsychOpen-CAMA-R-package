@@ -4,7 +4,6 @@ R package for the PsychOpen CAMA project (https://cama.psychopen.eu) - PsychOpen
 updating evidence from new primary studies collaboratively. Functions from the package are used to generate content for the php based gui of the application. 
 The re use of this package is limited since the functions are adapted to be used with our php gui.
 
-
 ### Following R packages are used: 
 
 **dmetar**<br>
