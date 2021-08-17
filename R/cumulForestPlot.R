@@ -44,15 +44,16 @@ cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
       return(NULL)
     }
   )
+  #order the loaded data depending on the r_year column
+  #dat <- dat[order(dat$r_year),]
 
   # depending on the given measure the input for rma.uni model is z transformed
   if(measure == "COR") {
 
     #fitting the rma.uni model based on z transformed data
     rma_model <- rma.uni(yi=transf.rtoz(dat[,yi],dat[,o_ni]), vi=transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
-
-
     tmp<-cumul(rma_model, order=order(dat$r_year))
+
     #creating a cumulative forest plot based on the fitted rma.uni model
     fp <- viz_forest(x = rma_model,
                      variant = "classic",
@@ -91,9 +92,4 @@ cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
   # print the cumul forest plot so the corresponding object can be retrieved by the web service
   print(fp)
   invisible();
-
 }
-
-
-
-
