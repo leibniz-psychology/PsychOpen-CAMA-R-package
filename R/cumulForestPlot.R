@@ -53,7 +53,7 @@ cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
     #fitting the rma.uni model based on z transformed data
     rma_model <- rma.uni(yi=transf.rtoz(dat[,yi],dat[,o_ni]), vi=transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
     tmp<-cumul(rma_model, order=order(dat$r_year))
-    summary(tmp)
+
     #creating a cumulative forest plot based on the fitted rma.uni model
     fp <- viz_forest(x = rma_model,
                      variant = "classic",
@@ -74,7 +74,7 @@ cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
     tmp<-cumul(rma_model, order=order(dat$r_year))
 
     #creating a cumulative forest plot based on the fitted rma.uni model
-    fp <- viz_forest(x = tmp,
+    fp <- viz_forest(x = rma_model,
                      variant = "classic",
                      study_labels = tmp$slab,
                      text_size =4,

@@ -15,7 +15,6 @@
 rma <- function(yi,vi,measure,d,effect="Effect") {
   library('metafor')
   library("ggplot2")
-  library("metaviz")
   library('jsonlite')
   library('psych')
 
@@ -44,6 +43,5 @@ rma <- function(yi,vi,measure,d,effect="Effect") {
   }else{
     rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
 
-    invisible();
   }
 }
