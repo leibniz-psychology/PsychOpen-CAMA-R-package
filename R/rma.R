@@ -1,6 +1,6 @@
-#' @title Forest plot
+#' @title rma uni model
 #' @description
-#' Using metafor package to create a forest plot and metaviz package to create a rain forest plot.
+#' Using metafor package to fit a rma uni model.
 #' @param yi
 #' A \code{string} of the variable which holds the vector of length k with the observed effect sizes or outcomes in the selected dataset (d)
 #' @param vi
@@ -8,11 +8,11 @@
 #' @param d
 #' A \code{string} representing the dataset name that should be used for fitting.
 #' @return
-#' creates a forest and rainforest plot
+#' rma uni model
 #' also creates a json file (imgHeight.json) that is used in a later api call to define the height of the plots
 #' @author Robert Studtrucker
 #' @export
-rmaZCOR <- function(yi,vi,d,effect="Effect") {
+rma <- function(yi,vi,measure,d,effect="Effect") {
   library('metafor')
   library("ggplot2")
   library("metaviz")
@@ -36,5 +36,14 @@ rmaZCOR <- function(yi,vi,d,effect="Effect") {
       return(NULL)
     }
   )
-  rma_model <- rma.uni(yi=transf.rtoz(dat[,yi],dat[,o_ni]), vi=transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
+
+  if(measure == "COR") {
+
+    rma_model <- rma.uni(yi=transf.rtoz(dat[,yi],dat[,o_ni]), vi=transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
+
+  }else{
+    rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
+
+    invisible();
   }
+}

@@ -14,7 +14,6 @@ pureForest <- function(rma_model) {
   library('jsonlite')
   library('psych')
 
-
 fp <- viz_forest(x = rma_model,
                  variant = "classic",
                  study_labels = rma_model$slab,
@@ -43,5 +42,4 @@ print(fp)
 print(rainfp)
 
 invisible();
-
 }
