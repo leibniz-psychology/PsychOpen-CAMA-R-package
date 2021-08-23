@@ -43,16 +43,7 @@ cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
   )
 
   #order the loaded data depending on the r_year column
-
-    dat$r_year<-as.numeric(dat$r_year)
-    dat$o_ni<-as.numeric(dat$o_ni)
-    dat$outcome_ID<-as.numeric(dat$outcome_ID)
-    dat$study_ID<-as.numeric(dat$study_ID)
-    dat$s_female<-as.numeric(dat$s_female)
-    dat$s_meanage<-as.numeric(dat$s_meanage)
-
-
-    #dat <- dat[order(dat$r_year),]
+  #dat <- dat[order(dat$r_year),]
 
   # depending on the given measure the input for rma.uni model is z transformed
   if(measure == "COR") {
