@@ -52,6 +52,7 @@ pureCumulForest <- function(rma_model,measure,d,effectName="Effect") {
                      annotate_CI = TRUE,
                      x_trans_function = tanh,
                      type = "cumulative")
+
   }else{
 
     tmp<-cumul(rma_model, order=order(dat$r_year))
