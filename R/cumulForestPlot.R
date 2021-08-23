@@ -43,7 +43,7 @@ cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
   )
 
   #order the loaded data depending on the r_year column
-  dat <- dat[order(dat$r_year),]
+  #dat <- dat[order(dat$r_year),]
 
   # depending on the given measure the input for rma.uni model is z transformed
   if(measure == "COR") {
@@ -52,20 +52,19 @@ cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
 
     rma_model <- metafor::rma.uni(yi=transf.rtoz(dat[,yi],dat[,o_ni]), vi=transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
 
-
     tmp<-metafor::cumul(rma_model, order=order(dat$r_year))
     #creating a cumulative forest plot based on the fitted rma.uni model
-    #fp <- viz_forest(x = df,
-    #                 group = NULL,
-    #                variant = "classic",
-    #                 study_labels = tmp$slab,
+
+    #fp <- viz_forest(x = rma_model,
+    #                 variant = "classic",
+    #                 study_labels = rma_model$slab,
     #                 text_size =4,
     #                 xlab = effectName,
     #                 annotate_CI = TRUE,
     #                 x_trans_function = tanh,
     #                 type = "cumulative")
     fp<- metafor::forest(x=tmp,
-                         cex=0.75,
+                        cex=0.75,
                          xlab = "Correlation Coefficient",
                          study_labels = tmp$slab,
                          transf="ztor",
@@ -79,17 +78,26 @@ cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
     #fitting the rma.uni model
     rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
 
-    #tmp<-cumul(rma_model, order=order(dat$r_year))
+    tmp<-cumul(rma_model, order=order(dat$r_year))
 
     #creating a cumulative forest plot based on the fitted rma.uni model
-    fp <- viz_forest(x = rma_model,
-                     variant = "classic",
-                     study_labels = rma_model$slab,
-                     text_size =4,
-                     xlab = effectName,
-                     annotate_CI = TRUE,
-                     type = "cumulative")
-  }
+    #fp <- viz_forest(x = rma_model,
+    #                 variant = "classic",
+    #                 study_labels = rma_model$slab,
+    #                 text_size =4,
+    #                 xlab = effectName,
+    #                 annotate_CI = TRUE,
+    #                 type = "cumulative")
+    fp<- metafor::forest(x=tmp,
+                         cex=0.75,
+                         xlab = "Correlation Coefficient",
+                         study_labels = tmp$slab,
+                         transf="ztor",
+                         efac=0.2
+    )
+
+
+    }
 
   # creating a json object with information about the height of the plot
   # this information is needed by the web service to define how big the requested image has to be.
