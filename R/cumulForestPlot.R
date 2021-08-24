@@ -55,25 +55,23 @@ cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
     #creating a cumulative forest plot based on the fitted rma.uni model
 
 
-    fp <- viz_forest(x = rma_model,
-                     variant = "classic",
-                     study_labels = rma_model$slab,
-                     text_size =4,
-                     xlab = effectName,
-                     annotate_CI = TRUE,
-                     x_trans_function = tanh,
-                     type = "cumulative")
-    #fp<- metafor::forest(x=tmp,
-    #                    cex=0.75,
-    #                     xlab = "Correlation Coefficient",
-    #                     study_labels = tmp$slab,
-    #                     transf="ztor",
-    #                     efac=0.3
-    #                    )
-
+    #fp <- viz_forest(x = rma_model,
+    #                 variant = "classic",
+    #                 study_labels = rma_model$slab,
+    #                 text_size =4,
+    #                 xlab = effectName,
+    #                 annotate_CI = TRUE,
+    #                 x_trans_function = tanh,
+    #                 type = "cumulative")
+    fp<- metafor::forest(x=tmp,
+                        cex=0.75,
+                         xlab = "Correlation Coefficient",
+                         study_labels = tmp$slab,
+                         transf="ztor",
+                         efac=0.2
+                        )
   }else{
     # 1. Overall-Effekt und Cumulative forest ####
-
 
     #fitting the rma.uni model
     rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
