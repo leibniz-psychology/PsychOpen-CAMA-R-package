@@ -41,12 +41,12 @@ pureCumulForest <- function(rma_model,measure,d,effectName="Effect") {
   if(measure == "COR") {
 
     #fitting the rma.uni model based on z transformed data
-    tmp<-metafor::cumul(rma_model, order=order(dat$r_year))
+    #tmp<-metafor::cumul(rma_model, order=order(dat$r_year))
 
     #creating a cumulative forest plot based on the fitted rma.uni model
     fp <- viz_forest(x = rma_model,
                      variant = "classic",
-                     study_labels = tmp$slab,
+                     study_labels = rma_model$slab,
                      text_size =4,
                      xlab = effectName,
                      annotate_CI = TRUE,

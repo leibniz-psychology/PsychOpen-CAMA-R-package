@@ -35,10 +35,11 @@ rma <- function(yi,vi,measure,d,effect="Effect") {
       return(NULL)
     }
   )
-
+  str(dat)
+  dat <- dat[order(dat$r_year),]
+  str(dat)
   if(measure == "COR") {
-
-    rma_model <- rma.uni(yi=transf.rtoz(dat[,yi],dat[,o_ni]), vi=transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
+    rma_model <- metafor::rma.uni(yi=transf.rtoz(dat[,yi],dat[,o_ni]), vi=transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
 
   }else{
     rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
