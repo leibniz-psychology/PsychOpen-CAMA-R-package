@@ -58,24 +58,36 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
     }
     nest<-lapply(nest, as.formula)
   }
-  nest
   # there is no moderator defined
   if( is.null(pred1) && is.null(pred2)){
     if(measure == "COR") {
 
       # z-standardisierte Daten erstellen
-      temp_dat <- escalc(measure="ZCOR", ri=dat[,yi], vi=dat[,vi], ni=dat[,"o_ni"], data=dat, var.names=c("o_zcor","o_zcor_var"))
+      temp_dat <- escalc(measure="ZCOR",
+                         ri=dat[,yi],
+                         vi=dat[,vi],
+                         ni=dat[,"o_ni"],
+                         data=dat,
+                         var.names=c("o_zcor","o_zcor_var"))
 
       # Modell berechnen
-      rma_mvmodel <- rma.mv(temp_dat[,"o_zcor"],temp_dat[,"o_zcor_var"], measure="ZCOR",random=nest)
+      rma_mvmodel <- rma.mv(temp_dat[,"o_zcor"],
+                            temp_dat[,"o_zcor_var"],
+                            data=temp_dat,
+                            measure="ZCOR",
+                            random=nest)
 
       # Backtransformation für Interpretation
       theRealModel <- predict(rma_mvmodel, transf=transf.ztor, digits=3)
 
 
-      # rma_mvmodel <- rma.mv(transf.rtoz(dat[,yi],dat[,o_ni]), transf.rtoz(dat[,vi],dat[,o_ni]),
+      # rma_mvmodel <- rma.mv(transf.rtoz(dat[,yi], dat[,o_ni]),
+      #                       transf.rtoz(dat[,vi],dat[,o_ni]),
       #                       random=nest,data=dat)
-      # theRealModel<-predict( rma_mvmodel, digits = 3, transf = transf.ztor)
+      #
+      # theRealModel<-predict( rma_mvmodel,
+      #                        digits = 3,
+      #                        transf = transf.ztor)
 
 
       print(rma_mvmodel)
@@ -115,11 +127,16 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
     if(measure == "COR") {
 
       # z-standardisierte Daten erstellen
-      moddat <- escalc(measure="ZCOR", ri=moddat[,yi], vi=moddat[,vi], ni=moddat[,"o_ni"], data=moddat, var.names=c("o_zcor","o_zcor_var"))
+      moddat <- escalc(measure="ZCOR",
+                       ri=moddat[,yi],
+                       vi=moddat[,vi],
+                       ni=moddat[,"o_ni"],
+                       data=moddat,
+                       var.names=c("o_zcor","o_zcor_var"))
 
       rma_formula <- as.formula(sprintf("%s ~ %s", "o_zcor",mods))
 
-      rma_mvmodel <- rma.mv(rma_formula, vi=moddat[,"o_zcor_var"], measure="ZCOR",data=moddat,random=nest,)
+      rma_mvmodel <- rma.mv(rma_formula, V=moddat[,"o_zcor_var"], measure="ZCOR",data=moddat,random=nest,)
 
 
       # moddat["cor_yi"]<-transf.rtoz(dat[,yi],dat[,o_ni])
@@ -167,7 +184,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
 
       rma_formula <- as.formula(sprintf("%s ~ %s", "o_zcor",pred1["value"]))
       rma_mvmodel <- rma.mv(rma_formula,
-                            vi=moddat[,"o_zcor_var"],
+                            V=moddat[,"o_zcor_var"],
                             measure="ZCOR",
                             data=moddat,
                             random=nest)
