@@ -36,12 +36,30 @@ funnelPLot <- function(yi,vi,measure,d,effectName="Effect") {
     }
   )
 
-  rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure)
-  RTest <-regtest(x=rma_model)
+  if(measure == "COR") {
+    # z-standardisierte Daten erstellen
+    temp_dat <- escalc(measure="ZCOR", ri=dat[,yi], vi=dat[,vi], ni=dat[,"o_ni"], data=dat, var.names=c("o_zcor","o_zcor_var"))
 
-  metafor::funnel(rma_model, yaxis="sei") # 'label'
-  metafor::funnel(rma_model, level=c(90, 95, 99), shade=c("white", "orange", "red"), refline=0, legend=TRUE)
-  gc() # Force R to release memory it is no longer using
+    # Modell berechnen
+    rma_model <- rma.uni(temp_dat[,"o_zcor"],temp_dat[,"o_zcor_var"], measure="ZCOR")
 
-  return(RTest)
+    RTest <-regtest(x=rma_model)
+    metafor::funnel(rma_model, yaxis="sei") # 'label'
+    metafor::funnel(rma_model, level=c(90, 95, 99), shade=c("white", "orange", "red"), refline=0, legend=TRUE)
+    gc() # Force R to release memory it is no longer using
+
+    return(RTest)
+
+  }else{
+    rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure)
+    RTest <-regtest(x=rma_model)
+
+    metafor::funnel(rma_model, yaxis="sei") # 'label'
+    metafor::funnel(rma_model, level=c(90, 95, 99), shade=c("white", "orange", "red"), refline=0, legend=TRUE)
+    gc() # Force R to release memory it is no longer using
+
+    return(RTest)
+  }
+
+
 }

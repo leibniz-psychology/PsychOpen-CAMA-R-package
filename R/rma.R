@@ -39,7 +39,11 @@ rma <- function(yi,vi,measure,d,effect="Effect") {
   dat <- dat[order(dat$r_year),]
   str(dat)
   if(measure == "COR") {
-    rma_model <- metafor::rma.uni(yi=transf.rtoz(dat[,yi],dat[,o_ni]), vi=transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
+    # z-standardisierte Daten erstellen
+    temp_dat <- escalc(measure="ZCOR", ri=dat[,yi], vi=dat[,vi], ni=dat[,"o_ni"], data=dat, var.names=c("o_zcor","o_zcor_var"))
+
+    # Modell berechnen
+    rma_model <- metafor::rma.uni(temp_dat[,"o_zcor"],temp_dat[,"o_zcor_var"], measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
 
   }else{
     rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))

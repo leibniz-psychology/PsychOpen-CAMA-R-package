@@ -48,10 +48,21 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
     #no moderators given ***
     if( is.null(pred1) && is.null(pred2)){
       if(measure == "COR") {
-        rma_model <- rma.uni(transf.rtoz(dat[,yi],dat[,o_ni]), transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",data=dat)
-        theRealModel<-predict(rma_model, digits = 3, transf = transf.ztor)
+
+        # z-standardisierte Daten erstellen
+        temp_dat <- escalc(measure="ZCOR", ri=dat[,yi], vi=dat[,vi], ni=dat[,"o_ni"], data=dat, var.names=c("o_zcor","o_zcor_var"))
+
+        # Modell berechnen
+        rma_model <- rma.uni(temp_dat[,"o_zcor"],temp_dat[,"o_zcor_var"], measure="ZCOR")
+
+        # Backtransformation für Interpretation
+        theRealModel <- predict(rma_model, transf=transf.ztor, digits=3)
+
         print(rma_model)
         print(theRealModel)
+
+        # Egger's Test (bei Funnel)
+        # eggers <- regtest(res_temp)
 
       }else{
         rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,data=dat)
@@ -82,11 +93,12 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
       #calculate model depending on the measure
       if(measure == "COR") {
 
-        moddat["cor_yi"]<-transf.rtoz(dat[,yi],dat[,o_ni])
-        moddat["cor_vi"]<-transf.rtoz(dat[,vi],dat[,o_ni])
-        rma_formula <- as.formula(sprintf("%s ~ %s", "cor_yi",mods))
+        # z-standardisierte Daten erstellen
+        moddat <- escalc(measure="ZCOR", ri=moddat[,yi], vi=moddat[,vi], ni=moddat[,"o_ni"], data=moddat, var.names=c("o_zcor","o_zcor_var"))
 
-        rma_model <- rma.uni(rma_formula, vi=moddat[,"cor_vi"], measure="ZCOR",data=moddat)
+        rma_formula <- as.formula(sprintf("%s ~ %s", "o_zcor",mods))
+
+        rma_model <- rma.uni(rma_formula, vi=moddat[,"o_zcor_var"], measure="ZCOR",data=moddat)
 
         return(rma_model)
 
@@ -116,11 +128,12 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
 
       #calculate model depending on the measure
       if(measure == "COR") {
-        moddat["cor_yi"]<-transf.rtoz(dat[,yi],dat[,o_ni])
-        moddat["cor_vi"]<-transf.rtoz(dat[,vi],dat[,o_ni])
 
-        rma_formula <- as.formula(sprintf("%s ~ %s", "cor_yi",pred1["value"]))
-        rma_model <- rma.uni(rma_formula,vi=moddat[,"cor_vi"], measure="ZCOR",data=moddat)
+        # z-standardisierte Daten erstellen
+        moddat <- escalc(measure="ZCOR", ri=moddat[,yi], vi=moddat[,vi], ni=moddat[,"o_ni"], data=moddat, var.names=c("o_zcor","o_zcor_var"))
+
+        rma_formula <- as.formula(sprintf("%s ~ %s", "o_zcor",pred1["value"]))
+        rma_model <- rma.uni(rma_formula,vi=moddat[,"o_zcor_var"], measure="ZCOR",data=moddat)
 
         return(rma_model)
 
