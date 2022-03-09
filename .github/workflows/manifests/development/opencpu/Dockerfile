@@ -5,10 +5,7 @@ ARG OCPU_PASS
 COPY . /home/opencpu/psychOpenCama
 COPY .github/workflows/manifests/development/opencpu/server.conf /etc/opencpu/
 
-#install needed dependencies
-RUN apt-get install -y \
-
-
+#install needed dependenciesp
 RUN apt-get update && apt-get install -y \
     libcurl4-gnutls-dev \
     && apt install -y cmake \
