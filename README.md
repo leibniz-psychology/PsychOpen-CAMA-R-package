@@ -16,8 +16,7 @@ Barret Schloerke, Di Cook, Joseph Larmarange, Francois Briatte, Moritz Marbach, 
 **ggplot2**<br>
 H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
 
-**jsonlite**<br>
-Jeroen Ooms (2014). The jsonlite Package: A Practical and Consistent Mapping Between JSON Data and R Objects. arXiv:1403.2805 [stat.CO] URL https://arxiv.org/abs/1403.2805.
+**jsonlite**<br>Jeroen Ooms (2014). The jsonlite Package: A Practical and Consistent Mapping Between JSON Data and R Objects. arXiv:1403.2805 [stat.CO] URL https://arxiv.org/abs/1403.2805.
 
 **labelVector**<br>
 Benjamin Nutter (2020). labelVector: Label Attributes for Atomic Vectors. R package version 0.1.1. https://CRAN.R-project.org/package=labelVector
