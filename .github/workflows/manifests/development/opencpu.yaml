@@ -8,8 +8,6 @@ metadata:
 spec:
   ports:
     - port: 80
-    - port: 443
-    - port: 8004
   selector:
     app: opencpu-dev
 ---
@@ -82,4 +80,3 @@ spec:
   ingress:
     - ports:
         - port: 80
-        - port: 8004

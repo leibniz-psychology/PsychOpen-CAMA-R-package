@@ -18,7 +18,7 @@ COPY .github/workflows/manifests/development/opencpu/opencpu.conf /etc/apache2/s
 COPY .github/workflows/manifests/development/opencpu/server.conf /etc/opencpu/
 
 RUN cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/ && \
-    cp /etc/apache2/mods-available/headers.load /etc/apache2/mods-enabled/ 
+    cp /etc/apache2/mods-available/headers.load /etc/apache2/mods-enabled/
 
 RUN R -e "install.packages('devtools')"
 RUN R -e "install.packages('metafor')"
