@@ -14,8 +14,8 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/ \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
-COPY opencpu.conf /etc/apache2/sites-available/
-COPY server.conf /etc/opencpu/
+COPY .github/workflows/manifests/development/opencpu/opencpu.conf /etc/apache2/sites-available/
+COPY .github/workflows/manifests/development/opencpu/server.conf /etc/opencpu/
 
 RUN cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/ && \
     cp /etc/apache2/mods-available/headers.load /etc/apache2/mods-enabled/ \
