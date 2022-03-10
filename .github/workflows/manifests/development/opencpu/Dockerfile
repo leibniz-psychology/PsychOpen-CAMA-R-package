@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
 
 COPY .github/workflows/manifests/development/opencpu/opencpu.conf /etc/apache2/sites-available/
 COPY .github/workflows/manifests/development/opencpu/server.conf /etc/opencpu/
+COPY .github/workflows/manifests/development/opencpu/apache2.conf /etc/apache2/
 
 RUN cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/ && \
     cp /etc/apache2/mods-available/headers.load /etc/apache2/mods-enabled/
