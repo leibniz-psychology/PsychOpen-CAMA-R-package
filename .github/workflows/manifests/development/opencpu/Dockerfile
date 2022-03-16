@@ -2,6 +2,9 @@ FROM crzpiddev.azurecr.io/opencpu-adjusted:v1
 
 ARG OCPU_PASS
 
+RUN apt update -y &&\
+    apt install -y vim
+
 #install needed dependenciesp
 #RUN apt-get update && apt-get install -y \
 #    libcurl4-gnutls-dev \
@@ -33,6 +36,7 @@ COPY . /home/opencpu/psychOpenCama
 COPY .github/workflows/manifests/development/opencpu/opencpu.conf /etc/apache2/sites-available/
 COPY .github/workflows/manifests/development/opencpu/server.conf /etc/opencpu/
 COPY .github/workflows/manifests/development/opencpu/apache2.conf /etc/apache2/
+COPY .github/workflows/manifests/development/opencpu/security.conf /etc/apache2/conf-enabled/
 
 RUN cd /home/opencpu && \
     R CMD build psychOpenCama && \
