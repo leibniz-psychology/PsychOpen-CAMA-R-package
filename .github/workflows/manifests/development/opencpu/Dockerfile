@@ -33,10 +33,10 @@ RUN apt update -y &&\
 
 #copy some config files
 COPY . /home/opencpu/psychOpenCama
-#COPY .github/workflows/manifests/development/opencpu/opencpu.conf /etc/apache2/sites-available/
-#COPY .github/workflows/manifests/development/opencpu/server.conf /etc/opencpu/
-#COPY .github/workflows/manifests/development/opencpu/apache2.conf /etc/apache2/
-#COPY .github/workflows/manifests/development/opencpu/security.conf /etc/apache2/conf-enabled/
+COPY .github/workflows/manifests/development/opencpu/opencpu.conf /etc/apache2/sites-available/
+COPY .github/workflows/manifests/development/opencpu/server.conf /etc/opencpu/
+COPY .github/workflows/manifests/development/opencpu/apache2.conf /etc/apache2/
+COPY .github/workflows/manifests/development/opencpu/security.conf /etc/apache2/conf-enabled/
 
 RUN cd /home/opencpu && \
     R CMD build psychOpenCama && \
