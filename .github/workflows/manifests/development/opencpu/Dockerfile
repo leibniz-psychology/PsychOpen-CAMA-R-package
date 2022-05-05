@@ -5,7 +5,7 @@ ARG OCPU_PASS
 RUN apt update -y &&\
     apt install -y vim
 
-#install needed dependenciesp
+#install needed dependencies
 #RUN apt-get update && apt-get install -y \
 #    libcurl4-gnutls-dev \
 #    && apt install -y cmake \
@@ -29,6 +29,15 @@ RUN apt update -y &&\
 #RUN R -e "install.packages('labelVector')"
 #RUN R -e "install.packages('pwr')"
 #RUN R -e "devtools::install_github('MathiasHarrer/dmetar')"
+
+RUN apt-get update && \
+    apt-get install -y openssl && \
+    openssl genrsa -des3 -passout pass:x -out server.pass.key 2048 && \
+    openssl rsa -passin pass:x -in server.pass.key -out server.key && \
+    rm server.pass.key && \
+    openssl req -new -key server.key -out server.csr \
+        -subj "/C=DE/ST=Rheinland-Pfalz/L=Trier/O=Leibniz Institut für Psychologie/OU=IT Department/CN=opencpu.dev.zpid.org" && \
+    openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 
 
 #copy some config files
