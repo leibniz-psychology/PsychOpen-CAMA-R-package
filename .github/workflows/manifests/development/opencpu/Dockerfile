@@ -2,6 +2,9 @@ FROM crzpiddev.azurecr.io/opencpu-adjusted:v1
 
 ARG OCPU_PASS
 
+ARG SSL_KEY
+
+
 RUN apt update -y &&\
     apt install -y vim
 
@@ -32,7 +35,7 @@ RUN apt update -y &&\
 
 RUN apt-get update && \
     apt-get install -y openssl && \
-    openssl genrsa -des3 -passout pass:x -out server.pass.key 2048 && \
+    openssl genrsa -des3 -passout pass:$SSL_KEY -out server.pass.key 2048 && \
     openssl rsa -passin pass:x -in server.pass.key -out server.key && \
     rm server.pass.key && \
     openssl req -new -key server.key -out server.csr \
