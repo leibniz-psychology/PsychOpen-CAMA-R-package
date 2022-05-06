@@ -24,6 +24,7 @@ RUN R -e "install.packages('metaviz')"
 RUN R -e "install.packages('netmeta',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('psych')"
 RUN R -e "install.packages('labelVector')"
+RUN R -e "install.packages('pwr')"
 RUN R -e "install.packages('jsonlite', repos = 'https://cran.r-project.org')"
 RUN R -e "devtools::install_github('MathiasHarrer/dmetar')"
 
