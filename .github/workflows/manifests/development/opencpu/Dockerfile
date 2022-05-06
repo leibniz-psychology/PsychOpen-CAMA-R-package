@@ -32,22 +32,21 @@ RUN apt update -y &&\
 #RUN R -e "install.packages('pwr')"
 #RUN R -e "devtools::install_github('MathiasHarrer/dmetar')"
 
-RUN apt-get update && \
+RUN cd /home/opencpu && \
+    apt-get update && \
     apt-get install -y openssl && \
     openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -nodes \
-      -keyout example.key -out example.crt -subj "/CN=opencpu.dev.zpid.org" \
+      -keyout ocpu_ssl.key -out ocpu_ssl.crt -subj "/CN=opencpu.dev.zpid.org" \
       -addext "subjectAltName=DNS:opencpu.dev.zpid.org,DNS:www.opencpu.dev.zpid.org,IP:12.0.0.1"
-#    openssl genrsa -des3 -passout pass:$SSL_KEY -out server.pass.key 2048 && \
-#    openssl rsa -passin pass:x -in server.pass.key -out server.key && \
-#    rm server.pass.key && \
-#    openssl req -new -key server.key -out server.csr \
-#        -subj "/C=DE/ST=Rheinland-Pfalz/L=Trier/O=Leibniz Institut für Psychologie/OU=IT Department/CN=opencpu.dev.zpid.org" && \
-#    openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 
+RUN cd /home/opencpu && \
+    mv /home/opencpu/ocpu_ssl.crt /etc/ssl/certs/ && \
+    mv /home/opencpu/ocpu_ssl.key /etc/ssl/private/
 
 #copy some config files
 COPY . /home/opencpu/psychOpenCama
 COPY .github/workflows/manifests/development/opencpu/opencpu.conf /etc/apache2/sites-available/
+COPY .github/workflows/manifests/development/opencpu/default-ssl.conf /etc/apache2/sites-available/
 COPY .github/workflows/manifests/development/opencpu/server.conf /etc/opencpu/
 COPY .github/workflows/manifests/development/opencpu/apache2.conf /etc/apache2/
 COPY .github/workflows/manifests/development/opencpu/security.conf /etc/apache2/conf-enabled/
