@@ -26,9 +26,11 @@ COPY .github/workflows/manifests/development/opencpu/apache2.conf /etc/apache2/
 COPY .github/workflows/manifests/development/opencpu/security.conf /etc/apache2/conf-enabled/
 
 RUN cd /home/opencpu && \
+    R -e "install.packages('remotes')" \
     R CMD build psychOpenCama && \
     mv psychOpenCama_*.tar.gz psychOpenCama_latest.tar.gz && \
-    R CMD INSTALL psychOpenCama_latest.tar.gz -library=/usr/local/lib/opencpu/site-library
+    R -e "remotes::install_local('/home/opencpu/psychOpenCama_latest.tar.gz', dependencies=T)"
+#    R CMD INSTALL psychOpenCama_latest.tar.gz -library=/usr/local/lib/opencpu/site-library
 
 # Set opencpu password
 RUN \
