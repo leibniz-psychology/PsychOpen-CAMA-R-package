@@ -29,7 +29,8 @@ RUN cd /home/opencpu && \
     R -e "install.packages('remotes')" \
     R CMD build psychOpenCama && \
     mv psychOpenCama_*.tar.gz psychOpenCama_latest.tar.gz && \
-    R -e "remotes::install_local('/home/opencpu/psychOpenCama_latest.tar.gz', dependencies=T)"
+    R -e "remotes::install_local('/home/opencpu/psychOpenCama_latest.tar.gz', dependencies=T)" && \
+    R -e "remove.packages('jsonlite')" \
 #    R CMD INSTALL psychOpenCama_latest.tar.gz -library=/usr/local/lib/opencpu/site-library
 
 # Set opencpu password
