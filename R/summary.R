@@ -10,7 +10,7 @@
 #' Robert Studtrucker
 #' @export
 #' @examples
-#'jsonSummary("CAMA_Math")
+
 jsonSummary <- function(d) {
   library(jsonlite)
 
@@ -32,8 +32,7 @@ jsonSummary <- function(d) {
     }
   )
 
-  val <-jsonlite::toJSON(lapply(dat, function(x){as.list(summary(x))}), pretty = TRUE, auto_unbox = TRUE)
-  gc() # Force R to release memory it is no longer using
+  val <-toJSON(lapply(dat, function(x){as.list(summary(x))}), pretty = TRUE, auto_unbox = TRUE)
   return(val)
 
 }
