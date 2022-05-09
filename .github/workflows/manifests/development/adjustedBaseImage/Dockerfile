@@ -14,9 +14,9 @@ RUN apt-get update && apt-get install -y \
 RUN cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/ && \
     cp /etc/apache2/mods-available/headers.load /etc/apache2/mods-enabled/
 
-#RUN R -e "install.packages('jsonlite', repos = 'https://cran.r-project.org')"
 RUN R -e "install.packages('devtools')"
 RUN R -e "install.packages('metafor')"
+RUN R -e "install.packages('rlang')"
 RUN R -e "install.packages('ggplot2')"
 RUN R -e "install.packages('GGally')"
 RUN R -e "install.packages('metapower')"
