@@ -18,11 +18,8 @@
 #' @export
 powersim <- function(yi,vi,measure,d,n,pval=0.05) {
   library(metafor)
-  #library(meta)
-  #library(metapower)
   library(pwr)
   library(ggplot2)
-  library(jsonlite)
 
   #load the in variable d defined dataset from the package
   dat <- tryCatch(

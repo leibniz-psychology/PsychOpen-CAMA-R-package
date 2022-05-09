@@ -12,7 +12,7 @@
 #' @examples
 
 jsonSummary <- function(d) {
-  library(jsonlite)
+  #library(jsonlite)
 
   #load the in variable d defined dataset from the package
   dat <- tryCatch(
