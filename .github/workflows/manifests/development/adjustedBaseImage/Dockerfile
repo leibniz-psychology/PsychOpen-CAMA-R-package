@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
 RUN cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/ && \
     cp /etc/apache2/mods-available/headers.load /etc/apache2/mods-enabled/
 
+RUN R -e "install.packages('jsonlite', repos = 'https://cran.r-project.org')"
 RUN R -e "install.packages('devtools')"
 RUN R -e "install.packages('metafor')"
 RUN R -e "install.packages('ggplot2')"
@@ -25,7 +26,6 @@ RUN R -e "install.packages('netmeta',dependencies=TRUE, repos='http://cran.rstud
 RUN R -e "install.packages('psych')"
 RUN R -e "install.packages('labelVector')"
 RUN R -e "install.packages('pwr')"
-RUN R -e "install.packages('jsonlite', repos = 'https://cran.r-project.org')"
 RUN R -e "devtools::install_github('MathiasHarrer/dmetar')"
 
 
