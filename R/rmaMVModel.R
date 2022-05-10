@@ -22,7 +22,6 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
   #load needed dependencies
   library(metafor)
   library(psych)
-  library(jsonlite)
   library(labelVector)
 
   #load the in variable d defined dataset from the package

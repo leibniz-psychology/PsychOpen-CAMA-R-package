@@ -16,7 +16,6 @@
 funnelPLot <- function(yi,vi,measure,d,effectName="Effect") {
 
   library(metafor)
-  #library(metaviz)
 
   #load the in variable d defined dataset from the package
   dat <- tryCatch(
