@@ -13,6 +13,7 @@
 
 
 netMetaForestplot <- function(model,reference) {
+
   requireNamespace("netmeta")
 
   netmeta::forest.netmeta(model, ref = reference, sortvar = TE,col.square = "#0097c6")
