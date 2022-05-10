@@ -54,7 +54,7 @@ scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
         ggplot2::geom_violin(draw_quantiles = c(0.2,0.4,0.6,0.8)) +
         ggplot2::geom_point(ggplot2::aes(x=dat[,pred1["value"]],color=dat[,pred2["value"]]),shape=19,size=2) +
         ggplot2::labs(title="Violin Plot",x=pred1["label"], y=effectName, color=pred2["label"]) +
-        ggplot2::theme(legend.position = "right",plot.title = element_text(hjust = 0.5))
+        ggplot2::theme(legend.position = "right",plot.title = ggplot2::element_text(hjust = 0.5))
     }else {
       numerical<-""
       categorical<-""
@@ -68,7 +68,7 @@ scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
       # Scatter, 2 predictors,  num/cat
       ggplot2::ggplot(dat = dat, ggplot2::aes(x = dat[,numerical["value"]], y = dat[,yi])) +
         ggplot2::geom_point(ggplot2::aes(color = dat[,categorical["value"]]),shape=19, size=3) +
-        ggplot2::theme(legend.position = "right",plot.title = element_text(hjust = 0.5)) +
+        ggplot2::theme(legend.position = "right",plot.title = ggplot2::element_text(hjust = 0.5)) +
         ggplot2::labs(title="Scatter Plot",x=numerical["label"], y=effectName, color=categorical["label"])
       }
     }
@@ -82,7 +82,7 @@ scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
         ggplot2::geom_violin(draw_quantiles = c(0.2,0.4,0.6,0.8), color='#0480a3') +
         geom_point(size=2,color="#34b4d8") +
         ggplot2::labs(title="Violin Plot",x=pred1["label"], y=effectName) +
-        ggplot2::theme(plot.title = element_text(hjust = 0.5))
+        ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
 
     }else{
       # Scatter, 1 predictor,   num
@@ -90,7 +90,7 @@ scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
       ggplot2::ggplot(dat = dat, ggplot2::aes(x = dat[,pred1["value"]], y = dat[,yi])) +
         geom_point(colour="#34B4D8", shape=19, size=3) +
         ggplot2::labs(title="Scatter Plot",x=pred1["label"], y=effectName) +
-        ggplot2::theme(plot.title = element_text(hjust = 0.5))
+        ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
     }
 
   }else if(is.null(pred1)&&is.null(pred2)) {
@@ -104,7 +104,7 @@ scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
       ggplot2::geom_violin(draw_quantiles = c(0.2,0.4,0.6,0.8), color="#0480A3") +
       ggplot2::geom_point(size=2, color="#34B4D8") +
       ggplot2::labs(title="Violin Plot",x="", y=effectName) +
-      ggplot2::theme(plot.title = element_text(hjust = 0.5))
+      ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
   }
 }
 
