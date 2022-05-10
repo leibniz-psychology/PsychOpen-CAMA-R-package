@@ -16,5 +16,5 @@ netMetaForestplot <- function(model,reference) {
 
   library(netmeta)
 
-  forest.netmeta(model, ref = reference, sortvar = TE,col.square = "#0097c6")
+  netmeta::forest.netmeta(model, ref = reference, sortvar = TE,col.square = "#0097c6")
 }
