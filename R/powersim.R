@@ -22,7 +22,7 @@ powersim <- function(yi,vi,measure,d,n,pval=0.05) {
   #library(metapower)
   library(pwr)
   library(ggplot2)
-  library(jsonlite)
+  requireNamespace("jsonlite")
 
   #load the in variable d defined dataset from the package
   dat <- tryCatch(
@@ -66,7 +66,7 @@ powersim <- function(yi,vi,measure,d,n,pval=0.05) {
 
   df <- data.frame(ID, VALUE)
   print(df)
-  write_json(df, "output.json")
+  jsonlite::write_json(df, "output.json")
 
 
 
