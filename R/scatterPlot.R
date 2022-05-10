@@ -43,7 +43,7 @@ scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
     if(pred1["type"]=="num" && pred2["type"]=="num"){
 
       # Scatter, 2 predictors,  num/num
-      ggscatmat(dat, columns=c(yi,pred1["value"],pred2["value"])) +
+      GGally::ggscatmat(dat, columns=c(yi,pred1["value"],pred2["value"])) +
         ggplot2::geom_point(colour="#34B4D8", shape=19) +
         ggplot2::labs(title="scatterplot matrix")
 
@@ -80,7 +80,7 @@ scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
 
       ggplot2::ggplot(dat, ggplot2::aes(x=dat[,pred1["value"]], y=dat[,yi])) +
         ggplot2::geom_violin(draw_quantiles = c(0.2,0.4,0.6,0.8), color='#0480a3') +
-        geom_point(size=2,color="#34b4d8") +
+        ggplot2::geom_point(size=2,color="#34b4d8") +
         ggplot2::labs(title="Violin Plot",x=pred1["label"], y=effectName) +
         ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
 
@@ -88,7 +88,7 @@ scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
       # Scatter, 1 predictor,   num
 
       ggplot2::ggplot(dat = dat, ggplot2::aes(x = dat[,pred1["value"]], y = dat[,yi])) +
-        geom_point(colour="#34B4D8", shape=19, size=3) +
+        ggplot2::geom_point(colour="#34B4D8", shape=19, size=3) +
         ggplot2::labs(title="Scatter Plot",x=pred1["label"], y=effectName) +
         ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
     }
