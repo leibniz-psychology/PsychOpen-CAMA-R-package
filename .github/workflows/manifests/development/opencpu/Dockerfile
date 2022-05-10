@@ -27,7 +27,6 @@ COPY .github/workflows/manifests/development/opencpu/security.conf /etc/apache2/
 
 RUN cd /home/opencpu && \
     R -e "install.packages('remotes')" && \
-    R -e "install.packages('jsonlite')" && \
     R CMD build psychOpenCama && \
     mv psychOpenCama_*.tar.gz psychOpenCama_latest.tar.gz && \
     R -e "remotes::install_local('/home/opencpu/psychOpenCama_latest.tar.gz', dependencies=T)"
