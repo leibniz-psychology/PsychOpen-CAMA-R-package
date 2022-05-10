@@ -12,9 +12,9 @@
 #' @author Robert Studtrucker
 #' @export
 scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
-  library(metafor)
-  library(ggplot2)
-  library(GGally)
+  requireNamespace("metafor")
+  requireNamespace("ggplot2")
+  requireNamespace("GGally")
 
   #load the in variable d defined dataset from the package
   dat <- tryCatch(
