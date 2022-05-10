@@ -9,5 +9,6 @@
 #' @export
 netMetaSummary <- function(model) {
   library(netmeta)
-  netmeta::summary.netmeta(model)
+  requireNamespace("netmeta")
+    netmeta::summary.netmeta(model)
 }
