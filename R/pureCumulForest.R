@@ -12,10 +12,15 @@
 #' @export
 pureCumulForest <- function(rma_model,measure,d,effectName="Effect") {
   #load needed dependencies
-  library('metafor')
-  library("ggplot2")
-  library("metaviz")
-  library('jsonlite')
+  #library('metafor')
+  #library("ggplot2")
+  #library("metaviz")
+  #library('jsonlite')
+
+  requireNamespace("metafor")
+  requireNamespace("ggplot2")
+  requireNamespace("metaviz")
+  requireNamespace("jsonlite")
 
   #load the in variable d defined dataset from the package
   dat<-get(d)
@@ -44,7 +49,7 @@ pureCumulForest <- function(rma_model,measure,d,effectName="Effect") {
     #tmp<-metafor::cumul(rma_model, order=order(dat$r_year))
 
     #creating a cumulative forest plot based on the fitted rma.uni model
-    fp <- viz_forest(x = rma_model,
+    fp <- metaviz::viz_forest(x = rma_model,
                      variant = "classic",
                      study_labels = rma_model$slab,
                      text_size =4,
@@ -55,10 +60,10 @@ pureCumulForest <- function(rma_model,measure,d,effectName="Effect") {
 
   }else{
 
-    tmp<-cumul(rma_model, order=order(dat$r_year))
+    tmp<-metafor::cumul(rma_model, order=order(dat$r_year))
 
     #creating a cumulative forest plot based on the fitted rma.uni model
-    fp <- viz_forest(x = rma_model,
+    fp <- metaviz::viz_forest(x = rma_model,
                      variant = "classic",
                      study_labels = tmp$slab,
                      text_size =4,
@@ -71,7 +76,7 @@ pureCumulForest <- function(rma_model,measure,d,effectName="Effect") {
   # this information is needed by the web service to define how big the requested image has to be.
   # If not specified standard height and wde is used wich may cause deformed plots when there are a lot of rows in the plot.
   height<-list("height" = length(rma_model$yi))
-  write_json(height, "imgHeight.json")
+  jsonlite::write_json(height, "imgHeight.json")
 
   # print the cumul forest plot so the corresponding object can be retrieved by the web service
   print(fp)

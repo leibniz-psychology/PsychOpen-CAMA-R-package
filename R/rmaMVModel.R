@@ -20,9 +20,12 @@
 rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
 
   #load needed dependencies
-  library(metafor)
-  library(psych)
-  library(labelVector)
+  #library(metafor)
+  #library(psych)
+  #library(labelVector)
+  requireNamespace("metafor")
+  requireNamespace("psych")
+  #requireNamespace("labelVector")
 
   #load the in variable d defined dataset from the package
   dat <- tryCatch(
@@ -62,7 +65,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
     if(measure == "COR") {
 
       # z-standardisierte Daten erstellen
-      temp_dat <- escalc(measure="ZCOR",
+      temp_dat <- metafor::escalc(measure="ZCOR",
                          ri=dat[,yi],
                          vi=dat[,vi],
                          ni=dat[,"o_ni"],
@@ -70,7 +73,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
                          var.names=c("o_zcor","o_zcor_var"))
 
       # Modell berechnen
-      rma_mvmodel <- rma.mv(temp_dat[,"o_zcor"],
+      rma_mvmodel <- metafor::rma.mv(temp_dat[,"o_zcor"],
                             temp_dat[,"o_zcor_var"],
                             data=temp_dat,
                             measure="ZCOR",
@@ -93,7 +96,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
       print(theRealModel)
 
     }else{
-      rma_mvmodel <- rma.mv(yi=dat[,yi],V=dat[,vi],
+      rma_mvmodel <- metafor::rma.mv(yi=dat[,yi],V=dat[,vi],
                             random=nest,
                             measure=measure,data=dat)
       gc() # Force R to release memory it is no longer using
@@ -126,7 +129,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
     if(measure == "COR") {
 
       # z-standardisierte Daten erstellen
-      moddat <- escalc(measure="ZCOR",
+      moddat <- metafor::escalc(measure="ZCOR",
                        ri=moddat[,yi],
                        vi=moddat[,vi],
                        ni=moddat[,"o_ni"],
@@ -135,7 +138,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
 
       rma_formula <- as.formula(sprintf("%s ~ %s", "o_zcor",mods))
 
-      rma_mvmodel <- rma.mv(rma_formula, V=moddat[,"o_zcor_var"], measure="ZCOR",data=moddat,random=nest,)
+      rma_mvmodel <- metafor::rma.mv(rma_formula, V=moddat[,"o_zcor_var"], measure="ZCOR",data=moddat,random=nest,)
 
 
       # moddat["cor_yi"]<-transf.rtoz(dat[,yi],dat[,o_ni])
@@ -152,7 +155,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
     }else{
 
       rma_formula <- as.formula(sprintf("%s ~ %s", yi,mods))
-      rma_mvmodel <- rma.mv(rma_formula,V=dat[,vi],
+      rma_mvmodel <- metafor::rma.mv(rma_formula,V=dat[,vi],
                             random=nest,
                             measure=measure,data=moddat)
       gc() # Force R to release memory it is no longer using
@@ -179,10 +182,10 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
     # fitting model depending on defined measure
     if(measure == "COR") {
       # z-standardisierte Daten erstellen
-      moddat <- escalc(measure="ZCOR", ri=moddat[,yi], vi=moddat[,vi], ni=moddat[,"o_ni"], data=moddat, var.names=c("o_zcor","o_zcor_var"))
+      moddat <- metafor::escalc(measure="ZCOR", ri=moddat[,yi], vi=moddat[,vi], ni=moddat[,"o_ni"], data=moddat, var.names=c("o_zcor","o_zcor_var"))
 
       rma_formula <- as.formula(sprintf("%s ~ %s", "o_zcor",pred1["value"]))
-      rma_mvmodel <- rma.mv(rma_formula,
+      rma_mvmodel <- metafor::rma.mv(rma_formula,
                             V=moddat[,"o_zcor_var"],
                             measure="ZCOR",
                             data=moddat,
@@ -201,7 +204,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
 
     }else{
 
-      rma_mvmodel <- rma.mv(rma_formula, V=dat[,vi],
+      rma_mvmodel <- metafor::rma.mv(rma_formula, V=dat[,vi],
                             random=nest,
                             measure=measure,data=moddat)
       gc() # Force R to release memory it is no longer using

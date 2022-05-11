@@ -17,11 +17,10 @@
 #' @author Robert Studtrucker
 #' @export
 powersim <- function(yi,vi,measure,d,n,pval=0.05) {
-  library(metafor)
-  #library(meta)
-  #library(metapower)
-  library(pwr)
-  library(ggplot2)
+
+  requireNamespace("metafor")
+  requireNamespace("pwr")
+  requireNamespace("ggplot2")
   requireNamespace("jsonlite")
 
   #load the in variable d defined dataset from the package
@@ -42,27 +41,27 @@ powersim <- function(yi,vi,measure,d,n,pval=0.05) {
     }
   )
 
-  uni<-rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure)
+  uni<-metafor::rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure)
   lb<-uni$ci.lb
   estimate<-uni$beta[[1]]
   ub<-uni$ci.ub
   nvec = 1:200
 
   power.lb = vector()  ## Lower bound estimate
-  for (i in 1:length(nvec)) {power.lb[i] <- pwr.t.test(nvec[i],d=lb,sig.level=pval)$power}
+  for (i in 1:length(nvec)) {power.lb[i] <- pwr::pwr.t.test(nvec[i],d=lb,sig.level=pval)$power}
 
   power.est = vector()   ## Estimate
 
-  for (i in 1:length(nvec)) {power.est[i] <- pwr.t.test(nvec[i],d=estimate,sig.level=pval)$power}
+  for (i in 1:length(nvec)) {power.est[i] <- pwr::pwr.t.test(nvec[i],d=estimate,sig.level=pval)$power}
 
   power.ub = vector()   ## Upper bound estimate
-  for (i in 1:length(nvec)) {power.ub[i] <- pwr.t.test(nvec[i],ub,sig.level=pval)$power}
+  for (i in 1:length(nvec)) {power.ub[i] <- pwr::pwr.t.test(nvec[i],ub,sig.level=pval)$power}
 
   power <- power.est[nvec==n]
 
   #Wird nur für den Ausgabetext benötigt
   ID=c("power","Samplesize")
-  VALUE=c(round(power*100,1),round(pwr.t.test(d=estimate,sig.level=pval, power=0.8)$n,0))
+  VALUE=c(round(power*100,1),round(pwr::pwr.t.test(d=estimate,sig.level=pval, power=0.8)$n,0))
 
   df <- data.frame(ID, VALUE)
   print(df)
@@ -81,27 +80,27 @@ powersim <- function(yi,vi,measure,d,n,pval=0.05) {
   text.upperbound<-paste("Up bound: ",round(ub,2))
 
 
-  if(pwr.t.test(d=estimate,sig.level=pval, power=0.8)<300){
-    ggplot(data = plotdat, aes(x = nvec, y = powvect, group=factor(estvec), color=factor(estvec))) +
-      geom_line(size=1.2) +
-      geom_point(aes(x = n, y = power), color = "black", size = 3) +
-      theme_minimal() +
-      scale_color_discrete(name="Assumed effect",labels=c(text.lowerbound,text.estimate,text.upperbound)) +
-      theme(legend.position="bottom") +
-      geom_hline(yintercept = 0.8,color = "grey", linetype = "dotdash") +
-      geom_vline(xintercept = pwr.t.test(d=estimate,sig.level=pval, power=0.8)$n,color = "grey", linetype = "dotdash") +
-      geom_vline(xintercept=n, color = "black", linetype = "longdash") +
-      geom_hline(yintercept=power, color = "black", linetype = "longdash") +
-      labs(y="Power", x="Sample size")
+  if(pwr::pwr.t.test(d=estimate,sig.level=pval, power=0.8)<300){
+    ggplot2::ggplot(data = plotdat, ggplot2::aes(x = nvec, y = powvect, group=factor(estvec), color=factor(estvec))) +
+      ggplot2::geom_line(size=1.2) +
+      ggplot2::geom_point(ggplot2::aes(x = n, y = power), color = "black", size = 3) +
+      ggplot2::theme_minimal() +
+      ggplot2::scale_color_discrete(name="Assumed effect",labels=c(text.lowerbound,text.estimate,text.upperbound)) +
+      ggplot2::theme(legend.position="bottom") +
+      ggplot2::geom_hline(yintercept = 0.8,color = "grey", linetype = "dotdash") +
+      ggplot2::geom_vline(xintercept = pwr::pwr.t.test(d=estimate,sig.level=pval, power=0.8)$n,color = "grey", linetype = "dotdash") +
+      ggplot2::geom_vline(xintercept=n, color = "black", linetype = "longdash") +
+      ggplot2::geom_hline(yintercept=power, color = "black", linetype = "longdash") +
+      ggplot2::labs(y="Power", x="Sample size")
   }else{
-    ggplot(data = plotdat, aes(x = nvec, y = powvect, group=factor(estvec), color=factor(estvec))) +
-      geom_line(size=1.2) +
-      geom_point(aes(x = n, y = power), color = "black", size = 3) +
-      theme_minimal() +
-      scale_color_discrete(name="Assumed effect",labels=c(text.lowerbound,text.estimate,text.upperbound)) +
-      theme(legend.position="bottom") +
-      geom_vline(xintercept=n, color = "black", linetype = "longdash") +
-      geom_hline(yintercept=power, color = "black", linetype = "longdash") +
-      labs(y="Power", x="Sample size")
+    ggplot2::ggplot(data = plotdat, ggplot2::aes(x = nvec, y = powvect, group=factor(estvec), color=factor(estvec))) +
+      ggplot2::geom_line(size=1.2) +
+      ggplot2::geom_point(ggplot2::aes(x = n, y = power), color = "black", size = 3) +
+      ggplot2::theme_minimal() +
+      ggplot2::scale_color_discrete(name="Assumed effect",labels=c(text.lowerbound,text.estimate,text.upperbound)) +
+      ggplot2::theme(legend.position="bottom") +
+      ggplot2::geom_vline(xintercept=n, color = "black", linetype = "longdash") +
+      ggplot2::geom_hline(yintercept=power, color = "black", linetype = "longdash") +
+      ggplot2::labs(y="Power", x="Sample size")
   }
 }

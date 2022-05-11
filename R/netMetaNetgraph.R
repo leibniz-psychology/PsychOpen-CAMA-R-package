@@ -12,7 +12,8 @@
 netMetaNetgraph <- function(model,d) {
 
   #load needed dependencies
-  library(netmeta)
+  requireNamespace("netmeta")
+
 
   #load the in variable d defined dataset from the package
   dat <- tryCatch(
@@ -44,7 +45,7 @@ netMetaNetgraph <- function(model,d) {
 
   trts<-unique(combined_treat)[!is.na(unique(combined_treat))]
 
-  gr<-netgraph(model, col="#0000CC", col.points="white", seq = trts)
+  gr<-netmeta::netgraph(model, col="#0000CC", col.points="white", seq = trts)
   print(gr)
  # gc() # Force R to release memory it is no longer using
 

@@ -10,7 +10,8 @@
 netMetaMatrix <- function(model) {
 
   #load needed dependencies
-  library(netmeta)
+  requireNamespace("netmeta")
+
 
   # Output 2: Matrix of all pairwise comparisons
   res.matrix<-round(model$TE.fixed,3)
