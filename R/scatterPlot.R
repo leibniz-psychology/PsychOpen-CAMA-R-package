@@ -15,7 +15,7 @@ scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
   requireNamespace("metafor")
   requireNamespace("ggplot2")
   requireNamespace("GGally")
-  library(rlang)
+  requireNamespace("rlang")
 
   #load the in variable d defined dataset from the package
   dat <- tryCatch(
