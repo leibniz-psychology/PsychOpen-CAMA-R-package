@@ -27,6 +27,7 @@ RUN R -e "install.packages('labelVector')"
 RUN R -e "install.packages('pwr')"
 RUN R -e "devtools::install_github('MathiasHarrer/dmetar')"
 RUN R -e "install.packages('rlang')"
+RUN R -e 'remove.packages("rlang", "/usr/lib/opencpu/library")'
 
 
 
