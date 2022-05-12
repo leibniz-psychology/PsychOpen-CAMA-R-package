@@ -16,7 +16,6 @@ RUN cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/ && \
 
 RUN R -e "install.packages('devtools')"
 RUN R -e "install.packages('metafor')"
-RUN R -e "install.packages('rlang')"
 RUN R -e "install.packages('ggplot2')"
 RUN R -e "install.packages('GGally')"
 RUN R -e "install.packages('metapower')"
