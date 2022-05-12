@@ -80,7 +80,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
                             random=nest)
 
       # Backtransformation für Interpretation
-      theRealModel <- predict(rma_mvmodel, transf=transf.ztor, digits=3)
+      theRealModel <- predict(rma_mvmodel, transf=metafor::transf.ztor, digits=3)
 
 
       # rma_mvmodel <- rma.mv(transf.rtoz(dat[,yi], dat[,o_ni]),
