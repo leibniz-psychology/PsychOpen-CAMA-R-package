@@ -28,6 +28,8 @@ RUN R -e "install.packages('pwr')"
 RUN R -e "devtools::install_github('MathiasHarrer/dmetar')"
 RUN R -e "install.packages('rlang')"
 RUN R -e 'remove.packages("rlang", "/usr/lib/opencpu/library")'
+RUN R -e 'remove.packages("vctrs", "/usr/lib/opencpu/library")'
+RUN R -e "install.packages('vctrs')"
 
 
 
