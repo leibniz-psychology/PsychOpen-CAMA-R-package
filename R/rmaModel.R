@@ -56,7 +56,7 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
         rma_model <- metafor::rma.uni(temp_dat[,"o_zcor"],temp_dat[,"o_zcor_var"], measure="ZCOR")
 
         # Backtransformation für Interpretation
-        theRealModel <- predict(rma_model, transf=transf.ztor, digits=3)
+        theRealModel <- predict(rma_model, transf=metafor::transf.ztor, digits=3)
 
         print(rma_model)
         print(theRealModel)
