@@ -12,7 +12,8 @@
 netMetaModel <- function(d,reference="Placebo") {
 
   #load needed dependencies
-  library(netmeta)
+  requireNamespace("netmeta")
+
 
   #load the in variable d defined dataset from the package
   dat <- tryCatch(
@@ -42,7 +43,7 @@ netMetaModel <- function(d,reference="Placebo") {
   combined_treat<-c(combined_treat,dat["treat1"],recursive = TRUE,use.names=FALSE)
   combined_treat<-c(combined_treat,dat["treat2"],recursive = TRUE,use.names=FALSE)
 
-  nma1<-netmeta(
+  nma1<-netmeta::netmeta(
     data=dat,
     TE=TE,
     seTE = seTE,

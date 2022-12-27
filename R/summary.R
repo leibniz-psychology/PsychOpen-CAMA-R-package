@@ -10,9 +10,9 @@
 #' Robert Studtrucker
 #' @export
 #' @examples
-#'jsonSummary("CAMA_Math")
+
 jsonSummary <- function(d) {
-  library(jsonlite)
+  requireNamespace("jsonlite")
 
   #load the in variable d defined dataset from the package
   dat <- tryCatch(
@@ -33,7 +33,6 @@ jsonSummary <- function(d) {
   )
 
   val <-jsonlite::toJSON(lapply(dat, function(x){as.list(summary(x))}), pretty = TRUE, auto_unbox = TRUE)
-  gc() # Force R to release memory it is no longer using
   return(val)
 
 }

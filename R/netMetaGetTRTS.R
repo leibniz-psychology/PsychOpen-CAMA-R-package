@@ -9,7 +9,7 @@
 #' @export
 netMetagetTRTS <- function(d) {
   #Todo check if there is a better way to do this
-  library(jsonlite)
+  requireNamespace("jsonlite")
 
   #load the in variable d defined dataset from the package
   dat <- tryCatch(
@@ -34,5 +34,5 @@ netMetagetTRTS <- function(d) {
   combined_treat<-c(combined_treat,dat["treat2"],recursive = TRUE,use.names=FALSE)
 
   trts<-unique(combined_treat)[!is.na(unique(combined_treat))]
-  write_json(trts, "trts.json")
+  jsonlite::write_json(trts, "trts.json")
 }

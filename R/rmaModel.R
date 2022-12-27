@@ -19,10 +19,10 @@
 #' @export
 rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
 
-  library(metafor)
-  #library(labelVector)
-  #library(psych)
-  library(jsonlite)
+  #library(metafor)
+  #library(jsonlite)
+  requireNamespace("metafor")
+  requireNamespace("jsonlite")
 
   #load the in variable d defined dataset from the package
   dat <- tryCatch(
@@ -50,13 +50,13 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
       if(measure == "COR") {
 
         # z-standardisierte Daten erstellen
-        temp_dat <- escalc(measure="ZCOR", ri=dat[,yi], vi=dat[,vi], ni=dat[,"o_ni"], data=dat, var.names=c("o_zcor","o_zcor_var"))
+        temp_dat <- metafor::escalc(measure="ZCOR", ri=dat[,yi], vi=dat[,vi], ni=dat[,"o_ni"], data=dat, var.names=c("o_zcor","o_zcor_var"))
 
         # Modell berechnen
-        rma_model <- rma.uni(temp_dat[,"o_zcor"],temp_dat[,"o_zcor_var"], measure="ZCOR")
+        rma_model <- metafor::rma.uni(temp_dat[,"o_zcor"],temp_dat[,"o_zcor_var"], measure="ZCOR")
 
         # Backtransformation für Interpretation
-        theRealModel <- predict(rma_model, transf=transf.ztor, digits=3)
+        theRealModel <- predict(rma_model, transf=metafor::transf.ztor, digits=3)
 
         print(rma_model)
         print(theRealModel)
@@ -65,7 +65,7 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
         # eggers <- regtest(res_temp)
 
       }else{
-        rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,data=dat)
+        rma_model <- metafor::rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,data=dat)
         return(summary(rma_model))
       }
     }
@@ -94,18 +94,18 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
       if(measure == "COR") {
 
         # z-standardisierte Daten erstellen
-        moddat <- escalc(measure="ZCOR", ri=moddat[,yi], vi=moddat[,vi], ni=moddat[,"o_ni"], data=moddat, var.names=c("o_zcor","o_zcor_var"))
+        moddat <- metafor::escalc(measure="ZCOR", ri=moddat[,yi], vi=moddat[,vi], ni=moddat[,"o_ni"], data=moddat, var.names=c("o_zcor","o_zcor_var"))
 
         rma_formula <- as.formula(sprintf("%s ~ %s", "o_zcor",mods))
 
-        rma_model <- rma.uni(rma_formula, vi=moddat[,"o_zcor_var"], measure="ZCOR",data=moddat)
+        rma_model <- metafor::rma.uni(rma_formula, vi=moddat[,"o_zcor_var"], measure="ZCOR",data=moddat)
 
         return(rma_model)
 
       }else{
 
         rma_formula <- as.formula(sprintf("%s ~ %s", yi,mods))
-        rma_model <- rma.uni(rma_formula,vi=dat[,vi],measure=measure,data=moddat)
+        rma_model <- metafor::rma.uni(rma_formula,vi=dat[,vi],measure=measure,data=moddat)
         return(summary(rma_model))
       }
     }
@@ -130,16 +130,16 @@ rmaModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL) {
       if(measure == "COR") {
 
         # z-standardisierte Daten erstellen
-        moddat <- escalc(measure="ZCOR", ri=moddat[,yi], vi=moddat[,vi], ni=moddat[,"o_ni"], data=moddat, var.names=c("o_zcor","o_zcor_var"))
+        moddat <- metafor::escalc(measure="ZCOR", ri=moddat[,yi], vi=moddat[,vi], ni=moddat[,"o_ni"], data=moddat, var.names=c("o_zcor","o_zcor_var"))
 
         rma_formula <- as.formula(sprintf("%s ~ %s", "o_zcor",pred1["value"]))
-        rma_model <- rma.uni(rma_formula,vi=moddat[,"o_zcor_var"], measure="ZCOR",data=moddat)
+        rma_model <- metafor::rma.uni(rma_formula,vi=moddat[,"o_zcor_var"], measure="ZCOR",data=moddat)
 
         return(rma_model)
 
       }else{
 
-        rma_model <- rma.uni(rma_formula, vi=dat[,vi],measure=measure,data=moddat)
+        rma_model <- metafor::rma.uni(rma_formula, vi=dat[,vi],measure=measure,data=moddat)
         return(rma_model)
       }
     }

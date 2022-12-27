@@ -8,6 +8,8 @@
 #' @author Robert Studtrucker
 #' @export
 netMetaSummary <- function(model) {
-  library(netmeta)
-  netmeta::summary.netmeta(model)
+  #library(netmeta)
+  #requireNamespace("netmeta")
+
+  summary(model)
 }

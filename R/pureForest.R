@@ -10,11 +10,15 @@
 #' @export
 pureForest <- function(rma_model) {
 
-  library("metaviz")
-  library('jsonlite')
-  library('psych')
+  #library("metaviz")
+  #library('jsonlite')
+  #library('psych')
+  requireNamespace("metaviz")
+  requireNamespace("jsonlite")
+  requireNamespace("psych")
 
-fp <- viz_forest(x = rma_model,
+
+fp <- metaviz::viz_forest(x = rma_model,
                  variant = "classic",
                  study_labels = rma_model$slab,
                  text_size =4,
@@ -24,7 +28,7 @@ fp <- viz_forest(x = rma_model,
                  x_trans_function = tanh,
                  type = "standard")
 
-rainfp <-viz_forest(x = rma_model,
+rainfp <-metaviz::viz_forest(x = rma_model,
                     variant = "rain",
                     study_labels = rma_model$slab,
                     text_size =4,
@@ -36,7 +40,7 @@ rainfp <-viz_forest(x = rma_model,
 
 
 height<-list("height" = length(rma_model$yi))
-write_json(height, "imgHeight.json")
+jsonlite::write_json(height, "imgHeight.json")
 
 print(fp)
 print(rainfp)

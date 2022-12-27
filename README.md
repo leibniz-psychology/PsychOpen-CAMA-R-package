@@ -42,21 +42,6 @@ Revelle, W. (2020) psych: Procedures for Personality and Psychological Research,
 **pwr**<br>
 Stephane Champely (2020). pwr: Basic Functions for Power Analysis. R package version 1.3-0. https://CRAN.R-project.org/package=pwr
 
-### The package also includes several datasets:
+### The package also includes several datasets
 
-* Bergmann, C. (2021). Function Word Segmentation. PsychOpen CAMA. https://doi.org/10.23668/PSYCHARCHIVES.4738
-* Bucher, L. (2021). Correlation of Machiavellianism and Psychopathy. PsychOpen CAMA. https://doi.org/10.23668/PSYCHARCHIVES.4732
-* Bucher, L. (2021). Correlation of Narcissism and Machiavellianism. PsychOpen CAMA. https://doi.org/10.23668/PSYCHARCHIVES.4730
-* Bucher, L. (2021). Correlation of Narcissism and Psychopathy. PsychOpen CAMA. https://doi.org/10.23668/PSYCHARCHIVES.4731
-* Bucher, L. (2021). Sex Differences in Machiavellianism. PsychOpen CAMA. https://doi.org/10.23668/PSYCHARCHIVES.4734
-* Bucher, L. (2021). Sex Differences in Narcissism. PsychOpen CAMA. https://doi.org/10.23668/PSYCHARCHIVES.4733
-* Bucher, L. (2021). Sex Differences in Psychopathy. PsychOpen CAMA. https://doi.org/10.23668/PSYCHARCHIVES.4735
-* Burgard, T. (2021). Panel Conditioning in Sensitive Items [Data set]. PsychOpen CAMA. https://doi.org/10.23668/PSYCHARCHIVES.4737
-* Burgard, T. (2021). Response Rates in Online Surveys. PsychOpen CAMA. https://doi.org/10.23668/PSYCHARCHIVES.4729
-* Christodoulou, J. (2021). Simple Arithmetic Competences. PsychOpen CAMA. https://doi.org/10.23668/PSYCHARCHIVES.4742
-* Daikeler, J. (2021). Response Rates Differences Web vs. Other. PsychOpen CAMA. https://doi.org/10.23668/PSYCHARCHIVES.4741
-* Dunst, C. (2021). Infant-directed Speech Preference. PsychOpen CAMA. https://doi.org/10.23668/PSYCHARCHIVES.4739
-* Emmer, C. (2021). Weight Stigma and Mental Health. PsychOpen CAMA. https://doi.org/10.23668/PSYCHARCHIVES.4728
-* Rabagliati, H. (2021). Abstract Rule Learning. PsychOpen CAMA. https://doi.org/10.23668/PSYCHARCHIVES.4740
-* Tsuji, S., Cristia, A., Frank, M. C., & Bergmann, C. (2019). Addressing publication bias in meta-analysis: Empirical findings from community-augmented meta-analyses of infant language development. PsychArchives. https://doi.org/10.23668/psycharchives.2561
-* Von Holzen, K. (2021). Mispronounciation Sensitivity. PsychOpen CAMA. https://doi.org/10.23668/PSYCHARCHIVES.4736
+See: [PsychArchives](https://www.psycharchives.org/en/browse/?q=CAMA&fq=dcType_keyword%3A%28%22researchData%22%29).

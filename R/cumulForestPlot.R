@@ -9,6 +9,8 @@
 #' A \code{string} of the variable which holds the vector of length k with the corresponding sampling variances in the selected dataset (d)
 #' @param d
 #' A \code{string} representing the dataset name that should be used for fitting.
+#' @param effectName
+#' A \code{string} representing the effect name that should be printed as label. defaults to "Effect"
 #' @param measure
 #' A character string indicating underlying summary measure.
 #' @return
@@ -19,10 +21,11 @@
 cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
 
   #load needed dependencies
-  library('metafor')
-  library("ggplot2")
-  library("metaviz")
-  library('jsonlite')
+
+  requireNamespace("metafor")
+  requireNamespace("ggplot2")
+  requireNamespace("metaviz")
+  requireNamespace("jsonlite")
 
   #load the in variable d defined dataset from the package
   dat <- tryCatch(
@@ -50,7 +53,7 @@ cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
 
     #fitting the rma.uni model based on z transformed data
 
-    rma_model <- metafor::rma.uni(yi=transf.rtoz(dat[,yi],dat[,o_ni]), vi=transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
+    rma_model <- metafor::rma.uni(yi=metafor::transf.rtoz(dat[,yi],dat[,o_ni]), vi=metafor::transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
 
     tmp<-metafor::cumul(rma_model, order=order(dat$r_year))
     #creating a cumulative forest plot based on the fitted rma.uni model
@@ -76,12 +79,12 @@ cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
     # 1. Overall-Effekt und Cumulative forest ####
 
     #fitting the rma.uni model
-    rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
+    rma_model <- metafor::rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
 
     #tmp<-cumul(rma_model, order=order(dat$r_year))
 
     #creating a cumulative forest plot based on the fitted rma.uni model
-    fp <- viz_forest(x = rma_model,
+    fp <- metaviz::viz_forest(x = rma_model,
                      variant = "classic",
                      study_labels = rma_model$slab,
                      text_size =4,
@@ -94,7 +97,7 @@ cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
   # this information is needed by the web service to define how big the requested image has to be.
   # If not specified standard height and wde is used wich may cause deformed plots when there are a lot of rows in the plot.
   height<-list("height" = length(rma_model$yi))
-  write_json(height, "imgHeight.json")
+  jsonlite::write_json(height, "imgHeight.json")
 
   # print the cumul forest plot so the corresponding object can be retrieved by the web service
   print(fp)

@@ -56,6 +56,7 @@ jobs:
         run: |
           DOCKER_BUILDKIT=1 docker build . -t ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.APP }}:latest-dev \
             --build-arg OCPU_PASS=${{ secrets.OCPU_PASS}} \
+            --build-arg SSL_KEY=${{ secrets.SSL_KEY}} \
             --file .github/workflows/manifests/${{ env.GH_BRANCH }}/opencpu/Dockerfile
           docker push ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.APP }}:latest-dev
 

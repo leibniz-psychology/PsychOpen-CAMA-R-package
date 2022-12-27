@@ -8,8 +8,6 @@ metadata:
 spec:
   ports:
     - port: 80
-    - port: 443
-    - port: 8004
   selector:
     app: opencpu-dev
 ---
@@ -35,7 +33,7 @@ spec:
           resources:
             requests:
               memory: "1024Mi"
-              cpu: "0.3"
+              cpu: "0.1"
             limits:
               memory: "4Gi"
               cpu: "1.0"
@@ -82,4 +80,3 @@ spec:
   ingress:
     - ports:
         - port: 80
-        - port: 8004

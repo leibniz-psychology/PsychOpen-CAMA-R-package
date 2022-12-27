@@ -7,6 +7,8 @@
 #' A \code{string} of the variable which holds the vector of length k with the corresponding sampling variances in the selected dataset (d)
 #' @param d
 #' A \code{string} representing the dataset name that should be used for fitting.
+#' @param effect
+#' A \code{string} representing the effect name that should be printed as label. defaults to "Effect"
 #' @param measure
 #' A character string indicating underlying summary measure.
 #' @return
@@ -15,11 +17,12 @@
 #' @author Robert Studtrucker
 #' @export
 forest <- function(yi,vi,measure,d,effect="Effect") {
-  library('metafor')
-  library("ggplot2")
-  library("metaviz")
-  library('jsonlite')
-  library('psych')
+
+  requireNamespace("metafor")
+  requireNamespace("ggplot2")
+  requireNamespace("metaviz")
+  requireNamespace("jsonlite")
+  requireNamespace("psych")
 
   #load the in variable d defined dataset from the package
   dat <- tryCatch(
@@ -41,9 +44,9 @@ forest <- function(yi,vi,measure,d,effect="Effect") {
 
   if(measure == "COR") {
 
-    rma_model <- rma.uni(yi=transf.rtoz(dat[,yi],dat[,o_ni]), vi=transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
+    rma_model <- metafor::rma.uni(yi=metafor::transf.rtoz(dat[,yi],dat[,o_ni]), vi=metafor::transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
 
-    fp <- viz_forest(x = rma_model,
+    fp <- metaviz::viz_forest(x = rma_model,
                      variant = "classic",
                      study_labels = rma_model$slab,
                      text_size =4,
@@ -53,7 +56,7 @@ forest <- function(yi,vi,measure,d,effect="Effect") {
                      x_trans_function = tanh,
                      type = "standard")
 
-    rainfp <-viz_forest(x = rma_model,
+    rainfp <-metaviz::viz_forest(x = rma_model,
                         variant = "rain",
                         study_labels = rma_model$slab,
                         text_size =4,
@@ -65,7 +68,7 @@ forest <- function(yi,vi,measure,d,effect="Effect") {
 
 
     height<-list("height" = length(rma_model$yi))
-    write_json(height, "imgHeight.json")
+    jsonlite::write_json(height, "imgHeight.json")
 
     print(fp)
     print(rainfp)
@@ -73,9 +76,9 @@ forest <- function(yi,vi,measure,d,effect="Effect") {
     invisible();
 
   }else{
-    rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
+    rma_model <- metafor::rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
 
-    fp <- viz_forest(x = rma_model,
+    fp <- metaviz::viz_forest(x = rma_model,
                      variant = "classic",
                      study_labels = rma_model$slab,
                      text_size =4,
@@ -83,7 +86,7 @@ forest <- function(yi,vi,measure,d,effect="Effect") {
                      annotate_CI = TRUE,
                      type = "standard")
 
-    rainfp <-viz_forest(x = rma_model,
+    rainfp <- metaviz::viz_forest(x = rma_model,
                         variant = "rain",
                         study_labels = rma_model$slab,
                         text_size =4,
@@ -92,7 +95,7 @@ forest <- function(yi,vi,measure,d,effect="Effect") {
                         type = "standard")
 
     height<-list("height" = length(rma_model$yi))
-    write_json(height, "imgHeight.json")
+    jsonlite::write_json(height, "imgHeight.json")
 
     print(fp)
     print(rainfp)

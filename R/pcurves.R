@@ -14,8 +14,9 @@
 #' @export
 pcurves<-function(yi,vi,measure,d) {
 
-library(dmetar)
-library(meta)
+  requireNamespace("dmetar")
+  requireNamespace("meta")
+
 
   #load the in variable d defined dataset from the package
   dat <- tryCatch(
@@ -39,11 +40,11 @@ library(meta)
 dat<-dat[dat$r_peer=="yes",]
 
 # meta-Model
-overall.meta <- metagen(TE=dat[,yi], seTE=sqrt(dat[,vi]),data = dat, studlab = paste(r_author),
+overall.meta <- meta::metagen(TE=dat[,yi], seTE=sqrt(dat[,vi]),data = dat, studlab = paste(r_author),
                         comb.fixed = FALSE,comb.random = TRUE,method.tau = "SJ",
                         hakn = TRUE,prediction = TRUE,sm = measure)
 
 # p-curve
-pcurve(overall.meta)
+dmetar::pcurve(overall.meta)
 
 }

@@ -13,10 +13,15 @@
 #' @author Robert Studtrucker
 #' @export
 rma <- function(yi,vi,measure,d,effect="Effect") {
-  library('metafor')
-  library("ggplot2")
-  library('jsonlite')
-  library('psych')
+  #library('metafor')
+  #library("ggplot2")
+  #library('jsonlite')
+  #library('psych')
+
+  requireNamespace("metafor")
+  requireNamespace("ggplot2")
+  requireNamespace("jsonlite")
+  requireNamespace("psych")
 
   #load the in variable d defined dataset from the package
   dat <- tryCatch(
@@ -40,13 +45,13 @@ rma <- function(yi,vi,measure,d,effect="Effect") {
   str(dat)
   if(measure == "COR") {
     # z-standardisierte Daten erstellen
-    temp_dat <- escalc(measure="ZCOR", ri=dat[,yi], vi=dat[,vi], ni=dat[,"o_ni"], data=dat, var.names=c("o_zcor","o_zcor_var"))
+    temp_dat <- metafor::escalc(measure="ZCOR", ri=dat[,yi], vi=dat[,vi], ni=dat[,"o_ni"], data=dat, var.names=c("o_zcor","o_zcor_var"))
 
     # Modell berechnen
     rma_model <- metafor::rma.uni(temp_dat[,"o_zcor"],temp_dat[,"o_zcor_var"], measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
 
   }else{
-    rma_model <- rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
+    rma_model <- metafor::rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
 
   }
 }
