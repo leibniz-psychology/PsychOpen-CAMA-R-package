@@ -15,7 +15,7 @@
 #' returns a Funnel plot for the given dataset
 #' @author Robert Studtrucker
 #' @export
-funnelPLot <- function(yi,vi,measure,d,effectName="Effect") {
+funnelPLot <- function(yi,vi,measure,d,peer="no", effectName="Effect") {
 
   requireNamespace("metafor")
 
@@ -36,10 +36,17 @@ funnelPLot <- function(yi,vi,measure,d,effectName="Effect") {
       return(NULL)
     }
   )
+  # Filtern nach veröffentlichten Studien wenn in der Anwendung ausgewählt (peer reviewed yes/no)
+  # Per default werden alle Studien mit einbezogen
+  if(peer == "yes"){
+    filtered_dat <- subset(dat,r_peer=="yes")
+  }else{
+    filtered_dat<-dat
+  }
 
   if(measure == "COR") {
     # z-standardisierte Daten erstellen
-    temp_dat <- metafor::escalc(measure="ZCOR", ri=dat[,yi], vi=dat[,vi], ni=dat[,"o_ni"], data=dat, var.names=c("o_zcor","o_zcor_var"))
+    temp_dat <- metafor::escalc(measure="ZCOR", ri=filtered_dat[,yi], vi=filtered_dat[,vi], ni=filtered_dat[,"o_ni"], data=filtered_dat, var.names=c("o_zcor","o_zcor_var"))
 
     # Modell berechnen
     rma_model <- metafor::rma.uni(temp_dat[,"o_zcor"],temp_dat[,"o_zcor_var"], measure="ZCOR")
@@ -52,7 +59,7 @@ funnelPLot <- function(yi,vi,measure,d,effectName="Effect") {
     return(RTest)
 
   }else{
-    rma_model <- metafor::rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure)
+    rma_model <- metafor::rma.uni(yi=filtered_dat[,yi],vi=filtered_dat[,vi],measure=measure)
     RTest <-metafor::regtest(x=rma_model)
 
     metafor::funnel(rma_model, yaxis="sei") # 'label'
