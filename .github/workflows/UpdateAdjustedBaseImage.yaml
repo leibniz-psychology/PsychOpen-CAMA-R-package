@@ -7,7 +7,7 @@ on:
 jobs:
   update-worker-image:
     name: update ocpu base image if needed
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       contents: read
     env:
@@ -25,21 +25,21 @@ jobs:
       -   name: Construct image ref
           run: echo "IMAGE_REF=${REGISTRY}/${GITHUB_REPOSITORY,,}/${APP}:$(cat ${APP}/VERSION)" >> $GITHUB_ENV
 
-      -   name: Set up kubelogin for non-interactive login
-          run: |
-            curl -LO https://github.com/Azure/kubelogin/releases/download/v0.0.9/kubelogin-linux-amd64.zip
-            sudo unzip -j kubelogin-linux-amd64.zip -d /usr/local/bin
-            rm -f kubelogin-linux-amd64.zip
-            kubelogin --version
+#      -   name: Set up kubelogin for non-interactive login
+#          run: |
+#            curl -LO https://github.com/Azure/kubelogin/releases/download/v0.0.9/kubelogin-linux-amd64.zip
+#            sudo unzip -j kubelogin-linux-amd64.zip -d /usr/local/bin
+#            rm -f kubelogin-linux-amd64.zip
+#            kubelogin --version
 
-      -   name: Install Azure cli
-          run: |
-            sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg
-            curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
-            AZ_REPO=$(lsb_release -cs)
-            echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
-            sudo apt-get update
-            sudo apt-get install azure-cli
+#      -   name: Install Azure cli
+#          run: |
+#            sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg
+#            curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
+#            AZ_REPO=$(lsb_release -cs)
+#            echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
+#            sudo apt-get update
+#            sudo apt-get install azure-cli
 
       -   name: Azure Login
           uses: azure/login@v1
@@ -51,7 +51,8 @@ jobs:
             az acr login --name ${{ secrets.ACR_NAME }}
 
       -   name: Create opencpu adjusted image based on development
+          if: github.ref_name == 'development' &&  success()
           run: |
-            DOCKER_BUILDKIT=1 docker build . -t ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.APP }}:latest-dev \
+            DOCKER_BUILDKIT=1 docker build . -t ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/ocpu-base-image:latest-dev \
               --file .github/workflows/manifests/${{ env.GH_BRANCH }}/adjustedBaseImage/Dockerfile 
-            docker push ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.APP }}:latest-dev
+            docker push ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/ocpu-base-image:latest-dev

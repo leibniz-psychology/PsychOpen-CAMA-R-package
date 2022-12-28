@@ -2,8 +2,6 @@ on:
   workflow_dispatch:
   push:
     branches: [ development ]
-  #pull_request:
-  #branches: [ development ]
 
 jobs:
   deploy-to-aks:
@@ -14,33 +12,33 @@ jobs:
     env:
       GH_BRANCH: ${{ github.ref_name }}
       GH_SHA: ${{ github.sha }}
-      NAMESPACE: ${{ github.ref_name }}
-      APP: opencpu
+      NAMESPACE: development
+      APP: ocpu
       REGISTRY: ${{ secrets.ACR_NAME }}.azurecr.io
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
         with:
-          ref: ${{ github.ref_name }}
+          ref: 'development'
 
       - name: Construct image ref
         run: echo "IMAGE_REF=${REGISTRY}/${GITHUB_REPOSITORY,,}/${APP}:$(cat ${APP}/VERSION)" >> $GITHUB_ENV
 
-      - name: Set up kubelogin for non-interactive login
-        run: |
-          curl -LO https://github.com/Azure/kubelogin/releases/download/v0.0.9/kubelogin-linux-amd64.zip
-          sudo unzip -j kubelogin-linux-amd64.zip -d /usr/local/bin
-          rm -f kubelogin-linux-amd64.zip
-          kubelogin --version
-
-      - name: Install Azure cli
-        run: |
-          sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg
-          curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
-          AZ_REPO=$(lsb_release -cs)
-          echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
-          sudo apt-get update
-          sudo apt-get install azure-cli
+#      - name: Set up kubelogin for non-interactive login
+#        run: |
+#          curl -LO https://github.com/Azure/kubelogin/releases/download/v0.0.9/kubelogin-linux-amd64.zip
+#          sudo unzip -j kubelogin-linux-amd64.zip -d /usr/local/bin
+#          rm -f kubelogin-linux-amd64.zip
+#          kubelogin --version
+#
+#      - name: Install Azure cli
+#        run: |
+#          sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg
+#          curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
+#          AZ_REPO=$(lsb_release -cs)
+#          echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
+#          sudo apt-get update
+#          sudo apt-get install azure-cli
 
       - name: Azure Login
         uses: azure/login@v1
@@ -54,49 +52,54 @@ jobs:
       - name: Create php image build based on development and push to a Azure Container Registry (ACR)
         if: github.ref_name == 'development' &&  success()
         run: |
-          DOCKER_BUILDKIT=1 docker build . -t ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.APP }}:latest-dev \
+          DOCKER_BUILDKIT=1 docker build . -t ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }} \
             --build-arg OCPU_PASS=${{ secrets.OCPU_PASS}} \
             --build-arg SSL_KEY=${{ secrets.SSL_KEY}} \
-            --file .github/workflows/manifests/${{ env.GH_BRANCH }}/opencpu/Dockerfile
-          docker push ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.APP }}:latest-dev
+            --file .github/workflows/manifests/development/opencpu/Dockerfile
+          docker push ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.APP }}:${{ github.sha }}
 
-      - name: Create php image build based on staging and push to a Azure Container Registry (ACR)
-        if: github.ref_name == 'staging' &&  success()
+      - name: set tag latest-dev
         run: |
-          DOCKER_BUILDKIT=1 docker build . -t ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.APP }}:latest-stg \
-            --build-arg OCPU_PASS=${{ secrets.OCPU_PASS}} \
-            --file .github/workflows/manifests/${{ env.GH_BRANCH }}/opencpu/Dockerfile
-          docker push ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.APP }}:latest-stg
-
-      - name: Install kubectl
-        uses: azure/setup-kubectl@v2.0
-        # with:
-        #  version: '<version>' # default is latest stable
-        id: install
-
-      - name: Set KUBECONFIG env variable
-        run: echo "KUBECONFIG=${RUNNER_TEMP}/kubeconfig-$(date +%s)" >> $GITHUB_ENV
-
-      - name: Set AKS cluster context
-        run: |
-          az aks get-credentials -n ${{ secrets.CLUSTER_RESOURCE_GROUP_NAME }} -g ${{ secrets.CLUSTER_NAME }} -f ${KUBECONFIG}
-          kubelogin convert-kubeconfig -l azurecli  # this is required for me because of AAD and Azure RBAC integration    
-
-
-      - name: Deploy to AKS
-        uses: azure/k8s-deploy@v1
+          docker pull ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }}
+          docker tag ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }} ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:latest-dev
+          docker push ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:latest-dev
+  kustomize:
+    name: kustomize
+    runs-on: self-hosted
+    needs: build
+    permissions:
+      contents: read
+    env:
+      APP: ocpu
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
         with:
-          manifests: |
-            .github/workflows/manifests/${{ github.ref_name }}/opencpu.yaml
-          namespace: ${{ github.ref_name }}
+          repository: leibniz-psychology/k8s-argocd-OpenCpu-config
+          ref: main
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          persist-credentials: true
+          # path: config
 
-      - name: Update existing deployment for development branch
-        if: github.ref_name == 'development' &&  success()
-        run: |
-          kubectl rollout restart deployment ${{ env.APP }}-dev --namespace=${{ env.GH_BRANCH }}
+      - name: Setup Kustomize
+        uses: imranismail/setup-kustomize@v1
+        with:
+          kustomize-version: "3.6.1"
 
-      - name: Update existing deployment for staging branch
-        #Funktioniert nicht, wenn der neue Pod nicht startfähig ist
-        if: github.ref_name == 'staging' &&  success()
+      - name: Switch out image tag
         run: |
-          kubectl rollout restart deployment ${{ env.APP }}-stg --namespace=${{ env.GH_BRANCH }}
+          cd dev
+          kustomize edit set image crzpiddev.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }}
+          cat kustomization.yaml
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -am "Update docker tag "${{ github.sha }}""
+      - name: Git push
+        uses: ad-m/github-push-action@master
+        with:
+          repository: leibniz-psychology/k8s-argocd-PASA-config
+          ssh: true
+          branch: main
