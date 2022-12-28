@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: Deploy to AKS
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       contents: read
     env:
