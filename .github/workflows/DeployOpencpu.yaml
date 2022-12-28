@@ -84,6 +84,6 @@ jobs:
       - name: Git push
         uses: ad-m/github-push-action@master
         with:
-          repository: leibniz-psychology/k8s-argocd-PASA-config
+          repository: leibniz-psychology/k8s-argocd-OpenCpu-config
           ssh: true
           branch: main
