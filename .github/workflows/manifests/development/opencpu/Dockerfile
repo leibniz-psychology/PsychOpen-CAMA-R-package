@@ -1,4 +1,4 @@
-FROM crzpiddev.azurecr.io/opencpu-adjusted:latest-dev
+FROM crzpiddev.azurecr.io/ocpu/ocpu-base-image:latest-dev
 
 ARG OCPU_PASS
 ARG SSL_KEY
