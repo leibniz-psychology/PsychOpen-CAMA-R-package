@@ -21,24 +21,8 @@ jobs:
         with:
           ref: 'development'
 
-      - name: Construct image ref
-        run: echo "IMAGE_REF=${REGISTRY}/${GITHUB_REPOSITORY,,}/${APP}:$(cat ${APP}/VERSION)" >> $GITHUB_ENV
-
-#      - name: Set up kubelogin for non-interactive login
-#        run: |
-#          curl -LO https://github.com/Azure/kubelogin/releases/download/v0.0.9/kubelogin-linux-amd64.zip
-#          sudo unzip -j kubelogin-linux-amd64.zip -d /usr/local/bin
-#          rm -f kubelogin-linux-amd64.zip
-#          kubelogin --version
-#
-#      - name: Install Azure cli
-#        run: |
-#          sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg
-#          curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
-#          AZ_REPO=$(lsb_release -cs)
-#          echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
-#          sudo apt-get update
-#          sudo apt-get install azure-cli
+#      - name: Construct image ref
+#        run: echo "IMAGE_REF=${REGISTRY}/${GITHUB_REPOSITORY,,}/${APP}:$(cat ${APP}/VERSION)" >> $GITHUB_ENV
 
       - name: Azure Login
         uses: azure/login@v1
@@ -56,7 +40,7 @@ jobs:
             --build-arg OCPU_PASS=${{ secrets.OCPU_PASS}} \
             --build-arg SSL_KEY=${{ secrets.SSL_KEY}} \
             --file .github/workflows/manifests/development/opencpu/Dockerfile
-          docker push ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.APP }}:${{ github.sha }}
+          docker push ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }}
 
       - name: set tag latest-dev
         run: |
