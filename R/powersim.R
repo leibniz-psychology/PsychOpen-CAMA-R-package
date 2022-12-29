@@ -64,7 +64,6 @@ powersim <- function(yi,vi,measure,d,n,pval=0.05) {
   VALUE=c(round(power*100,1),round(pwr::pwr.t.test(d=estimate,sig.level=pval, power=0.8)$n,0))
 
   df <- data.frame(ID, VALUE)
-  print(df)
   jsonlite::write_json(df, "output.json")
 
 
@@ -80,7 +79,8 @@ powersim <- function(yi,vi,measure,d,n,pval=0.05) {
   text.upperbound<-paste("Up bound: ",round(ub,2))
 
 
-  if(pwr::pwr.t.test(d=estimate,sig.level=pval, power=0.8)<300){
+
+  if(pwr::pwr.t.test(d=estimate,sig.level=pval, power=0.8)["n"]<300){
     ggplot2::ggplot(data = plotdat, ggplot2::aes(x = nvec, y = powvect, group=factor(estvec), color=factor(estvec))) +
       ggplot2::geom_line(size=1.2) +
       ggplot2::geom_point(ggplot2::aes(x = n, y = power), color = "black", size = 3) +
