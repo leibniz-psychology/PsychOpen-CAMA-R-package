@@ -26,22 +26,8 @@ pureCumulForest <- function(rma_model,measure,d,effectName="Effect") {
   dat<-get(d)
 
   #load the in variable d defined dataset from the package
-  dat <- tryCatch(
-    {get(d)},
-    error=function(cond) {
-      message(paste("This dataset does not exist:", d))
-      message("Here's the original error message:")
-      message(cond)
-      return(NULL)
-    },
-    warning=function(cond) {
-      message(paste("input caused a warning:", d))
-      message("Here's the original warning message:")
-      message(cond)
-      # Choose a return value in case of warning
-      return(NULL)
-    }
-  )
+  dat <- checkData(d)
+
   # depending on the given measure we have to transform the labels of the x axis (Fisher's z values back to correlation coefficients using tanh)
   if(measure == "COR") {
 

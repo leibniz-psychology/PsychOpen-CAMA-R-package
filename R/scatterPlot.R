@@ -17,31 +17,17 @@ scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
   requireNamespace("GGally")
 
   #load the in variable d defined dataset from the package
-  dat <- tryCatch(
-    {get(d)},
-    error=function(cond) {
-      message(paste("This dataset does not exist:", d))
-      message("Here's the original error message:")
-      message(cond)
-      return(NULL)
-    },
-    warning=function(cond) {
-      message(paste("input caused a warning:", d))
-      message("Here's the original warning message:")
-      message(cond)
-      # Choose a return value in case of warning
-      return(NULL)
-    }
-  )
+  dat <- checkData(d)
 
   pred1<-unlist(pred1)
   pred2<-unlist(pred2)
 
   if( !is.null(pred1) && !is.null(pred2)){
 
+    checkParameter(dat,c(yi,pred1["value"],pred2["value"]))
+
     #Es gibt zwei Prädiktoren
     if(pred1["type"]=="num" && pred2["type"]=="num"){
-
       # Scatter, 2 predictors,  num/num
       GGally::ggscatmat(dat, columns=c(yi,pred1["value"],pred2["value"])) +
         ggplot2::geom_point(colour="#34B4D8", shape=19) +
