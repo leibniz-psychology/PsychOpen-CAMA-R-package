@@ -5,6 +5,6 @@
 #' A \code{string} representing the dataset name that should be used.
 checkParameter <- function(d,paramList) {
   if(!all(paramList %in% names(d))){
-    stop("stopped code because of one or more parameters did not exist in the dataset")
+    stop(paste("stopped code because of one or more parameters did not exist in the dataset"))
   }
 }
