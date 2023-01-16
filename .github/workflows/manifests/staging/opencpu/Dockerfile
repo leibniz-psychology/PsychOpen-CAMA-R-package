@@ -10,13 +10,15 @@ RUN cd /home/opencpu && \
     apt-get update && \
     apt-get install -y openssl && \
     openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -nodes \
-      -keyout ocpu_ssl.key -out ocpu_ssl.crt -subj "/CN=opencpu.dev.zpid.org" \
+      -keyout ocpu_ssl.key -out ocpu_ssl.crt -subj "/CN=opencpu.stg.zpid.org" \
       -addext "subjectAltName=DNS:opencpu.stg.zpid.org,DNS:www.opencpu.stg.zpid.org,IP:127.0.0.1"
 
 RUN cd /home/opencpu && \
     mv /home/opencpu/ocpu_ssl.crt /etc/ssl/certs/ && \
     mv /home/opencpu/ocpu_ssl.key /etc/ssl/private/
 
+#copy some config files
+COPY . /home/opencpu/psychOpenCama
 
 RUN cd /home/opencpu && \
     R -e "install.packages('remotes')" && \
