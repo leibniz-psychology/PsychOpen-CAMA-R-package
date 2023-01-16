@@ -17,6 +17,8 @@ RUN cd /home/opencpu && \
     mv /home/opencpu/ocpu_ssl.crt /etc/ssl/certs/ && \
     mv /home/opencpu/ocpu_ssl.key /etc/ssl/private/
 
+#copy some config files
+COPY . /home/opencpu/psychOpenCama
 
 RUN cd /home/opencpu && \
     R -e "install.packages('remotes')" && \
