@@ -15,6 +15,5 @@ checkIntegrity <- function() {
 
   }
 
-
 }
 
