@@ -24,25 +24,10 @@ rma <- function(yi,vi,measure,d,effect="Effect") {
   requireNamespace("psych")
 
   #load the in variable d defined dataset from the package
-  dat <- tryCatch(
-    {get(d)},
-    error=function(cond) {
-      message(paste("This dataset does not exist:", d))
-      message("Here's the original error message:")
-      message(cond)
-      return(NULL)
-    },
-    warning=function(cond) {
-      message(paste("input caused a warning:", d))
-      message("Here's the original warning message:")
-      message(cond)
-      # Choose a return value in case of warning
-      return(NULL)
-    }
-  )
-  str(dat)
+  dat <- checkData(d)
+  checkParameter(dat,c(yi,vi))
   dat <- dat[order(dat$r_year),]
-  str(dat)
+
   if(measure == "COR") {
     # z-standardisierte Daten erstellen
     temp_dat <- metafor::escalc(measure="ZCOR", ri=dat[,yi], vi=dat[,vi], ni=dat[,"o_ni"], data=dat, var.names=c("o_zcor","o_zcor_var"))

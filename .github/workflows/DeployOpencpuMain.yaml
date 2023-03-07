@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
   push:
-    branches: [ development ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -12,18 +12,14 @@ jobs:
     env:
       GH_BRANCH: ${{ github.ref_name }}
       GH_SHA: ${{ github.sha }}
-      NAMESPACE: development
+      NAMESPACE: main
       APP: ocpu
       REGISTRY: ${{ secrets.ACR_NAME }}.azurecr.io
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
         with:
-          ref: 'development'
-
-#      - name: Construct image ref
-#        run: echo "IMAGE_REF=${REGISTRY}/${GITHUB_REPOSITORY,,}/${APP}:$(cat ${APP}/VERSION)" >> $GITHUB_ENV
-
+          ref: 'staging'
       - name: Azure Login
         uses: azure/login@v1
         with:
@@ -34,19 +30,19 @@ jobs:
           az acr login --name ${{ secrets.ACR_NAME }}
 
       - name: Create php image build based on development and push to a Azure Container Registry (ACR)
-        if: github.ref_name == 'development' &&  success()
+        if: github.ref_name == 'main' &&  success()
         run: |
           DOCKER_BUILDKIT=1 docker build . -t ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }} \
             --build-arg OCPU_PASS=${{ secrets.OCPU_PASS}} \
             --build-arg SSL_KEY=${{ secrets.SSL_KEY}} \
-            --file .github/workflows/manifests/development/opencpu/Dockerfile
+            --file .github/workflows/manifests/main/opencpu/Dockerfile
           docker push ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }}
 
-      - name: set tag latest-dev
+      - name: set tag latest-prod
         run: |
           docker pull ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }}
-          docker tag ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }} ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:latest-dev
-          docker push ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:latest-dev
+          docker tag ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }} ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:latest-prod
+          docker push ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:latest-prod
   kustomize:
     name: kustomize
     runs-on: ubuntu-latest
@@ -72,7 +68,7 @@ jobs:
 
       - name: Switch out image tag
         run: |
-          cd dev
+          cd prod
           kustomize edit set image crzpiddev.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }}
           cat kustomization.yaml
 

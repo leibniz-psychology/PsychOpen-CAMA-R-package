@@ -10,8 +10,8 @@ RUN cd /home/opencpu && \
     apt-get update && \
     apt-get install -y openssl && \
     openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -nodes \
-      -keyout ocpu_ssl.key -out ocpu_ssl.crt -subj "/CN=opencpu.dev.zpid.org" \
-      -addext "subjectAltName=DNS:opencpu.dev.zpid.org,DNS:www.opencpu.dev.zpid.org,IP:127.0.0.1"
+      -keyout ocpu_ssl.key -out ocpu_ssl.crt -subj "/CN=opencpu.preprod.zpid.org" \
+      -addext "subjectAltName=DNS:opencpu.preprod.zpid.org,DNS:www.opencpu.preprod.zpid.org,IP:127.0.0.1"
 
 RUN cd /home/opencpu && \
     mv /home/opencpu/ocpu_ssl.crt /etc/ssl/certs/ && \
