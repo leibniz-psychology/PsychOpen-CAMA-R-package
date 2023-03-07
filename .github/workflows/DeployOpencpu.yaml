@@ -49,7 +49,7 @@ jobs:
           docker push ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:latest-dev
   kustomize:
     name: kustomize
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     needs: build
     permissions:
       contents: read
