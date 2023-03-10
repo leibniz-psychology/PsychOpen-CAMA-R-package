@@ -1,3 +1,8 @@
+## Release 1.0.4
+### 03.2023 
+Features:
+* included configuration  for kubernetes deployment
+
 ## Release 1.0.3
 ### 28.12.2022 / Online 05.01.2023
 Features:
@@ -8,7 +13,6 @@ Features:
 ### 10.08.2021 / Online 10.08.2021
 Features:
 * new Dataset added CAMA_Bussiness
-
 
 ## Release 1.0
 ### 21.06.2021 / Online 21.06.2021
