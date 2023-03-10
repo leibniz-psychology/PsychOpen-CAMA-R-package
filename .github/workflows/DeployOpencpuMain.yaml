@@ -4,42 +4,22 @@ on:
     branches: [ main ]
 
 jobs:
-  rename-deploy-image:
+  build:
     name: Deploy to AKS
     runs-on: ubuntu-latest
     permissions:
       contents: read
     env:
       GH_BRANCH: ${{ github.ref_name }}
+      GH_SHA: ${{ github.sha }}
       NAMESPACE: main
       APP: ocpu
       REGISTRY: ${{ secrets.ACR_NAME }}.azurecr.io
-
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
         with:
           ref: 'main'
-
-      - name: Construct image ref
-        run: echo "IMAGE_REF=${REGISTRY}/${GITHUB_REPOSITORY,,}/${APP}:$(cat ${APP}/VERSION)" >> $GITHUB_ENV
-
-      - name: Set up kubelogin for non-interactive login
-        run: |
-          curl -LO https://github.com/Azure/kubelogin/releases/download/v0.0.9/kubelogin-linux-amd64.zip
-          sudo unzip -j kubelogin-linux-amd64.zip -d /usr/local/bin
-          rm -f kubelogin-linux-amd64.zip
-          kubelogin --version
-
-      - name: Install Azure cli
-        run: |
-          sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg
-          curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
-          AZ_REPO=$(lsb_release -cs)
-          echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
-          sudo apt-get update
-          sudo apt-get install azure-cli
-
       - name: Azure Login
         uses: azure/login@v1
         with:
@@ -49,6 +29,15 @@ jobs:
         run: |
           az acr login --name ${{ secrets.ACR_NAME }}
 
+      - name: Create php image build based on main and push to a Azure Container Registry (ACR)
+        if: github.ref_name == 'main' &&  success()
+        run: |
+          DOCKER_BUILDKIT=1 docker build . -t ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }} \
+            --build-arg OCPU_PASS=${{ secrets.OCPU_PASS}} \
+            --build-arg SSL_KEY=${{ secrets.SSL_KEY}} \
+            --file .github/workflows/manifests/main/opencpu/Dockerfile
+          docker push ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }}
+
       - name: get latest tags
         uses: actions-ecosystem/action-get-latest-tag@v1
         id: get-latest-tag
@@ -56,10 +45,49 @@ jobs:
           current_version: ${{ steps.get-latest-tag.outputs.tag }}
 
       - name: set tag version tag from github
-        if: github.ref_name == 'main' &&  success()
         run: |
-          docker pull ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:latest-stg
-          docker image ls
+          docker pull ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }}
           echo tag with ${{ steps.get-latest-tag.outputs.tag }}
-          docker tag ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:latest-stg ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ steps.get-latest-tag.outputs.tag }}
+          docker tag ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }} ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ steps.get-latest-tag.outputs.tag }}
           docker push ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ steps.get-latest-tag.outputs.tag }}
+
+  kustomize:
+    name: kustomize
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: read
+    env:
+      APP: ocpu
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+        with:
+          repository: leibniz-psychology/k8s-argocd-OpenCpu-config
+          ref: main
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          persist-credentials: true
+          # path: config
+
+      - name: Setup Kustomize
+        uses: imranismail/setup-kustomize@v1
+        with:
+          kustomize-version: "3.6.1"
+
+      - name: Switch out image tag
+        run: |
+          cd prod
+          kustomize edit set image crzpiddev.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }}
+          cat kustomization.yaml
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -am "Update docker tag "${{ github.sha }}""
+      - name: Git push
+        uses: ad-m/github-push-action@master
+        with:
+          repository: leibniz-psychology/k8s-argocd-OpenCpu-config
+          ssh: true
+          branch: main
