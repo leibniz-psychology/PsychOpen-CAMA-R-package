@@ -48,7 +48,7 @@ jobs:
         run: |
           docker pull ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }}
           echo tag with ${{ steps.get-latest-tag.outputs.tag }}
-          docker tag ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:latest-stg ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ steps.get-latest-tag.outputs.tag }}
+          docker tag ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }} ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ steps.get-latest-tag.outputs.tag }}
           docker push ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ steps.get-latest-tag.outputs.tag }}
 
   kustomize:
