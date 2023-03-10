@@ -38,11 +38,19 @@ jobs:
             --file .github/workflows/manifests/main/opencpu/Dockerfile
           docker push ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }}
 
-      - name: set tag latest-prod
+      - name: get latest tags
+        uses: actions-ecosystem/action-get-latest-tag@v1
+        id: get-latest-tag
+        with:
+          current_version: ${{ steps.get-latest-tag.outputs.tag }}
+
+      - name: set tag version tag from github
         run: |
           docker pull ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }}
-          docker tag ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ github.sha }} ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:latest-prod
-          docker push ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:latest-prod
+          echo tag with ${{ steps.get-latest-tag.outputs.tag }}
+          docker tag ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:latest-stg ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ steps.get-latest-tag.outputs.tag }}
+          docker push ${{ secrets.ACR_NAME }}.azurecr.io/ocpu/${{ env.APP }}:${{ steps.get-latest-tag.outputs.tag }}
+
   kustomize:
     name: kustomize
     runs-on: ubuntu-latest
