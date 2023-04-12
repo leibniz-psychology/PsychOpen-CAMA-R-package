@@ -27,7 +27,9 @@ RUN cd /home/opencpu && \
     mv psychOpenCama_*.tar.gz psychOpenCama_latest.tar.gz && \
 #    R -e "remotes::install_local('/home/opencpu/psychOpenCama_latest.tar.gz')"
     R CMD INSTALL psychOpenCama_latest.tar.gz --library=/usr/local/lib/R/site-library && \
-    chmod -R 755 /var/www/html/index.html
+    chmod 755 /var/www/html/index.html && \
+    touch /etc/ssl/certs/ocpu_ssl.crt && \
+    touch /etc/ssl/private/ocpu_ssl.key
 
 # Set opencpu password
 RUN \
