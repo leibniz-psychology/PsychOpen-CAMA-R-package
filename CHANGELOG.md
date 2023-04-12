@@ -1,4 +1,9 @@
 
+## Hotfix Release 1.0.6
+### 04.2023
+Bugs:
+* updated Dockerfile, removed static ssl files
+
 ## Hotfix Release 1.0.5
 ### 04.2023
 Bugs:
