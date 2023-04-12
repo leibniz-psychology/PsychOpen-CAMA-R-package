@@ -29,7 +29,10 @@ RUN cd /home/opencpu && \
     R CMD INSTALL psychOpenCama_latest.tar.gz --library=/usr/local/lib/R/site-library && \
     chmod 755 /var/www/html/index.html && \
     touch /etc/ssl/certs/ocpu_ssl.crt && \
-    touch /etc/ssl/private/ocpu_ssl.key
+    touch /etc/ssl/private/ocpu_ssl.key && \
+    chmod 644 /etc/ssl/certs/ocpu_ssl.crt && \
+    chmod 400 /etc/ssl/private/ocpu_ssl.key
+    
 
 # Set opencpu password
 RUN \
