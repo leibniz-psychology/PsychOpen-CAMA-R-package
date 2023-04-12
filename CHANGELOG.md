@@ -1,4 +1,8 @@
-
+## Hotfix Release 1.0.7
+### 04.2023
+Sonstiges:
+* add index html to static folder
+* 
 ## Hotfix Release 1.0.6
 ### 04.2023
 Bugs:

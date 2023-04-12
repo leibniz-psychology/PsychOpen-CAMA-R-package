@@ -19,6 +19,7 @@ RUN apt update -y &&\
 
 #copy some config files
 COPY . /home/opencpu/psychOpenCama
+COPY .github/workflows/manifests/main/opencpu/index.html  /var/www/html/index.html
 
 RUN cd /home/opencpu && \
     R -e "install.packages('remotes')" && \
