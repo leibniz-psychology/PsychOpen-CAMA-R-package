@@ -1,0 +1,405 @@
+{
+	"datensatz" : {
+		"name" : "Function word segmentation",
+		"data_name":"CAMA_Segment",
+		"psychArchivesHandle": "http://dx.doi.org/10.23668/psycharchives.4738",
+		"domain": "Cognitive development",
+		"metaanalysis_type": "standard",
+		"moderators" : [
+			{"type": "num" ,"value": "s_meanage" ,"label": "Mean Age Sample" },
+			{"type": "cat" ,"value": "t_method" ,"label": "Method" },
+			{"type": "cat","value":"t_response","label": "Measurement Response"  }],
+		"effect_strength" : {
+			"label" : "SMD",
+			"variable_labels":[
+				{
+					"name":"hedges_g",
+					"data_label_yi":"o_g_calc",
+					"varianz_label_vi": "o_g_var_calc"
+				},
+				{
+					"name":"cohens_d",
+					"data_label_yi":"o_d_calc",
+					"varianz_label_vi": "o_d_var_calc"
+				}
+			]
+		},
+		"analysis_levels":["outcome_ID","sample_ID","report_ID"]
+	},
+	"dokumentation" : {
+		"title": "Bergmann, C. and Cristia, A. (2016), Development of infants' segmentation of words from native speech: a meta‐analytic approach. Dev Sci, 19: 901-917.",
+		"doi": "https://doi.org/10.1111/desc.12341",
+		"url":"",
+		"dataProvider": "http://metalab.stanford.edu/: Bergmann, C., Tsuji, S., Piccinini, P.E., Lewis, M.L., Braginsky, M., Frank, M.C., & Cristia, A. (2018). Promoting replicability in developmental research through meta-analyses: Insights from language acquisition research. Child Development, 89, 1996-2009 . DOI: 10.1111/cdev.13079 [Repository]",
+		"license": "CC BY 4.0",
+		"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+		"researchQuestion": "Preference for familiar over novel test stimuli (longer looking time)",
+		"literatureSelection": "Inclusion: (1) original data were reported; (2) the stimulus material was continuous natural speech spoken in the participants’ native language; (3) the dependent measure was looking time (LT) at a neutral visual target (i.e. not a possible referent of one set of stimuli); (4) infants were normally developing.",
+		"effectSize": "Hedge’s g, Cohen’s d",
+		"hierarchicalStructure": "Outcome – Sample - Report"
+	},
+	"literatureintraege": [
+		{
+			"shortCite": "Altvater-Mackensen &amp; Mani (2013)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1111/desc.12071"
+		},
+		{
+			
+			"shortCite": "Babineau &amp; Shi (2011)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Babineau &amp; Shi (2014)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1037/a0038105"
+		},
+		{
+			"shortCite": "Barker &amp; Newman (2004)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/j.cognition.2004.06.001"
+		},
+		{
+			"shortCite": "Bartels, Darcy, &amp; Hoehle (2009)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Berdasco‐Munoz et al. (2017)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1111/infa.12217"
+		},
+		{
+			"shortCite": "Bergmann, C. &amp; Fikkert, P. (2014)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Bortfeld, et al. (2005)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1111/j.0956-7976.2005.01531.x"
+		},
+		{
+			"shortCite": "Bosch et al. (2013)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.3389/fpsyg.2013.00106"
+		},
+		{
+			"shortCite": "Butler &amp; Frota (2018)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1017/s0305000918000181"
+		},
+		{
+			"shortCite": "Floccia et al. (2016)",
+			"peerReviewed": true,
+			"doi": "https://www.researchgate.net/deref/http%3A%2F%2Fdx.doi.org%2F10.1016%2Fj.cognition.2015.12.004"
+		},
+		{
+			"shortCite": "Gonzalez-Gomez &amp; Nazzi (2013)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1044/1092-4388%282012%2F12-0138%29"
+		},
+		{
+			"shortCite": "Gout, Christophe, &amp; Morgan (2004)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1016/j.jml.2004.07.002"
+		},
+		{
+			"shortCite": "Goyet, Nishibayashi, &amp; Nazzi (2013)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1371/journal.pone.0079646"
+		},
+		{
+			"shortCite": "Hollich, Newman, &amp; Jusczyk (2005)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1111/j.1467-8624.2005.00866.x"
+		},
+		{
+			"shortCite": "Houston &amp; Jusczyk (2000)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1037/0096-1523.26.5.1570"
+		},
+		{
+			"shortCite": "Houston &amp; Jusczyk (2003)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1037/0096-1523.29.6.1143"
+		},
+		{
+			"shortCite": "Houston et al. (2000)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.3758/BF03214363"
+		},
+		{
+			"shortCite": "Houston et al. (2004)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1080/01690960344000143"
+		},
+		{
+			"shortCite": "Johnson (2005)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1207/s15327078in0701_8"
+		},
+		{
+			"shortCite": "Johnson (2008)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1121/1.2908407"
+		},
+		{
+			"shortCite": "Johnson, Seidl, &amp; Tyler (2014)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1371/journal.pone.0083546"
+		},
+		{
+			"shortCite": "Johnson et al. (2003)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1016/S0010-0285(02)00507-8"
+		},
+		{
+			"shortCite": "Jusczyk &amp; Aslin (1995)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1006/cogp.1995.1010"
+		},
+		{
+			"shortCite": "Jusczyk, Hohne, &amp; Baumann (1999)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.3758/bf03213111"
+		},
+		{
+			"shortCite": "Jusczyk, Houston, &amp; Newsome (1999)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1006/cogp.1999.0716"
+		},
+		{
+			"shortCite": "Katz-Gershon (2007)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Kim (2012)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Kuijpers et al. (1998)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Mani &amp; Pätzold (2016)",
+			"peerReviewed": true,
+			"doi": "https://www.researchgate.net/deref/http%3A%2F%2Fdx.doi.org%2F10.1080%2F15475441.2016.1171717"
+		},
+		{
+			"shortCite": "Marquis &amp; Shi (2008)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1121/1.2884082"
+		},
+		{
+			"shortCite": "Marquis &amp; Shi (2009)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Marquis &amp; Shi (2012)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1016/j.cognition.2011.07.004"
+		},
+		{
+			"shortCite": "Mason-Apps et al. (2011)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Mattys &amp; Jusczyk (2001)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1037//0096-1523.27.3.644"
+		},
+		{
+			
+			"shortCite": "Mattys &amp; Jusczyk (2001b)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/s0010-0277(00)00109-8"
+		},
+		{
+			"shortCite": "Minagawa et al. (2017)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/j.bandl.2017.03.005"
+		},
+		{
+			"shortCite": "Nazzi et al. (2005)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1177/00238309050480030201"
+		},
+		{
+			"shortCite": "Nazzi et al. (2006)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1016/j.jml.2005.10.004"
+		},
+		{
+			"shortCite": "Nazzi et al. (2014)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1017/S0305000913000111"
+		},
+		{
+			"shortCite": "Newman &amp; Jusczyk (1996)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.3758/BF03207548"
+		},
+		{
+			"shortCite": "Newman, Tsay, &amp; Jusczyk (2003)",
+			"peerReviewed": true,
+			"doi": "http://hincapie.psych.purdue.edu/Jusczyk/pdf/Develop.pdf"
+		},
+		{
+			"shortCite": "Nishibayashi, Goyet, &amp; Nazzi (2014)",
+			"doi": "",
+			"peerReviewed": true
+		},
+		{
+			"shortCite": "Ota &amp; Skarabela (2018)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1017/s0305000916000660"
+		},
+		{
+			
+			"shortCite": "Polka et al. (2017)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1111/desc.12419"
+		},
+		{
+			"shortCite": "Polka et al. (2017)",
+			"doi": "",
+			"peerReviewed": true
+		},
+		{
+			"shortCite": "Polka &amp; Sundara (2011)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1111/j.1532-7078.2011.00075.x"
+		},
+		{
+			
+			"shortCite": "Porto (2015)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			
+			"shortCite": "Schmale &amp; Seidl (2009)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1111/j.1467-7687.2009.00809.x"
+		},
+		{
+			
+			"shortCite": "Schmale et al. (2010)",
+			"peerReviewed": true,
+			"doi": "https://www.researchgate.net/deref/http%3A%2F%2Fdx.doi.org%2F10.1111%2Fj.1532-7078.2010.00032.x"
+		},
+		{
+			
+			"shortCite": "Schreiner et al. (2016)",
+			"peerReviewed": true,
+			"doi": "https://www.researchgate.net/deref/http%3A%2F%2Fdx.doi.org%2F10.1111%2Finfa.12133"
+		},
+		{
+			
+			"shortCite": "Schreiner &amp; Mani (2017)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/j.cognition.2016.12.003"
+		},
+		{
+			
+			"shortCite": "Seidl &amp; Johnson (2006)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1111/j.1467-7687.2006.00534.x"
+		},
+		{
+			
+			"shortCite": "Seidl &amp; Johnson (2008)",
+			"peerReviewed": true,
+			"doi": "https://www.researchgate.net/deref/http%3A%2F%2Fdx.doi.org%2F10.1017%2FS0305000907008215"
+		},
+		{
+			
+			"shortCite": "Shi &amp; Lepage (2008)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1111/j.1467-7687.2008.00685.x"
+		},
+		{
+			
+			"shortCite": "Singh (2008)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/j.cognition.2007.05.002"
+		},
+		{
+			
+			"shortCite": "Singh et al. (2009)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1080/15250000903263973"
+		},
+		{
+			
+			"shortCite": "Singh &amp; Foong (2012)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/j.cognition.2012.05.008"
+		},
+		{
+			
+			"shortCite": "Singh, Morgan, &amp; White (2004)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1016/j.jml.2004.04.004"
+		},
+		{
+			
+			"shortCite": "Singh, Nestor, &amp; Bortfeld (2008)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1080/15250000701779386"
+		},
+		{
+			
+			"shortCite": "Singh, Reznick, &amp; Xuehua (2012)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1111/j.1467-7687.2012.01141.x"
+		},
+		{
+			"shortCite": "Singh, White, &amp; Morgan (2008)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1080/15475440801922131"
+		},
+		{
+			"shortCite": "Tincoff &amp; Jusczyk (1996)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Tsay &amp; Jusczyk (2003)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "vanHeugten &amp; Johnson (2012)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1044/1092-4388(2011/10-0347)"
+		},
+		{
+			"shortCite": "van Kampen et al. (2007)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Wang, Llanos, &amp; Seidl (2017)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1121/1.4979704"
+		},
+		{
+			"shortCite": "Willits et al. (2009)",
+			"peerReviewed": true,
+			"doi": "https://www.researchgate.net/profile/Jon_Willits2/publication/264825476_Verbs_are_lookING_good_in_early_language_acquisition/links/53f29ef90cf2f2c3e8025a6e.pdf"
+		},
+		{
+			"shortCite": "Zahner, Schoenhuber, &amp; Braun (2015)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1017/s0305000915000744"
+		}
+	]
+}

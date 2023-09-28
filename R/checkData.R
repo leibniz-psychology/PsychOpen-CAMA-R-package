@@ -3,6 +3,7 @@
 #' Helper function to check if the given dataset exists
 #' @param d
 #' A \code{string} representing the dataset name that should be used.
+
 checkData <- function(d) {
 
   dat <- tryCatch(

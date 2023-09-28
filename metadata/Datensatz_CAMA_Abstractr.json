@@ -1,0 +1,140 @@
+{
+	"datensatz" : {
+		"name" : "Abstract rule learning",
+		"data_name":"CAMA_Abstractr",
+		"psychArchivesHandle": "http://dx.doi.org/10.23668/psycharchives.4740",
+		"domain": "Cognitive development",
+		"metaanalysis_type": "standard",
+		"moderators" : [{"type":"cat","value":"t_semantics","label": "Semantics"},{"type": "cat","value":"t_modality","label": "Modality" },{"type": "num","value":"s_meanage","label": "Mean Age" }],
+		"effect_strength" : {
+			"label" : "SMD",
+			"variable_labels":[
+				{
+					"name":"hedges_g",
+					"data_label_yi":"o_g_calc",
+					"varianz_label_vi": "o_g_var_calc"
+				},
+				{
+					"name":"cohens_d",
+					"data_label_yi":"o_d_calc",
+					"varianz_label_vi": "o_d_var_calc"
+				}
+			]
+		},
+		"analysis_levels":["outcome_ID","sample_ID","report_ID"]
+	},
+	"dokumentation" : {
+		"title": "Rabagliati, H,Ferguson, B,Lew‐Williams, C.The profile of abstract rule learning in infancy: Meta‐analytic and experimental evidence. Dev Sci.2019;22:e12704.",
+		"doi": "https://doi.org/10.1111/desc.12704",
+		"url":"",
+		"dataProvider": "http://metalab.stanford.edu/: Bergmann, C., Tsuji, S., Piccinini, P.E., Lewis, M.L., Braginsky, M., Frank, M.C., & Cristia, A. (2018). Promoting replicability in developmental research through meta-analyses: Insights from language acquisition research. Child Development, 89, 1996-2009 . DOI: 10.1111/cdev.13079 [Repository]",
+		"license": "CC BY 4.0",
+		"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+		"researchQuestion": "Can infants learn abstract repition rules from different types of stimuli?",
+		"literatureSelection": "Inclusion: (1) Participants were typically developing infants under 24 months of age, (2) participants were exposed to strings of three stimuli generated from a single repetition pattern (e.g. AAB, ABB), and (3) participants were tested on their behavioural response to new stringsgenerated from either the familiarized pattern (Familiar pattern trials)or a novel pattern (Novel pattern trials). Exclusion: (1) reports that used different paradigms or asked somewhat different questions, including neuroimaging studies, relational-match-to-sample studies, (3) studies that did not use repetition patterns, and (4) studies in which infants were exposed to two patterns",
+		"effectSize": "Hedge’s g, Cohen’s d",
+		"hierarchicalStructure": "Outcome – Sample - Report"
+	},
+	"literatureintraege": [
+		{
+			"shortCite": "Dawson & Gerken (2009)",
+			"doi": "https://doi.org/10.1016/j.cognition.2009.02.010",
+			"peerReviewed": true
+		},
+		{
+			"shortCite": "Saffran et al (2007)",
+			"doi": "https://psycnet.apa.org/doi/10.1016/j.cognition.2006.11.004",
+			"peerReviewed": true
+		},
+		{
+			"shortCite": "Thiessen (2012)\n",
+			"doi": "https://psycnet.apa.org/doi/10.1080/15475441.2011.583610\n",
+			"peerReviewed": true
+		},
+		{
+			"shortCite": "Bulf et al (2015)\n",
+			"doi": "https://doi.org/10.3389/fpsyg.2015.01595\n",
+			"peerReviewed": true
+		},
+		{
+			"shortCite": "Frank et al (2009)\n",
+			"doi": "https://psycnet.apa.org/doi/10.1111/j.1467-7687.2008.00794.x\n",
+			"peerReviewed": true
+		},
+		{
+			"shortCite": "Ferguson & Lew-Williams (2016)\n",
+			"doi": "https://doi.org/10.1038/srep25434\n",
+			"peerReviewed": true
+		},
+{
+			"shortCite": "Tsui et al (2016)\n",
+			"doi": "https://doi.org/10.1111/desc.12319\n",
+			"peerReviewed": true
+		},
+{
+			"shortCite": "Rabagliati et al (2012)\n",
+			"doi": "https://doi.org/10.1371/journal.pone.0040517\n",
+			"peerReviewed": true
+		},
+{
+			"shortCite": "Marcus et al (2007)\n",
+			"doi": "https://psycnet.apa.org/doi/10.1111/j.1467-9280.2007.01910.x\n",
+			"peerReviewed": true
+		},
+{
+			"shortCite": "Johnson et al (2009)\n",
+			"doi": "https://doi.org/10.1080/15250000802569611\n",
+			"peerReviewed": true
+		},
+{
+			"shortCite": "Marcus et al (1999)\n",
+			"doi": "https://doi.org/10.1126/science.283.5398.77\n",
+			"peerReviewed": true
+		},
+{
+			"shortCite": "Gerken et al (2015)\n",
+			"doi": "https://doi.org/10.1111/desc.12183\n",
+			"peerReviewed": true
+		},
+{
+			"shortCite": "Gerken (2006)\n",
+			"doi": "https://psycnet.apa.org/doi/10.1016/j.cognition.2005.03.003\n",
+			"peerReviewed": true
+		},
+{
+			"shortCite": "Gerken (2010)\n",
+			"doi": "https://psycnet.apa.org/doi/10.1016/j.cognition.2010.01.006\n",
+			"peerReviewed": true
+		},
+{
+			"shortCite": "Pons & Toro (2010)\n",
+			"doi": "https://psycnet.apa.org/doi/10.1016/j.cognition.2010.05.013\n",
+			"peerReviewed": true
+		},
+{
+			"shortCite": "Ferguson & Waxman (2016)\n",
+			"doi": "https://groups.psych.northwestern.edu/waxman/documents/FergusonWaxman2015CSS.pdf\n",
+			"peerReviewed": true
+		},
+{
+			"shortCite": "Gervain & Werker (2013)\n",
+			"doi": "https://doi.org/10.1017/s0305000912000256\n",
+			"peerReviewed": true
+		},
+{
+			"shortCite": "Bahlmann & Levelt (2016)\n",
+			"doi": "",
+			"peerReviewed": false
+		},
+{
+			"shortCite": "Leeuven & Levelt (2016)\n",
+			"doi": "",
+			"peerReviewed": false
+		},
+{
+			"shortCite": "Bulf et al (2017)\n",
+			"doi": "https://doi.org/10.1038/s41598-017-02466-w\n",
+			"peerReviewed": true
+		}
+	]
+}

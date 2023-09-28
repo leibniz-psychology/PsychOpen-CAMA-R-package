@@ -1,0 +1,1772 @@
+{
+  "datensatz": {
+    "name": "Correlation of Machiavellianism and Psychopathy",
+    "data_name": "CAMA_interr_MP",
+    "psychArchivesHandle": "https://doi.org/10.23668/psycharchives.7066",
+    "domain": "Personality psychology",
+    "metaanalysis_type": "standard",
+    "moderators": [
+      {"type": "num", "value": "s_meanage","label": "Mean Age Sample"},
+      { "value": "r_year", "type": "num", "label": "Publication Year" },
+      { "value": "r_peer", "type": "cat", "label": "Publication Status"},
+      { "value": "r_language", "type": "cat", "label": "Language Report"},
+      { "value": "s_targetpop", "type": "cat", "label": "Target Population"},
+      { "value": "s_n", "type": "num", "label": "Sample Size"},
+      { "value": "s_nfemale", "type": "num", "label": "Sample Size Women"},
+      { "value": "s_nmale", "type": "num", "label": "Sample Size Men"},
+      { "value": "m_language", "type": "cat", "label": "Language Measurements" },
+      { "value": "m_scale1", "type": "cat", "label": "Scale Machiavellianism"},
+      { "value": "m_scale2",  "type": "cat", "label": "Scale Psychopathy"},
+      { "value": "m_items1", "type": "num", "label": "Number of Items on Machiavellianism"},
+      { "value": "m_items2", "type": "num", "label": "Number of Items on Psychopathy"},
+      { "value": "m_itemstot", "type": "num", "label": "Number of Items on Dark Triad"},
+      { "type": "cat", "value": "r_lab", "label": "Laboratory"},
+      { "type": "cat", "value": "m_type", "label": "Scale Type"},
+      { "type": "cat", "value": "s_oecd", "label": "OECD Status"} ],
+    "effect_strength": {
+      "label": "COR",
+      "variable_labels": [
+        {
+          "name": "pearson_r",
+          "data_label_yi": "o_ri",
+          "varianz_label_vi": "o_ri_var"
+        }
+      ]
+    },
+    "analysis_levels": []
+  },
+  "dokumentation": {
+    "title": "Prinz, G. M. (2019). Sex differences and trait intercorrelations in the dark triad of personality: A systematic review and psychometric meta-analysis [Unpublished master‘s thesis], University of Vienna.",
+    "doi": "",
+    "url":"",
+    "dataProvider": "Lisa Bucher",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "researchQuestion": "Interrelations between subclinical components of the Dark Triad of personality",
+    "literatureSelection": "Inclusion: (1) Studies need to investigate the three components of the Dark Triad (narcissism, Machiavellianism, psychopathy) within one sample and (2) report results (mean and standard deviation) of men and women for the three traits ",
+    "effectSize": "Raw Pearson correlation, either reported or (re-)calculated with available/provided datasets of primary studies",
+    "hierarchicalStructure": "If a study reported several effect sizes for a sample, only one effect size was culled to ensure statistical independence of samples in the synthesis"
+  },
+  "literatureintraege": [
+        {
+            "shortCite": "Adler (2017)",
+            "peerReviewed": "false",
+            "NA": "NA"
+        },
+        {
+            "shortCite": "Aghababaei et al. (2014)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2014.03.026"
+        },
+        {
+            "shortCite": "Alessandri et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.3389/fpsyg.2020.02102"
+        },
+        {
+            "shortCite": "Aminnuddin (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.dib.2020.105486"
+        },
+        {
+            "shortCite": "Anderson & Cheers (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1111/ap.12283"
+        },
+        {
+            "shortCite": "Anisdahl Jonson & Venbakken Sagerud (2017)",
+            "peerReviewed": "false",
+            "NA": "https://biopen.bi.no/bi-xmlui/handle/11250/2479378"
+        },
+        {
+            "shortCite": "Arseneault & Catano (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1111/ajsp.12378"
+        },
+        {
+            "shortCite": "Arteta-Garcia (2015)",
+            "peerReviewed": "false",
+            "NA": "https://digital.library.txstate.edu/handle/10877/5569 "
+        },
+        {
+            "shortCite": "Atari & Chegeni (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2016.06.070"
+        },
+        {
+            "shortCite": "Azizli et al. (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2015.09.034"
+        },
+        {
+            "shortCite": "Baka (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1080/10803548.2018.1463670"
+        },
+        {
+            "shortCite": "Ball et al. (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.aap.2018.08.010"
+        },
+        {
+            "shortCite": "Baloyi (2019)",
+            "peerReviewed": "false",
+            "NA": "http://ulspace.ul.ac.za/handle/10386/3076"
+        },
+        {
+            "shortCite": "Balta et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2019.06.005"
+        },
+        {
+            "shortCite": "Barelds et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "http://dx.doi.org/10.1016/j.paid.2017.04.017"
+        },
+        {
+            "shortCite": "Barlett (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2016.05.061"
+        },
+        {
+            "shortCite": "Barrilaro Portillo (2020)",
+            "peerReviewed": "false",
+            "NA": "https://rodin.uca.es/handle/10498/23371"
+        },
+        {
+            "shortCite": "Barrutieta & Ursúa (2011)",
+            "peerReviewed": "true",
+            "NA": "https://www.behavioralpsycho.com/product/subclinical-psychopathy-and-the-dark-triad-of-personality/"
+        },
+        {
+            "shortCite": "Baughman (2014a)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2014.01.034"
+        },
+        {
+            "shortCite": "Baughman (2014b)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2014.07.019"
+        },
+        {
+            "shortCite": "Baughman (2015)",
+            "peerReviewed": "false",
+            "NA": "https://ir.lib.uwo.ca/etd/3276/"
+        },
+        {
+            "shortCite": "Baughman et al. (2012)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2011.11.020"
+        },
+        {
+            "shortCite": "Bekiroğlu (2020)",
+            "peerReviewed": "false",
+            "NA": "http://acikerisim.fsm.edu.tr/xmlui/handle/11352/3146"
+        },
+        {
+            "shortCite": "Berg et al. (2013)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.jrp.2013.04.003"
+        },
+        {
+            "shortCite": "Bergkvist (2016)",
+            "peerReviewed": "false",
+            "NA": "https://esource.dbs.ie/handle/10788/3184"
+        },
+        {
+            "shortCite": "Bıçaksız (2019)",
+            "peerReviewed": "true",
+            "NA": "https://dergipark.org.tr/en/pub/tuad/issue/50009/605194"
+        },
+        {
+            "shortCite": "Bill et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.3389/fpsyg.2020.02034"
+        },
+        {
+            "shortCite": "Birkás & Csathó (2015)",
+            "peerReviewed": "true",
+            "NA": "http://dx.doi.org/10.1016/j.paid.2015.06.035"
+        },
+        {
+            "shortCite": "Birkás et al. (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.14355/ijap.2016.05.001"
+        },
+        {
+            "shortCite": "Black (2013)",
+            "peerReviewed": "false",
+            "NA": "https://open.library.ubc.ca/cIRcle/collections/ubctheses/24/items/1.0073544 "
+        },
+        {
+            "shortCite": "Blagov (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1177/1948550620936439"
+        },
+        {
+            "shortCite": "Book et al. (2015)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2014.09.016"
+        },
+        {
+            "shortCite": "Boonroungrut & Fei (2018)",
+            "peerReviewed": "true",
+            "NA": "NA"
+        },
+        {
+            "shortCite": "Borráz-León & Rantala (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110341"
+        },
+        {
+            "shortCite": "Borráz-León et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2018.08.008"
+        },
+        {
+            "shortCite": "Boudreau (2018)",
+            "peerReviewed": "false",
+            "NA": "NA"
+        },
+        {
+            "shortCite": "Bouncken et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1504/IJEV.2020.107932"
+        },
+        {
+            "shortCite": "Bourbonnais & Durand (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.20982/tqmp.14.3.r001"
+        },
+        {
+            "shortCite": "Breeden et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110052"
+        },
+        {
+            "shortCite": "Burkhard (2019)",
+            "peerReviewed": "false",
+            "NA": "https://sbap.ch/wp-content/uploads/2019/11/MA_2019F_Burkhard_Alexander_Dalibor.pdf"
+        },
+        {
+            "shortCite": "Burtăverde (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110255"
+        },
+        {
+            "shortCite": "Busuioc & Butucescu (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.24837/pru.v18i1.461"
+        },
+        {
+            "shortCite": "Cabeza Ramírez & Pérez (2018)",
+            "peerReviewed": "false",
+            "NA": "http://hdl.handle.net/10498/20660."
+        },
+        {
+            "shortCite": "Campos Reyes (2019)",
+            "peerReviewed": "false",
+            "NA": "https://core.ac.uk/display/290000189?recSetID="
+        },
+        {
+            "shortCite": "Cannon et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110068"
+        },
+        {
+            "shortCite": "Carević (2019)",
+            "peerReviewed": "false",
+            "NA": "https://urn.nsk.hr/urn:nbn:hr:162:713034"
+        },
+        {
+            "shortCite": "Carqueville (2020)",
+            "peerReviewed": "false",
+            "NA": "NA"
+        },
+        {
+            "shortCite": "Carvalho Loureiro (2019)",
+            "peerReviewed": "false",
+            "NA": "https://eg.uc.pt/handle/10316/89726"
+        },
+        {
+            "shortCite": "Chabrol et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1080/24732850.2017.1361310"
+        },
+        {
+            "shortCite": "Chegeni & Atari (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1111/jabr.12071"
+        },
+        {
+            "shortCite": "Chester et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/https://doi.org/10.1177/0146167218816327"
+        },
+        {
+            "shortCite": "Chin (2016)",
+            "peerReviewed": "false",
+            "NA": "https://ir.lib.uwo.ca/etd/3760/"
+        },
+        {
+            "shortCite": "Chintakananda (2019)",
+            "peerReviewed": "false",
+            "NA": "https://ink.library.smu.edu.sg/etd_coll/203/"
+        },
+        {
+            "shortCite": "Chung (2017)",
+            "peerReviewed": "false",
+            "NA": "https://ethos.bl.uk/OrderDetails.do?uin=uk.bl.ethos.754115"
+        },
+        {
+            "shortCite": "Chuquipiondo Cebreros (2018)",
+            "peerReviewed": "false",
+            "NA": "http://repositorio.urp.edu.pe/handle/URP/1426"
+        },
+        {
+            "shortCite": "Clancy et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.chb.2020.106460"
+        },
+        {
+            "shortCite": "Connor et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2019.109685"
+        },
+        {
+            "shortCite": "Conrado (2020)",
+            "peerReviewed": "false",
+            "NA": "https://hdl.handle.net/10216/130767"
+        },
+        {
+            "shortCite": "Ĉović (2014)",
+            "peerReviewed": "false",
+            "NA": "https://repozitorij.ffos.hr/islandora/object/ffos%3A966  "
+        },
+        {
+            "shortCite": "Craker & March (2016)",
+            "peerReviewed": "true",
+            "NA": "http://dx.doi.org/10.1016/j.paid.2016.06.043"
+        },
+        {
+            "shortCite": "Crossley et al. (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2015.11.052"
+        },
+        {
+            "shortCite": "Czarna et al. (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.3389/fpsyg.2016.00445 "
+        },
+        {
+            "shortCite": "Czibor et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2017.06.002"
+        },
+        {
+            "shortCite": "Davis et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s40806-018-0175-3"
+        },
+        {
+            "shortCite": "de Brouwer (2014)",
+            "peerReviewed": "false",
+            "NA": "http://arno.uvt.nl/show.cgi?fid=134497"
+        },
+        {
+            "shortCite": "De Bruin (2019)",
+            "peerReviewed": "false",
+            "NA": "NA"
+        },
+        {
+            "shortCite": "De Clerq et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1108/PR-07-2018-0241"
+        },
+        {
+            "shortCite": "Demircioğlu et al. (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s12144-018-9956-x"
+        },
+        {
+            "shortCite": "DeShong et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2016.09.053"
+        },
+        {
+            "shortCite": "Díaz Muñoz (2019)",
+            "peerReviewed": "false",
+            "NA": "https://sifp.psico.edu.uy/sites/default/files/Trabajos%20finales/%20Archivos/tesis_final_-_joaquin_diaz_2.pdf"
+        },
+        {
+            "shortCite": "Dinić & Wertag (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2017.11.003 "
+        },
+        {
+            "shortCite": "Dinić et al. (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2018.06.018"
+        },
+        {
+            "shortCite": "Dinić et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1111/ajsp.12422"
+        },
+        {
+            "shortCite": "Doyle (2020)",
+            "peerReviewed": "false",
+            "NA": "NA"
+        },
+        {
+            "shortCite": "Dragova-Koleva (2019)",
+            "peerReviewed": "true",
+            "NA": "https://www.ceeol.com/search/article-detail?id=811120"
+        },
+        {
+            "shortCite": "Duncan & March (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2019.03.014"
+        },
+        {
+            "shortCite": "Durand (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.20982/tqmp.12.3.r006 "
+        },
+        {
+            "shortCite": "Duspara & Greitemeyer (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.heliyon.2017.e00425 "
+        },
+        {
+            "shortCite": "Egorova & Adamovich (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.15405/epsbs.2018.11.02.24 "
+        },
+        {
+            "shortCite": "Egorova et al. (2015)",
+            "peerReviewed": "true",
+            "NA": "http://psystudy.ru/num/2015v8n43/1181-egorova43.html "
+        },
+        {
+            "shortCite": "Erik & Bhogal (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.5178/lebs.2016.50"
+        },
+        {
+            "shortCite": "Erzi (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.109827"
+        },
+        {
+            "shortCite": "Fayyaz et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.26501/jibm/2020.1001-015"
+        },
+        {
+            "shortCite": "Fernández del Río et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.3390/ijerph16152731"
+        },
+        {
+            "shortCite": "Fernández del Río et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2019.109700"
+        },
+        {
+            "shortCite": "Fido et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.jenvp.2020.101499"
+        },
+        {
+            "shortCite": "Finkelstein (2014)",
+            "peerReviewed": "false",
+            "NA": "http://bir.brandeis.edu/handle/10192/28572 "
+        },
+        {
+            "shortCite": "Foley (2020)",
+            "peerReviewed": "false",
+            "NA": "NA"
+        },
+        {
+            "shortCite": "Francis (2018)",
+            "peerReviewed": "true",
+            "NA": "https://www.semanticscholar.org/paper/Resilience-and-Wellbeing-in-Ministry-%3A-An-empirical-Francis/24dc2534c00457e7889596c1ac2d0aeec6312571"
+        },
+        {
+            "shortCite": "Freyth & Batinic (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110316"
+        },
+        {
+            "shortCite": "Frishberg (2018)",
+            "peerReviewed": "false",
+            "NA": "NA"
+        },
+        {
+            "shortCite": "Galang et al. (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2016.03.081"
+        },
+        {
+            "shortCite": "Galić (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1111/ijsa.12126"
+        },
+        {
+            "shortCite": "Garcia (2020)",
+            "peerReviewed": "true",
+            "NA": "http://doi.org/10.7717/peerj.9620"
+        },
+        {
+            "shortCite": "Garcia et al. (2015)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1177/2158244015615167"
+        },
+        {
+            "shortCite": "Garcia et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1002/pchj.168"
+        },
+        {
+            "shortCite": "Garcia et al. (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.heliyon.2018.e00569"
+        },
+        {
+            "shortCite": "Garcia et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi-org/10.3389/fpsyg.2020.00016 "
+        },
+        {
+            "shortCite": "Gerymski & Krok (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.5114/cipp.2019.92960"
+        },
+        {
+            "shortCite": "Giammarco & Vernon (2014)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2014.02.010 "
+        },
+        {
+            "shortCite": "Giammarco (2014)",
+            "peerReviewed": "false",
+            "NA": "https://ir.lib.uwo.ca/etd/2255/"
+        },
+        {
+            "shortCite": "Góis (2017)",
+            "peerReviewed": "false",
+            "NA": "https://www.teses.usp.br/teses/disponiveis/12/12136/tde-22022018-171814/en.php"
+        },
+        {
+            "shortCite": "Gómez-Leal et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.7717/peerj.8120"
+        },
+        {
+            "shortCite": "Gortan (2018)",
+            "peerReviewed": "false",
+            "NA": "https://www.unirepository.svkri.uniri.hr/islandora/object/ffri:1826"
+        },
+        {
+            "shortCite": "Greitemeyer & Sagioglou (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110380"
+        },
+        {
+            "shortCite": "Grover & Furnham (2021a)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.109979"
+        },
+        {
+            "shortCite": "Grover & Furnham (2021b)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.109848"
+        },
+        {
+            "shortCite": "Grover & Furnham (2021c)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110450"
+        },
+        {
+            "shortCite": "Gülerdi (2020)",
+            "peerReviewed": "false",
+            "NA": "https://open.metu.edu.tr/handle/11511/46144"
+        },
+        {
+            "shortCite": "Hajhoseiny et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.22059/ijms.2019.266704.673335"
+        },
+        {
+            "shortCite": "Halm & Möhring (2019)",
+            "peerReviewed": "false",
+            "NA": "https://osf.io/arxzp/"
+        },
+        {
+            "shortCite": "Harris (2017)",
+            "peerReviewed": "false",
+            "NA": "https://core.ac.uk/download/pdf/345085566.pdf"
+        },
+        {
+            "shortCite": "Hart et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1111/jopy.12411"
+        },
+        {
+            "shortCite": "Hartung et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.3389/fpsyg.2019.01162"
+        },
+        {
+            "shortCite": "Hayes et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s10862-020-09835-2"
+        },
+        {
+            "shortCite": "Highhouse et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1111/apps.12163"
+        },
+        {
+            "shortCite": "Hmieleski & Lerner (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1111/jsbm.12296"
+        },
+        {
+            "shortCite": "Höflinger et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1026/0932-4089/a000328"
+        },
+        {
+            "shortCite": "Holtzman (2011)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.jrp.2011.09.002"
+        },
+        {
+            "shortCite": "Huang et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1002/ijop.12518"
+        },
+        {
+            "shortCite": "Hudek-Knežević et al. (2016)",
+            "peerReviewed": "true",
+            "NA": "https://hrcak.srce.hr/156336"
+        },
+        {
+            "shortCite": "Hyde et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1111/ajpy.12294"
+        },
+        {
+            "shortCite": "Jakšić (2017)",
+            "peerReviewed": "false",
+            "NA": "https://zir.nsk.hr/islandora/object/unizd%3A1100"
+        },
+        {
+            "shortCite": "Jambrešić et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.19090/pp.2020.2.243-262"
+        },
+        {
+            "shortCite": "Janke et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org10.1177/1948550618790227"
+        },
+        {
+            "shortCite": "Janssen et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "http://dx.doi.org/10.2139/ssrn.3717615"
+        },
+        {
+            "shortCite": "Jauk et al. (2016a)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1002/per.2040"
+        },
+        {
+            "shortCite": "Jauk et al. (2016b)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1027/1614-0001/a000195"
+        },
+        {
+            "shortCite": "Jelinčić (2020)",
+            "peerReviewed": "false",
+            "NA": "https://zir.nsk.hr/en/islandora/object/hrstud%3A2347"
+        },
+        {
+            "shortCite": "Johnson et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1027/1614-0001/a000284"
+        },
+        {
+            "shortCite": "Jonason & Davis (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2018.01.004"
+        },
+        {
+            "shortCite": "Jonason & Ferrell (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2016.01.039 "
+        },
+        {
+            "shortCite": "Jonason & Fletcher (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2018.03.044"
+        },
+        {
+            "shortCite": "Jonason & Jackson (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2015.11.023 "
+        },
+        {
+            "shortCite": "Jonason & Kavanagh (2010)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2010.05.030"
+        },
+        {
+            "shortCite": "Jonason & Krause (2013)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2013.04.027"
+        },
+        {
+            "shortCite": "Jonason & Kroll (2015)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1027/1614-0001/a000166"
+        },
+        {
+            "shortCite": "Jonason & O'Connor (2017)",
+            "peerReviewed": "true",
+            "NA": "http://dx.doi.org/10.1016/j.paid.2016.11.045"
+        },
+        {
+            "shortCite": "Jonason & Sherman (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110081"
+        },
+        {
+            "shortCite": "Jonason & Tome (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1080/00224545.2018.1529652"
+        },
+        {
+            "shortCite": "Jonason & Webster (2010)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1037/a0019265"
+        },
+        {
+            "shortCite": "Jonason & Zeigler-Hill (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2018.05.031"
+        },
+        {
+            "shortCite": "Jonason (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2018.05.024"
+        },
+        {
+            "shortCite": "Jonason (2019)",
+            "peerReviewed": "true",
+            "NA": "NA"
+        },
+        {
+            "shortCite": "Jonason et al. (2009)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1002/per.698"
+        },
+        {
+            "shortCite": "Jonason et al. (2010a)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s12110-010-9102-4 "
+        },
+        {
+            "shortCite": "Jonason et al. (2012b)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2011.11.008"
+        },
+        {
+            "shortCite": "Jonason et al. (2013a)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2013.05.001"
+        },
+        {
+            "shortCite": "Jonason et al. (2013b)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2012.11.009"
+        },
+        {
+            "shortCite": "Jonason et al. (2013c)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1177/147470491301100116"
+        },
+        {
+            "shortCite": "Jonason et al. (2014)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2014.05.024"
+        },
+        {
+            "shortCite": "Jonason et al. (2015a)",
+            "peerReviewed": "true",
+            "NA": "NA"
+        },
+        {
+            "shortCite": "Jonason et al. (2015b)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2015.01.008"
+        },
+        {
+            "shortCite": "Jonason et al. (2015c)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2014.08.026 "
+        },
+        {
+            "shortCite": "Jonason et al. (2015d)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1037/aca0000037"
+        },
+        {
+            "shortCite": "Jonason et al. (2017a)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2016.08.002 "
+        },
+        {
+            "shortCite": "Jonason et al. (2020a)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2019.109755"
+        },
+        {
+            "shortCite": "Jonason et al. (2020b)",
+            "peerReviewed": "true",
+            "NA": "https//doi.org/10.1080/00224545.2019.1623162"
+        },
+        {
+            "shortCite": "Jonason et al. (2020c)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2019.109617"
+        },
+        {
+            "shortCite": "Jones & de Roos (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s40806-016-0070-8"
+        },
+        {
+            "shortCite": "Jones & Figueredo (2013)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1002/per.1893"
+        },
+        {
+            "shortCite": "Jones & Paulhus (2010)",
+            "peerReviewed": "true",
+            "NA": "http://www.sakkyndig.com/psykologi/artvit/jones2010.pdf"
+        },
+        {
+            "shortCite": "Jones & Paulhus (2014)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1177/1073191113514105"
+        },
+        {
+            "shortCite": "Jones & Weiser (2014)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2013.09.007"
+        },
+        {
+            "shortCite": "Jurić (2020)",
+            "peerReviewed": "false",
+            "NA": "https://repozitorij.efst.unist.hr/en/islandora/object/efst%3A3904"
+        },
+        {
+            "shortCite": "Kajonius et al. (2015)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2014.12.055 "
+        },
+        {
+            "shortCite": "Kajonius et al. (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.7717/peerj.1748"
+        },
+        {
+            "shortCite": "Karandikar et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2018.03.048"
+        },
+        {
+            "shortCite": "Kardum et al. (2015)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2014.10.048"
+        },
+        {
+            "shortCite": "Kardum et al. (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2018.04.020"
+        },
+        {
+            "shortCite": "Kavanagh et al. (2013)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2013.05.019"
+        },
+        {
+            "shortCite": "Kawamoto et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "http://dx.doi.org/10.1037/pag0000399"
+        },
+        {
+            "shortCite": "Kay & Saucier (2020a)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.109889"
+        },
+        {
+            "shortCite": "Kay & Saucier (2020b)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.109863"
+        },
+        {
+            "shortCite": "Kay (2020)",
+            "peerReviewed": "true",
+            "NA": "https://psyarxiv.com/j3m2y/"
+        },
+        {
+            "shortCite": "Kay (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110543"
+        },
+        {
+            "shortCite": "Kenny (2018)",
+            "peerReviewed": "false",
+            "NA": "http://eprints.hud.ac.uk/id/eprint/34871/"
+        },
+        {
+            "shortCite": "Kerckhofs et al. (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.2308/HORIZONS-2020-001"
+        },
+        {
+            "shortCite": "Kerig & Stellwagen (2010)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s10862-009-9168-7"
+        },
+        {
+            "shortCite": "Kiire (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2016.08.043"
+        },
+        {
+            "shortCite": "Kiire (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2018.07.016"
+        },
+        {
+            "shortCite": "Kiire et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110256"
+        },
+        {
+            "shortCite": "Kircaburun & Griffiths (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1556/2006.7.2018.109"
+        },
+        {
+            "shortCite": "Kircaburun et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1177/0886260519889930"
+        },
+        {
+            "shortCite": "Kjeldgaard-Christiansen et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.poetic.2020.101511"
+        },
+        {
+            "shortCite": "Knight (2016)",
+            "peerReviewed": "false",
+            "NA": "https://aquila.usm.edu/masters_theses/164/"
+        },
+        {
+            "shortCite": "Koch-Bayram & Biemann (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1177/1548051820950379"
+        },
+        {
+            "shortCite": "Koçoğlu (2020)",
+            "peerReviewed": "false",
+            "NA": "https://open.metu.edu.tr/bitstream/handle/11511/46115/index.pdf"
+        },
+        {
+            "shortCite": "Koehn et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2018.11.038"
+        },
+        {
+            "shortCite": "Korunić (2018)",
+            "peerReviewed": "false",
+            "NA": "https://zir.nsk.hr/en/islandora/object/unizd%3A2135"
+        },
+        {
+            "shortCite": "Kowalski et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2016.07.029 "
+        },
+        {
+            "shortCite": "Kowalski et al. (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2018.06.049"
+        },
+        {
+            "shortCite": "Kowalski et al. (2019a)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1080/00223891.2019.1673760"
+        },
+        {
+            "shortCite": "Kowalski et al. (2019b)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s12144-019-00518-0"
+        },
+        {
+            "shortCite": "Krasavtseva (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.17323/1813-8918-2018-1-54-68"
+        },
+        {
+            "shortCite": "Küfner et al. (2014)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1026/0012-1924/a000124"
+        },
+        {
+            "shortCite": "Kumpasoğlu et al. (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110606"
+        },
+        {
+            "shortCite": "Kuper et al. (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/"
+        },
+        {
+            "shortCite": "Láng et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1177/0033294117742655 "
+        },
+        {
+            "shortCite": "Lata & Chaudhary (2020a)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110090"
+        },
+        {
+            "shortCite": "Lata & Chaudhary (2020b)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s10551-020-04617-y"
+        },
+        {
+            "shortCite": "Lau & Marsee (2013)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s10826-012-9586-0"
+        },
+        {
+            "shortCite": "LaViers (2019)",
+            "peerReviewed": "false",
+            "NA": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3487157"
+        },
+        {
+            "shortCite": "Le (2016)",
+            "peerReviewed": "false",
+            "NA": "https://open.library.ubc.ca/soa/cIRcle/collections/ubctheses/24/items/1.0314142"
+        },
+        {
+            "shortCite": "Lee & Ashton (2005)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2004.09.016"
+        },
+        {
+            "shortCite": "Lee (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2018.08.019"
+        },
+        {
+            "shortCite": "Li et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1177/0272431619880335"
+        },
+        {
+            "shortCite": "Likhanov et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1111/bjep.12349"
+        },
+        {
+            "shortCite": "Liu et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1177/0886260519877950"
+        },
+        {
+            "shortCite": "Lyons & Brockman (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2016.08.038"
+        },
+        {
+            "shortCite": "Lyons & Rice (2014)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2014.01.002"
+        },
+        {
+            "shortCite": "Lyons et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2019.01.012"
+        },
+        {
+            "shortCite": "Lyons et al. (2020a)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s12144-019-00589-z"
+        },
+        {
+            "shortCite": "Lyons et al. (2020b)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1177/0886260520922346"
+        },
+        {
+            "shortCite": "Ma (2018)",
+            "peerReviewed": "false",
+            "NA": "https://academicworks.cuny.edu/gc_etds/2777/"
+        },
+        {
+            "shortCite": "Maaß (2016)",
+            "peerReviewed": "false",
+            "NA": "https://edoc.hu-berlin.de/handle/18452/18255"
+        },
+        {
+            "shortCite": "Malesza & Kalinowski (2019a)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s12144-019-00320-y"
+        },
+        {
+            "shortCite": "Malesza & Kalinowski (2019b)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s12144-019-00351-5"
+        },
+        {
+            "shortCite": "Malesza & Ostaszewski (2016a)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2015.09.016"
+        },
+        {
+            "shortCite": "Malesza & Ostaszewski (2016b)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2015.10.026"
+        },
+        {
+            "shortCite": "Mangera (2019)",
+            "peerReviewed": "false",
+            "NA": "https://repository.up.ac.za/handle/2263/72789"
+        },
+        {
+            "shortCite": "Manoğlu (2020)",
+            "peerReviewed": "false",
+            "NA": "https://open.metu.edu.tr/bitstream/handle/11511/45695/index.pdf"
+        },
+        {
+            "shortCite": "March & Wagstaff (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.3389/fpsyg.2017.02210 "
+        },
+        {
+            "shortCite": "March et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "http://dx.doi.org/10.1016/j.paid.2017.01.025"
+        },
+        {
+            "shortCite": "March et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110084"
+        },
+        {
+            "shortCite": "Marshall et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "http://dx.doi.org/10.1037/ppm0000209"
+        },
+        {
+            "shortCite": "Mayor et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1186/s40359-020-00486-2"
+        },
+        {
+            "shortCite": "McLarnon et al. (2015)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1177/1069072714523251 "
+        },
+        {
+            "shortCite": "Mertens (2014)",
+            "peerReviewed": "false",
+            "NA": "https://anet.uantwerpen.be/desktop/uantwerpen"
+        },
+        {
+            "shortCite": "Mertens et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.appet.2019.104516"
+        },
+        {
+            "shortCite": "Mertens et al. (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110359"
+        },
+        {
+            "shortCite": "Min et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.jrp.2019.103862"
+        },
+        {
+            "shortCite": "Mitić (2016)",
+            "peerReviewed": "false",
+            "NA": "http://nardus.mpn.gov.rs/handle/123456789/8276?locale-attribute=sr_RS"
+        },
+        {
+            "shortCite": "Mockaitytė (2015)",
+            "peerReviewed": "false",
+            "NA": "https://www.vdu.lt/cris/handle/20.500.12259/119686"
+        },
+        {
+            "shortCite": "Moor et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2019.06.029"
+        },
+        {
+            "shortCite": "Moraga et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1002/pchj.153"
+        },
+        {
+            "shortCite": "Müller et al. (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1159/000511078"
+        },
+        {
+            "shortCite": "Muris et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.23860/dignity.2020.05.01.03"
+        },
+        {
+            "shortCite": "Nappa et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.4458/2733-02"
+        },
+        {
+            "shortCite": "Navas et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.3390/ijerph17217754"
+        },
+        {
+            "shortCite": "Nelissen (2019)",
+            "peerReviewed": "false",
+            "NA": "https://lib.ugent.be/en/catalog/rug01:002791027"
+        },
+        {
+            "shortCite": "Neria et al. (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2016.05.054"
+        },
+        {
+            "shortCite": "Nguyen et al. (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110432"
+        },
+        {
+            "shortCite": "Nogueira et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.3389/fpsyg.2019.02692"
+        },
+        {
+            "shortCite": "Noser et al. (2014)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.jrp.2014.10.007 "
+        },
+        {
+            "shortCite": "Nuzulia & Why (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1177/1948550619893956"
+        },
+        {
+            "shortCite": "Odermatt et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s10869-017-9490-0 "
+        },
+        {
+            "shortCite": "Oostrom et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.jrp.2017.09.001 "
+        },
+        {
+            "shortCite": "Öszoy et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2017.05.019"
+        },
+        {
+            "shortCite": "Özkul (2020)",
+            "peerReviewed": "false",
+            "NA": "https://open.metu.edu.tr/bitstream/handle/11511/45696/index.pdf"
+        },
+        {
+            "shortCite": "Pabian et al. (2015)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2014.11.015"
+        },
+        {
+            "shortCite": "Pachocki (2019)",
+            "peerReviewed": "false",
+            "NA": "https://eldorado.tu-dortmund.de/handle/2003/38155"
+        },
+        {
+            "shortCite": "Pajevic et al. (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2017.11.009"
+        },
+        {
+            "shortCite": "Paleczek et al. (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1108/JMP-11-2017-0402"
+        },
+        {
+            "shortCite": "Pan et al. (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.ijinfomgt.2018.05.008"
+        },
+        {
+            "shortCite": "Papageorgiou et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2017.06.031"
+        },
+        {
+            "shortCite": "Papageorgiou et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.109917"
+        },
+        {
+            "shortCite": "Pátkai (2018)",
+            "peerReviewed": "false",
+            "NA": "https://pea.lib.pte.hu/handle/pea/23218 "
+        },
+        {
+            "shortCite": "Paulhus & Williams (2002)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/S0092-6566(02)00505-6"
+        },
+        {
+            "shortCite": "Paulhus et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1027/1015-5759/a000602"
+        },
+        {
+            "shortCite": "Pavlović & Rajter (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.5559/di.29.3.01"
+        },
+        {
+            "shortCite": "Pechorro et al. (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1080/01639625.2017.1421120"
+        },
+        {
+            "shortCite": "Pechorro et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s12144-019-00288-9"
+        },
+        {
+            "shortCite": "Persson et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1177/1073191117701192 "
+        },
+        {
+            "shortCite": "Pfattheicher et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.joep.2018.06.004"
+        },
+        {
+            "shortCite": "Pilch & Smolorz (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2019.05.041"
+        },
+        {
+            "shortCite": "Pinter (2019)",
+            "peerReviewed": "false",
+            "NA": "https://repositorio.uade.edu.ar/xmlui/handle/123456789/8242"
+        },
+        {
+            "shortCite": "Plouffe et al. (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2018.01.002"
+        },
+        {
+            "shortCite": "Plouffe et al. (2020a)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1177/0886260520948517"
+        },
+        {
+            "shortCite": "Plouffe et al. (2020b)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s12144-020-00871-5"
+        },
+        {
+            "shortCite": "Porter et al. (2014)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2013.11.014"
+        },
+        {
+            "shortCite": "Prusik & Szulawski (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.3389/fpsyg.2019.01290"
+        },
+        {
+            "shortCite": "Prusik et al. (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110413"
+        },
+        {
+            "shortCite": "Puthillam et al. (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110309"
+        },
+        {
+            "shortCite": "Ramos-Villagrasa et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.3390/su12020474"
+        },
+        {
+            "shortCite": "Richardson & Boag (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2015.12.039"
+        },
+        {
+            "shortCite": "Roeser et al. (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2015.09.002"
+        },
+        {
+            "shortCite": "Roulin & Krings (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1111/apps.12072"
+        },
+        {
+            "shortCite": "Rožić et al. (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.31820/pt.27.3.11"
+        },
+        {
+            "shortCite": "Rundle et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.3389/fpsyg.2019.02229"
+        },
+        {
+            "shortCite": "Sabouri et al. (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.2147/NDT.S97267"
+        },
+        {
+            "shortCite": "Salessi & Omar (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.11144/Javeriana.upsy17-3.tops"
+        },
+        {
+            "shortCite": "Sanchez-Ruiz et al. (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110403"
+        },
+        {
+            "shortCite": "Sariyska et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.3389/fpsyg.2019.02591"
+        },
+        {
+            "shortCite": "Schimmenti et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s12144-017-9588-6 "
+        },
+        {
+            "shortCite": "Schmitt et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.3389/fpsyg.2020.01132"
+        },
+        {
+            "shortCite": "Schneider et al. (2015)",
+            "peerReviewed": "true",
+            "NA": "http://dx.doi.org/10.1016/j.paid.2014.09.026"
+        },
+        {
+            "shortCite": "Sehar & Fatima (2016)",
+            "peerReviewed": "true",
+            "NA": "NA"
+        },
+        {
+            "shortCite": "Semenyna & Honey (2015)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2015.03.046"
+        },
+        {
+            "shortCite": "Sevi et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110126"
+        },
+        {
+            "shortCite": "Shih et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s12144-019-00549-7"
+        },
+        {
+            "shortCite": "Smith et al. (2014)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2014.01.044"
+        },
+        {
+            "shortCite": "Smith et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2019.04.003"
+        },
+        {
+            "shortCite": "Smoker & March (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.chb.2017.03.012"
+        },
+        {
+            "shortCite": "Söder & Hjelm (2020)",
+            "peerReviewed": "false",
+            "NA": "https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1475030&dswid=3436"
+        },
+        {
+            "shortCite": "Somma et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1027/1015-5759/a000499 "
+        },
+        {
+            "shortCite": "Spurk et al. (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1177/1948550615609735"
+        },
+        {
+            "shortCite": "Stanwix & Walker (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110338"
+        },
+        {
+            "shortCite": "Stellwagen & Kerig (2013)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2012.08.019"
+        },
+        {
+            "shortCite": "Stolarski et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2017.02.001"
+        },
+        {
+            "shortCite": "Strobl et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1142/S1363919619500452"
+        },
+        {
+            "shortCite": "Szabó & Bereczkei (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.5709/acp-0230-7"
+        },
+        {
+            "shortCite": "Szabó & Jones (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2019.01.008"
+        },
+        {
+            "shortCite": "Tajmirriyahi et al. (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110281"
+        },
+        {
+            "shortCite": "Tamura et al. (2015)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.2132/personality.24.26"
+        },
+        {
+            "shortCite": "Tang et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1002/ab.21873"
+        },
+        {
+            "shortCite": "Tarabay (2015)",
+            "peerReviewed": "false",
+            "NA": "https://trove.nla.gov.au/work/209191820?keyword=Tarabay%202015"
+        },
+        {
+            "shortCite": "Tetreault et al. (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1177/0886260518793992"
+        },
+        {
+            "shortCite": "Točaković (2017)",
+            "peerReviewed": "false",
+            "NA": "https://repozitorij.hrstud.unizg.hr/islandora/object/hrstud%3A1164"
+        },
+        {
+            "shortCite": "Tozar (2019)",
+            "peerReviewed": "false",
+            "NA": "http://www.openaccess.hacettepe.edu.tr:8080/xmlui/handle/11655/8118"
+        },
+        {
+            "shortCite": "Tracy (2017)",
+            "peerReviewed": "false",
+            "NA": "https://eprints.utas.edu.au/23742/"
+        },
+        {
+            "shortCite": "Triberti et al. (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110453"
+        },
+        {
+            "shortCite": "Trombly & Zeigler-Hill (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1007/s12144-016-9461-z"
+        },
+        {
+            "shortCite": "Tsoukas & March (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1080/00224499.2017.1420750"
+        },
+        {
+            "shortCite": "Turnipseed & Cohen (2015)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2015.03.003"
+        },
+        {
+            "shortCite": "Turnipseed & Landay (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2018.07.029"
+        },
+        {
+            "shortCite": "Vaughan et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.psychsport.2019.01.002"
+        },
+        {
+            "shortCite": "Vedel & Thomsen (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2017.04.030"
+        },
+        {
+            "shortCite": "Veres et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1108/PR-02-2019-0085"
+        },
+        {
+            "shortCite": "Visser et al. (2014)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1037/a0034163 "
+        },
+        {
+            "shortCite": "Vize et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "http://dx.doi.org/10.1037/per0000386"
+        },
+        {
+            "shortCite": "Vossen et al. (2017)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.26502/jppd.2572-519X0032"
+        },
+        {
+            "shortCite": "Waddell et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110160"
+        },
+        {
+            "shortCite": "Wai & Tiliopoulos (2012)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2012.01.008"
+        },
+        {
+            "shortCite": "Webster et al. (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2016.05.065"
+        },
+        {
+            "shortCite": "Wehner et al. (2021)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1027/1015-5759/a000617"
+        },
+        {
+            "shortCite": "Wertag & Bratko (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1027/1614-0001/a000276"
+        },
+        {
+            "shortCite": "Williams et al. (2007)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1080/00223890701268074"
+        },
+        {
+            "shortCite": "Womick et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2018.08.022"
+        },
+        {
+            "shortCite": "Wu et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.3389/fpsyg.2019.00360"
+        },
+        {
+            "shortCite": "Wu et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.3389/fpsyg.2020.01520"
+        },
+        {
+            "shortCite": "Yang et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2019.06.027"
+        },
+        {
+            "shortCite": "Yeo (2019)",
+            "peerReviewed": "false",
+            "NA": "https://dr.ntu.edu.sg/handle/10356/93537"
+        },
+        {
+            "shortCite": "Ying & Cohen (2018)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1002/hpm.2577"
+        },
+        {
+            "shortCite": "Yousefi & Piri (2016)",
+            "peerReviewed": "true",
+            "NA": "http://ijpcp.iums.ac.ir/article-1-2574-fa.html"
+        },
+        {
+            "shortCite": "Yuan et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1080/0144929X.2020.1805513"
+        },
+        {
+            "shortCite": "Yurdakul (2019)",
+            "peerReviewed": "false",
+            "NA": "https://acikerisim.isikun.edu.tr/xmlui/handle/11729/2171"
+        },
+        {
+            "shortCite": "Zajenkowski et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110199"
+        },
+        {
+            "shortCite": "Zeigler-Hill et al. (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2015.09.048"
+        },
+        {
+            "shortCite": "Żemojtel-Piotrowska et al. (2020)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2020.110168"
+        },
+        {
+            "shortCite": "Zhang et al. (2019)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1080/01443410.2018.1502414"
+        },
+        {
+            "shortCite": "Zhao et al. (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.3389/fpsyg.2016.00608 "
+        },
+        {
+            "shortCite": "Žigmundić (2018)",
+            "peerReviewed": "false",
+            "NA": "https://repozitorij.ffos.hr/en/islandora/object/ffos%3A4518"
+        },
+        {
+            "shortCite": "Zuo et al. (2016)",
+            "peerReviewed": "true",
+            "NA": "https://doi.org/10.1016/j.paid.2016.03.076"
+        }
+    ]
+}

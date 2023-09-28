@@ -1,0 +1,139 @@
+{
+	"datensatz" : {
+		"name" : "Response Rates in Online Surveys",
+		"data_name":"CAMA_RR",
+		"psychArchivesHandle": "http://dx.doi.org/10.23668/psycharchives.4729",
+		"domain": "Survey methods",
+		"metaanalysis_type": "standard",
+		"moderators" : [{"type":"num","value":"t_year","label": "Year of data collection"},
+                    {"type": "num","value":"t_length_items","label": "Number of survey items" },
+                    {"type": "cat","value":"t_continent","label": "Continent" },
+                    {"type": "cat","value":"t_topic","label": "Survey topic" },
+                    {"type": "cat","value":"t_incentives","label": "Incentives" }],
+		"effect_strength" : {
+			"label" : "PR",
+			"variable_labels":[
+				{
+					"name":"Response Rate",
+					"data_label_yi":"o_rr",
+					"varianz_label_vi": "o_var_rr"
+				}
+			]
+		},
+		"analysis_levels":[]
+	},
+	"dokumentation" : {
+		"title": "Burgard, T., Bosnjak, M. & Wedderhoff, N. (2020). Response rates in online surveys with affective disorder participants. A meta-analysis of study design and time effects between 2008 and 2019. Zeitschrift für Psychologie, 228(1), 14-24. ",
+		"doi": "https://doi.org/10.1027/2151-2604/a000394",
+		"url":"",
+		"dataProvider": "Tanja Burgard",
+		"license": "CC BY 4.0",
+		"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+		"researchQuestion": "Have response rates in psychological online surveys decreased over time?What effect do survey design characteristics have on response rates in online surveys?",
+		"literatureSelection": "Psychological studies reporting on results and response rates of online surveys with participants suffering from depression or general anxiety disorder",
+		"effectSize": "Response Rate = Number of complete interviews divided by the number of interview attempts (AAPOR, 2016)",
+		"hierarchicalStructure": ""
+	},
+	"literatureintraege": [
+		{
+			"shortCite": "Shigemura (2008)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/j.jad.2007.08.019"
+		},
+		{
+			"shortCite": "Kikuchi (2011)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1007/s00406-010-0124-z"
+		},
+		{
+			"shortCite": "Zimmermann (2011)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/record/2011-16491-003"
+		},
+		{
+			"shortCite": "Van Overveld (2008)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/j.janxdis.2007.04.001"
+		},
+		{
+			"shortCite": "Peth (2018)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1055/s-0044-101952"
+		},
+		{
+			"shortCite": "Williams (2018)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.2146/ajhp161008"
+		},
+		{
+			"shortCite": "Strohmeier (2018)",
+			"peerReviewed": true,
+			"doi": "https://dx.doi.org/10.1371%2Fjournal.pone.0205333"
+		},
+		{
+			"shortCite": "Schuring (2017)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1080/00913847.2017.1386069"
+		},
+		{
+			"shortCite": "Salles (2019)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/j.jsurg.2018.08.022"
+		},
+		{
+			"shortCite": "Prinz (2016)",
+			"peerReviewed": true,
+			"doi": "https://dx.doi.org/10.1136%2Fbmjsem-2016-000124"
+		},
+		{
+			"shortCite": "Paiva (2018)",
+			"peerReviewed": true,
+			"doi": "https://dx.doi.org/10.1186%2Fs12885-018-4964-7"
+		},
+		{
+			"shortCite": "Hoff (2015)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Han (2017)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/j.jamcollsurg.2016.12.039"
+		},
+		{
+			"shortCite": "Gouttebarge (2016)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1080/02640414.2016.1258485"
+		},
+		{
+			"shortCite": "De Graaff (2016)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1093/humrep/dew215"
+		},
+		{
+			"shortCite": "Crawford (2017)",
+			"peerReviewed": true,
+			"doi": "https://dx.doi.org/10.1093%2Fhumrep%2Fdew351"
+		},
+		{
+			"shortCite": "Axisa (2019)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1071/ah18076"
+		},
+		{
+			"shortCite": "Al Atassi (2018)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/j.joms.2018.06.018"
+		},
+		{
+			"shortCite": "Härmark (2013)",
+			"peerReviewed": true,
+			"doi": "https://dx.doi.org/10.1007%2Fs00228-012-1313-7"
+		},
+		{
+			"shortCite": "Goodwin (2017)",
+			"peerReviewed": false,
+			"doi": "https://doi.org/10.1016/j.jad.2017.05.048"
+		}
+	]
+}

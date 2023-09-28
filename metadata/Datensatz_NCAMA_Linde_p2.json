@@ -1,0 +1,51 @@
+{
+    "datensatz": {
+        "name": "Remission after Depression Treatment",
+        "data_name": "NCAMA_Linde_p2",
+        "psychArchivesHandle": "",
+        "domain": "Clinical psychology",
+        "metaanalysis_type": "network",
+        "moderators": [
+            {
+                "type": "",
+                "value": "",
+                "label": ""
+            }
+        ],
+        "effect_strength": {
+            "label": "OR",
+            "variable_labels": [
+                {
+                    "name": "Odds Ratio",
+                    "data_label_yi": "TE",
+                    "varianz_label_vi": "seTE"
+                }
+            ]
+        },
+        "analysis_levels": []
+    },
+    "dokumentation": {
+        "title": ".",
+        "doi": "",
+        "url": "",
+        "dataProvider": "",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "researchQuestion": "",
+        "literatureSelection": "",
+        "effectSize": "",
+        "hierarchicalStructure": ""
+    },
+    "literatureintraege": [
+        {
+            "shortCite": "",
+            "doi": "",
+            "peerReviewed": true
+        },
+        {
+            "shortCite": "",
+            "doi": "",
+            "peerReviewed": true
+        }
+    ]
+}

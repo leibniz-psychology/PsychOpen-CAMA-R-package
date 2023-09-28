@@ -1,0 +1,51 @@
+{
+    "datensatz": {
+        "name": "Anodal tDSCS Effects on Verbal Episodic Memory",
+        "data_name": "NCAMA_Bartl",
+        "psychArchivesHandle": "",
+        "domain": "Cognitive psychology",
+        "metaanalysis_type": "network",
+        "moderators": [
+            {
+                "type": "",
+                "value": "",
+                "label": ""
+            }
+        ],
+        "effect_strength": {
+            "label": "SMD",
+            "variable_labels": [
+                {
+                    "name": "SMD",
+                    "data_label_yi": "TE",
+                    "varianz_label_vi": "seTE"
+                }
+            ]
+        },
+        "analysis_levels": []
+    },
+    "dokumentation": {
+        "title": ".",
+        "doi": "",
+        "url": "",
+        "dataProvider": "",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "researchQuestion": "",
+        "literatureSelection": "",
+        "effectSize": "",
+        "hierarchicalStructure": ""
+    },
+    "literatureintraege": [
+        {
+            "shortCite": "",
+            "doi": "",
+            "peerReviewed": true
+        },
+        {
+            "shortCite": "",
+            "doi": "",
+            "peerReviewed": true
+        }
+    ]
+}
