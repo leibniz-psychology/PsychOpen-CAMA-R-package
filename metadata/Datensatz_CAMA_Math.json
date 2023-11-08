@@ -1,0 +1,70 @@
+{
+	"datensatz" : {
+		"name" : "Arithmetic Competences",
+		"data_name": "CAMA_Math",
+		"psychArchivesHandle": "https://hdl.handle.net/20.500.12034/4189",
+		"domain": "Cognitive development",
+		"metaanalysis_type": "standard",
+		"moderators" : [{"type": "num" ,"value": "s_meanage" ,"label": "Mean Age Sample" },{"type": "cat","value":"t_exposure" ,"label": "Pre-Test Exposure" }],
+		"effect_strength" : {
+			"label" : "SMD",
+			"variable_labels":[
+				{
+					"name":"hedges_g",
+					"data_label_yi":"o_g_calc",
+					"varianz_label_vi": "o_g_var_calc"
+				},
+				{
+					"name":"cohens_d",
+					"data_label_yi":"o_d_calc",
+					"varianz_label_vi": "o_d_var_calc"
+				}
+			]
+		},
+		"analysis_levels":["outcome_ID","sample_ID","report_ID"]
+	},
+	"dokumentation" : {
+		"title": "Christodoulou, J., Lac, A., & Moore, D. S. (2017). Babies and math: A meta-analysis of infants’ simple arithmetic competence. Developmental Psychology, 53(8), 1405–1417.",
+		"doi": "https://psycnet.apa.org/doi/10.1037/dev0000330",
+		"url":"",
+		"dataProvider": "http://metalab.stanford.edu/: Bergmann, C., Tsuji, S., Piccinini, P.E., Lewis, M.L., Braginsky, M., Frank, M.C., & Cristia, A. (2018). Promoting replicability in developmental research through meta-analyses: Insights from language acquisition research. Child Development, 89, 1996-2009 . DOI: 10.1111/cdev.13079 [Repository]",
+		"license": "CC BY 4.0",
+		"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+		"researchQuestion": "Do infants look longer at stimuli representing incorrect versus correct solutions of basic arithmetic computations?",
+		"literatureSelection": "Inclusion: (1) use of an experimental method designed to replicate or extend Wynn’s (1992) original study. (2) Study had to contain at least one sample in which infants responded to a mathematically incorrect and correct number of items, (3) Study had to compare infants’ lookingtimes at these items.Exclusion: (1) Insufficient information was reported to compute the effect size, (2) the researcher did not provide required statistics when contacted",
+		"effectSize": "Hedge’s g, Cohen’s d",
+		"hierarchicalStructure": "Most studies tested multiple samples. If a study featured several experiments administered to the same set of participants, only one effect size was culled to ensure statistical independence of samples in the synthesis"
+	},
+	"literatureintraege": [
+		{
+			"shortCite": "Simon, Hespos, and Rochat (1995)",
+			"peerReviewed": true,
+			"doi": "http://dx.doi.org/10.1016/0885-2014(95)90011-X"
+		},
+		{
+			"shortCite": "Wakeley, Rivera, and Langer (2000)",
+			"peerReviewed": true,
+			"doi": "http://dx.doi.org/10.1111/1467-8624.00244"
+		},
+		{
+			"shortCite": "Cohen and Marks (2002)",
+			"peerReviewed": true,
+			"doi": "http://dx.doi.org/10.1111/1467-7687.00220"
+		},
+		{
+			"shortCite": "McCrink and Wynn (2004)",
+			"peerReviewed": true,
+			"doi": "http://dx.doi.org/10.1111/j.0956-7976.2004.00755.x"
+		},
+		{
+			"shortCite": "Berger, Tzur, and Posner (2006)",
+			"peerReviewed": true,
+			"doi": "http://dx.doi.org/10.1073/pnas.0605350103"
+		},
+		{
+			"shortCite": "Moore and Cocas (2006)",
+			"peerReviewed": true,
+			"doi": "http://dx.doi.org/10.1037/0012-1649.42.4.666"
+		}
+	]
+}

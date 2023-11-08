@@ -1,0 +1,144 @@
+{
+  "datensatz": {
+    "name": "Infant directed speech preference",
+    "data_name": "CAMA_Speech",
+    "psychArchivesHandle": "http://dx.doi.org/10.23668/psycharchives.4739",
+    "domain": "Cognitive development",
+    "metaanalysis_type": "standard",
+    "moderators": [
+      {"type": "cat", "value": "t_response","label": "Measurement Response"},
+      { "type": "num", "value": "s_meanage", "label": "Mean Age Sample"},
+      { "type": "cat", "value": "t_speaker", "label": "Speaker"}
+    ],
+    "effect_strength": {"label": "SMD","variable_labels": [
+        { "name": "hedges_g", "data_label_yi": "o_g_calc", "varianz_label_vi": "o_g_var_calc"},
+        { "name": "cohens_d", "data_label_yi": "o_d_calc", "varianz_label_vi": "o_d_var_calc"}
+      ]
+    },
+    "analysis_levels": ["outcome_ID","sample_ID","report_ID"]
+  },
+  "dokumentation": {
+    "title": "Dunst C, Gorman E, Hamby D. Preference for infant-directed speech in preverbal young children. Center for Early Literacy Learning.2012;5(1):1–13",
+    "url": "http://earlyliteracylearning.org/cellreviews/cellreviews_v5_n1.pdf",
+    "doi": "",
+    "dataProvider": "http://metalab.stanford.edu/: Bergmann, C., Tsuji, S., Piccinini, P.E., Lewis, M.L., Braginsky, M., Frank, M.C., & Cristia, A. (2018). Promoting replicability in developmental research through meta-analyses: Insights from language acquisition research. Child Development, 89, 1996-2009 . DOI: 10.1111/cdev.13079 [Repository]",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "researchQuestion": "Looking times as a function of whether infant-directed vs. adult-directed speech is presented as stimulation",
+    "literatureSelection": "Inclusion: Effects of infant-directed speech on child behavior were compared to the effects of adult-directed speech on child behavior. Exclusion: Intentional manipulation of word boundaries or use of nonsense words or phrases ",
+    "effectSize": "Hedge’s g, Cohen’s d",
+    "hierarchicalStructure": "Outcome – Sample - Report"
+  },
+  "literatureintraege": [
+    {
+      "shortCite": "Cooper &amp; Aslin (1990)",
+      "peerReviewed": "1",
+      "doi": "https://psycnet.apa.org/doi/10.2307/1130766"
+    },
+    {
+      "shortCite": "Cooper &amp; Aslin (1994)",
+      "peerReviewed": "1",
+      "doi": "https://doi.org/10.1111/j.1467-8624.1994.tb00841.x"
+    },
+    {
+      "shortCite": "Cooper et al. (1997)",
+      "peerReviewed": "1",
+      "doi": "https://psycnet.apa.org/doi/10.1016/S0163-6383(97)90037-0"
+    },
+    {
+      "shortCite": "Droucker et al. (2013)",
+      "peerReviewed": "1",
+      "doi": "https://doi.org/10.1044/1092-4388(2012/11-0266)"
+    },
+    {
+      "shortCite": "Fernald (1985)",
+      "peerReviewed": "1",
+      "doi": "https://doi.org/10.1016/S0163-6383(85)80005-9"
+    },
+    {
+      "shortCite": "Fernald &amp; Kuhl (1987)",
+      "peerReviewed": "1",
+      "doi": "https://psycnet.apa.org/doi/10.1016/0163-6383(87)90017-8"
+    },
+    {
+      "shortCite": "Glenn &amp; Cunningham (1983)",
+      "peerReviewed": "1",
+      "doi": "https://psycnet.apa.org/doi/10.1037/0012-1649.19.3.332"
+    },
+    {
+      "shortCite": "Hayashi et al. (2001)",
+      "peerReviewed": "1",
+      "doi": "https://psycnet.apa.org/doi/10.1044/1092-4388(2001/092)"
+    },
+    {
+      "shortCite": "Inoe et al. (2011)",
+      "peerReviewed": "1",
+      "doi": ""
+    },
+    {
+      "shortCite": "Kaplan et al. (1995a)",
+      "peerReviewed": "1",
+      "doi": "https://psycnet.apa.org/doi/10.1002/dev.420280105"
+    },
+    {
+      "shortCite": "Kaplan et al. (1995b)",
+      "peerReviewed": "1",
+      "doi": "https://psycnet.apa.org/doi/10.1016/0163-6383(95)90050-0"
+    },
+    {
+      "shortCite": "Newman &amp; Hussain (2006)",
+      "peerReviewed": "1",
+      "doi": "https://psycnet.apa.org/doi/10.1207/s15327078in1001_4"
+    },
+    {
+      "shortCite": "Pegg et al. (1992)",
+      "peerReviewed": "1",
+      "doi": "https://psycnet.apa.org/doi/10.1016/0163-6383(92)80003-D"
+    },
+    {
+      "shortCite": "Robertson et al. (2013)",
+      "peerReviewed": "1",
+      "doi": "https://doi.org/10.1044/1092-4388(2012/12-0110)"
+    },
+    {
+      "shortCite": "Schachner &amp; Hannon (2011)",
+      "peerReviewed": "1",
+      "doi": "https://psycnet.apa.org/doi/10.1037/a0020740"
+    },
+    {
+      "shortCite": "Segal (2010)",
+      "peerReviewed": "0",
+      "doi": ""
+    },
+    {
+      "shortCite": "Segal &amp; Newman (2015)",
+      "peerReviewed": "1",
+      "doi": "https://psycnet.apa.org/doi/10.1111/infa.12077"
+    },
+    {
+      "shortCite": "Singh et al. (2002)",
+      "peerReviewed": "1",
+      "doi": "https://psycnet.apa.org/doi/10.1207/S15327078IN0303_5"
+    },
+    {
+      "shortCite": "Singh et al. (2009)",
+      "peerReviewed": "1",
+      "doi": "https://psycnet.apa.org/doi/10.1080/15250000903263973"
+    },
+    {
+      "shortCite": "Trainor et al. (1996)",
+      "peerReviewed": "1",
+      "doi": "https://www.researchgate.net/deref/http%3A%2F%2Fdx.doi.org%2F10.1016%2FS0163-6383(96)90046-6"
+    },
+    {
+      "shortCite": "Werker &amp; McLeod (1989)",
+      "peerReviewed": "1",
+      "doi": "https://psycnet.apa.org/doi/10.1037/h0084224"
+    },
+    {
+      "shortCite": "Werker et al. (1994)",
+      "peerReviewed": "1",
+      "doi": "https://psycnet.apa.org/doi/10.1016/0163-6383(94)90012-4"
+    }
+  ]
+}

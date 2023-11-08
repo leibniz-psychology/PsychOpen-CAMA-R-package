@@ -1,0 +1,144 @@
+
+{
+	"datensatz" : {
+		"name" : "Panel Conditioning",
+		"data_name":"CAMA_PanCon",
+		"psychArchivesHandle": "http://dx.doi.org/10.23668/psycharchives.4737",
+		"domain": "Survey methods",
+		"metaanalysis_type": "standard",
+		"moderators" : [{"type":"num","value":"t_condfreq","label": "Conditioning frequency"},
+                    {"type": "num","value":"t_intervalwaves","label": "Interval between waves" },
+                    {"type": "cat","value":"t_typequest","label": "Type of question" },
+                    {"type": "cat","value":"t_topic","label": "Survey topic" }],
+		"effect_strength" : {
+			"label" : "SMD",
+			"variable_labels":[
+				{
+					"name":"SMD",
+					"data_label_yi":"o_g",
+					"varianz_label_vi": "o_var_g"
+				}
+			]
+		},
+		"analysis_levels":["outcome_ID","sample_ID","report_ID"]
+	},
+	"dokumentation" : {
+		"title": "Burgard, T., Wedderhoff, N., & Bosnjak, M. (2020). Konditionierungseffekte in Panel-Untersuchungen: Systematische Übersichtsarbeit und Meta-Analyse am Beispiel sensitiver Fragen. Psychologische Rundschau, 71, 89-95. ",
+		"doi": "https://doi.org/10.1026/0033-3042/a000479",
+		"url":"",
+		"dataProvider": "Tanja Burgard",
+		"license": "CC BY 4.0",
+		"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+		"researchQuestion": "What effect does repeated surveying in panels have on responses to sensitive items (direction and dose)?",
+		"literatureSelection": "Study reporting results on the same sensitive items from an unconditioned control group and experienced panelists at the same point in time",
+		"effectSize": "SMD",
+		"hierarchicalStructure": "Outcome – Sample - Report"
+	},
+	"literatureintraege": [
+		{
+			"shortCite": "Struminskaya 2016",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1177%2F0894439315574022"
+		},
+		{
+			"shortCite": "Warren 2012",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1177%2F0049124112460374"
+		},
+		{
+			"shortCite": "Toepoel 2008",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.18148/srm/2009.v3i2.874"
+		},
+		{
+			"shortCite": "Quick 2017",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1186/s12913-017-2016-7"
+		},
+		{
+			"shortCite": "Halpern-Manners 2017",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1177%2F0049124114532445"
+		},
+		{
+			"shortCite": "Pevalin 2000",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1007/s001270050272"
+		},
+		{
+			"shortCite": "Coombs 1973",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.2307/1964738"
+		},
+		{
+			"shortCite": "Axinn 2015",
+			"peerReviewed": true,
+			"doi": "https://dx.doi.org/10.1016%2Fj.ssresearch.2014.07.002"
+		},
+		{
+			"shortCite": "Choquette 1987",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/record/1988-29834-001"
+		},
+		{
+			"shortCite": "Clinton 2001",
+			"peerReviewed": true,
+			"doi": "http://www.websm.org/uploadi/editor/1362639244Clinton_2001_Panel_Bias_from_Attrition_and_Conditioning.pdf"
+		},
+		{
+			"shortCite": "Kraut 1973",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1086/268101"
+		},
+		{
+			"shortCite": "Murray 1988",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1136/jech.42.3.304"
+		},
+		{
+			"shortCite": "Song 2017",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.18148/srm/2017.v11i4.6262"
+		},
+		{
+			"shortCite": "Waterton 1989",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Fisher 2016",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1111/obes.12296"
+		},
+		{
+			"shortCite": "Halpern-Manners 2014",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1093/poq/nfu029"
+		},
+		{
+			"shortCite": "Torche 2012",
+			"peerReviewed": true,
+			"doi": "http://www.jstor.org/stable/41682682"
+		},
+		{
+			"shortCite": "Fitzsimons 2007",
+			"peerReviewed": true,
+			"doi": "https://dx.doi.org/10.1086%2F513043"
+		},
+		{
+			"shortCite": "Williams 2006",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1080/15534510600630850"
+		},
+		{
+			"shortCite": "Barber 2016",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1080/13645579.2014.979717"
+		},
+		{
+			"shortCite": "Bridge 1977",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1086/268352"
+		}
+	]
+}

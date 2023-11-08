@@ -1,0 +1,106 @@
+{
+	"datensatz" : {
+		    "name": "Stress reduction through mindfulness",
+    "data_name": "CAMA_Mind",
+    "psychArchivesHandle": "",
+    "domain": "Health Psychology",
+    "metaanalysis_type": "standard",
+    "moderators": [
+      {"type": "num", "value": "t_frequency", "label": "Intervention frequency"},
+      {"type": "num", "value": "t_number","label": "Intervention number"},
+      {"type": "num", "value": "t_duration", "label": "Intervention duration"},
+      {"type": "cat", "value": "t_comparison","label": "Comparison group type"},
+      {"type": "cat","value": "s_targetpop","label": "Target population"},
+      {"type": "cat","value": "r_peer","label": "Peer-reviewed"}
+    ],
+   "effect_strength": {
+      "label": "SMD",
+      "variable_labels": [
+        {"name": "Hedges_g", "data_label_yi": "o_g", "varianz_label_vi": "o_g_var"}
+      ]
+    },
+    "analysis_levels": [
+      "outcome_ID", "study_ID"
+    ]
+  },
+  "dokumentation": {
+    "title": "Sparacio, A., Ropovik, I., Jiga-Boy, G., Forscher, P., & Ijzerman, H. (under review). Stress regulation via self-administered mindfulness and biofeedback interventions in adults: A pre-registered meta-analysis.",
+    "url": "",
+    "doi": "",
+    "dataProvider": "Alessandro Sparacio",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "researchQuestion": "Is there support for the reduction of stress through self-administered mindfulness?",
+    "literatureSelection": "Inclusion: 1) Published primary studies, preprint articles, working papers, dissertations, and books published in English, 2) randomized control trials and observational studies that estimated the effect of (or exposure to) self-administered mindfulness, 3) studies that measured at least one of the three components of the stress response (physiological, affective, and cognitive) 4) the participants of the study had to be humans. Exclusion 1) review or meta-analysis,2) participants were adolescents (under 18 years of age),3) a common-metric effect size reflecting a bivariate effect or relationship could not be computed, or4) intervention of self-administered mindfulness was combined with other active treatment",
+    "effectSize": "Hedge's g",
+    "hierarchicalStructure": "Outcome – Study"
+  },
+	"literatureintraege": [
+		{ 
+			"shortCite": "Azam et al. (2015)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/j.ijpsycho.2015.06.005"
+		},
+		{ 
+			"shortCite": "Morledge, et al. (2013)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1007/s12160-013-9490-x"
+		},
+		{ 
+			"shortCite": "Nadler, Carswell, & Minda (2020)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.3389/fpsyg.2020.00255"
+		},
+		{ 
+			"shortCite": "Oren (2015)",
+			"peerReviewed": false,
+			"doi": ""
+		},
+		{ 
+			"shortCite": "Pearson et al. (2018)",
+			"peerReviewed": true,
+			"doi": "http://dx.doi.org/10.1007/s12671-018-0908-1"
+		},
+		{ 
+			"shortCite": "Potharst et al. (2019)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.3389/fpsyg.2019.01550"
+		},
+		{ 
+			"shortCite": "Russell et al. (2019)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1007/s00520-018-4574-6"
+		},
+		{ 
+			"shortCite": "Stjernswärd & Hansson (2017)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1007/s12671-016-0653-2"
+		},
+		{ 
+			"shortCite": "Wahbeh (2018)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.3390/medicines5040119"
+		},
+		{ 
+			"shortCite": "Wimberley, Mintz, & Suh (2016)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1007/s12671-015-0460-1"
+		},
+		{ 
+			"shortCite": "Cavanagh et al. (2013)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/j.brat.2013.06.003"
+		},
+		{ 
+			"shortCite": "Rich, Ogden, & Morison (2021)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1108/IJWHM-04-2020-0046"
+		},
+		{ 
+			"shortCite": "Hasselberg & Rönnlund (2020)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1080/23311908.2020.1769807"
+		}
+		
+	]
+}
