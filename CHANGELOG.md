@@ -1,5 +1,5 @@
 
-## Release 1.0.6
+## Release 1.0.8
 ### 11.2023
 Bugs:
 * added new datasets CAMA_TFP_Reduce, CAMA_TFP_Enhance
