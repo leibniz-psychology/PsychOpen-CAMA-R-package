@@ -1,0 +1,39 @@
+{
+	"datensatz" : {
+		    "name": "Psychotherapy and Psychopharmacology Interventions for PTSD",
+    "data_name": "CAMA_PTSD_Interventions",
+    "psychArchivesHandle": "",
+    "domain": "Clinical Psychology",
+    "metaanalysis_type": "standard",
+    "moderators": [
+      {"type": "num", "value": "r_year", "label": "Publication year"},
+      {"type": "cat", "value": "r_peer","label": "Peer-reviewed"},
+      {"type": "cat", "value": "t_type_psychotherapy", "label": "Type of Psychotherapy"},
+      {"type": "cat", "value": "t_type_psychopharmacology","label": "Type of Psychopharmacology"},
+      {"type": "cat","value": "t_diagnostic_type","label": "Type of diagnosis"},
+	{"type": "cat","value": "s_timepoint_name","label": "Time point measurement"}
+    ],
+   "effect_strength": {
+      "label": "SMD",
+      "variable_labels": [
+        {"name": "Hedges_g", "data_label_yi": "o_g", "varianz_label_vi": "o_g_var"}
+      ]
+    },
+    "analysis_levels": ["sample_ID"]
+  },
+  "dokumentation": {
+    "title": "Test-data on psychotherapeutic interventions (Randomized Controlled Trials) for posttraumatic stress disorders",
+    "url": "",
+    "doi": "",
+    "dataProvider": "Sebastian Siehl",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "researchQuestion": "Treatment effects of exposure-based interventions vs. active and passive control interventions",
+    "literatureSelection": "Inclusion: All RCTs that either implemented psychotherapeutic or pharmacological treatment of PTSD in adults (>18 years of age); studies in which PTSD was the main diagnosis",
+    "Exclusion": "The main diagnosis is not PTSD; the study design is not a randomized controlled trial; participants in the experimental group suffered comorbid from a neurological (e.g. stroke) symptom",
+    "effectSize": "Hedge's g",
+    "hierarchicalStructure": "The reported effect sizes per study were subdivided by main intervention vs. active and/or passive control group per timepoint (baseline, post, follo-up 1, follow-up 2, follow-up 3"
+  },
+	"literatureintraege": [		
+	]
+}

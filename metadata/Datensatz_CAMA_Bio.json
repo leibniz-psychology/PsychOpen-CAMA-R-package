@@ -1,0 +1,107 @@
+{
+	"datensatz" : {
+		    "name": "Stress reduction through biofeedback",
+    "data_name": "CAMA_Bio",
+    "psychArchivesHandle": "",
+    "domain": "Health Psychology",
+    "metaanalysis_type": "standard",
+    "moderators": [
+      {"type": "num", "value": "t_frequency", "label": "Intervention frequency"},
+      {"type": "num", "value": "t_number","label": "Intervention number"},
+      {"type": "num", "value": "t_duration", "label": "Intervention duration"},
+      {"type": "cat", "value": "t_comparison","label": "Comparison group type"},
+      {"type": "cat","value": "s_targetpop","label": "Target population"},
+      {"type": "cat","value": "r_peer","label": "Peer-reviewed"}
+    ],
+   "effect_strength": {
+      "label": "SMD",
+      "variable_labels": [
+        {"name": "Hedges_g", "data_label_yi": "o_g", "varianz_label_vi": "o_g_var"}
+      ]
+    },
+    "analysis_levels": [
+      "outcome_ID", "sample_ID"
+    ]
+  },
+  "dokumentation": {
+    "title": "Sparacio, A., Ropovik, I., Jiga-Boy, G., Forscher, P., & Ijzerman, H. (under review). Stress regulation via self-administered mindfulness and biofeedback interventions in adults: A pre-registered meta-analysis.",
+    "url": "",
+    "doi": "",
+    "dataProvider": "Alessandro Sparacio",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "researchQuestion": "Is there support for the reduction of stress through self-administered biofeedback?",
+    "literatureSelection": "Inclusion: 1) Published primary studies, preprint articles, working papers, dissertations, and books published in English,2) randomized control trials and observational studies that estimated the effect of self-administered biofeedback,3) studies that measured at least one of the three components of the stress response (physiological, affective, and cognitive)4) the participants of the study had to be humans.Exclusion 1) review or meta-analysis,2) participants were adolescents (under 18 years of age),3) a common-metric effect size reflecting a bivariate effect or relationship could not be computed, or4) Intervention of self-administered biofeedback was combined with other active treatment",
+    "effectSize": "Hedge's g",
+    "hierarchicalStructure": "Outcome – Sample"
+  },
+
+	"literatureintraege": [
+		{ 
+			"shortCite": "Berry et al. (2014)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.7453/gahmj.2013.075"
+		},
+		{ 
+			"shortCite": "Burch et al. (2020)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1007/s10484-020-09462-3"
+		},
+		{ 
+			"shortCite": "Hunter et al. (2019)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.2196/15974"
+		},
+		{ 
+			"shortCite": "Lee, Kim, & Wachholtz (2015)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.17315/kjhp.2015.20.2.002"
+		},
+		{ 
+			"shortCite": "Meier & Welch (2015)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1080/10615806.2015.1085514"
+		},
+		{ 
+			"shortCite": "Paul & Garg (2012)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1007/s10484-012-9185-2"
+		},
+		{ 
+			"shortCite": "Sherlin et al. (2009)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1037/a0016047"
+		},
+		{ 
+			"shortCite": "van der Zwan et al. (2019)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.3390/ijerph16061051"
+		},
+		{ 
+			"shortCite": "Wheat (2012)",
+			"peerReviewed": false,
+			"doi": "https://doi.org/10.33915/etd.476"
+		},
+		{ 
+			"shortCite": "Winstead (2019)",
+			"peerReviewed": false,
+			"doi": ""
+		},
+		{ 
+			"shortCite": "Gatchel & Proctor (1976)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1037/0022-006X.44.3.381"
+		},
+		{ 
+			"shortCite": "Patron et al. (2012) ",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1007/s10484-012-9202-5"
+		},
+		{ 
+			"shortCite": "Park & Jung (2020)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/j.ijpsycho.2020.10.008"
+		}
+		
+	]
+}

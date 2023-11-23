@@ -1,0 +1,399 @@
+{
+    "datensatz": {
+        "name": "Gender and TPB constructs: Intention to start a business",
+        "data_name": "CAMA_Business",
+        "psychArchivesHandle": "http://dx.doi.org/10.23668/psycharchives.5264",
+        "domain": "Organizational Psychology",
+        "metaanalysis_type": "standard",
+        "moderators": [
+            {
+                "type": "cat",
+                "value": "t_TPBtype",
+                "label": "TPB construct"
+            },
+            {
+                "type": "num",
+                "value": "r_year",
+                "label": "Publication Year"
+            },
+            {
+                "type": "cat",
+                "value": "s_sampletype",
+                "label": "Sample type"
+            },
+            {
+                "type": "cat",
+                "value": "s_country",
+                "label": "Country of conduction"
+            },
+            {
+                "type": "cat",
+                "value": "s_cult_clust",
+                "label": "Cultural cluster"
+            },
+            {
+                "type": "num",
+                "value": "s_female",
+                "label": "Share of females"
+            },
+            {
+                "type": "num",
+                "value": "s_meanage",
+                "label": "Mean Age Sample"
+            }
+        ],
+        "effect_strength": {
+            "label": "COR",
+            "variable_labels": [
+                {
+                    "name": "pearson_r",
+                    "data_label_yi": "o_ri",
+                    "varianz_label_vi": "o_ri_var"
+                }
+            ]
+        },
+        "analysis_levels": [
+            "outcome_ID",
+            "study_ID"
+        ]
+    },
+    "dokumentation": {
+        "title": "Steinmetz, H., Isidor, R., & Bauer, C. (2021). Gender Differences in the Intention to Start a Business. Zeitschrift für Psychologie, 229(1), 70-84. https://doi.org/10.1027/2151-2604/a000435",
+        "url": "",
+        "doi": " https://doi.org/10.1027/2151-2604/a000435",
+        "dataProvider": "Holger Steinmetz",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "researchQuestion": "What is the quantitative association between gender and the constructs of the Theory of Planned Behavior in the context of starting a business?",
+        "literatureSelection": "Inclusion: Studies containing at least one correlation between gender and a TBP variable",
+        "effectSize": "Pearson's r",
+        "hierarchicalStructure": "Outcome – Study"
+    },
+    "literatureintraege": [
+        {
+            "shortCite": "Almobaireek & Manolova (2012)",
+            "peerReviewed": true,
+            "doi": "https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.873.6924&rep=rep1&type=pdf"
+        },
+        {
+            "shortCite": "Aloulou (2016)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1108/JSBED-02-2016-0028"
+        },
+        {
+            "shortCite": "Arenius & Minniti (2005)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1007/s11187-005-1984-x"
+        },
+        {
+            "shortCite": "Arshad et al. (2016)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1108/CDI-10-2015-0135"
+        },
+        {
+            "shortCite": "Bacq & Alt (2018)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.jbusvent.2018.01.004"
+        },
+        {
+            "shortCite": "Baughn et al. (2006)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1142/S108494670600026X"
+        },
+        {
+            "shortCite": "Bullough et al. (2013)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1111/etap.12006"
+        },
+        {
+            "shortCite": "Camelo-Ordaz et al. (2016)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.brq.2016.03.001"
+        },
+        {
+            "shortCite": "Carey et al. (2010)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1142/S1084946710001622"
+        },
+        {
+            "shortCite": "Chen et al. (1998)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/S0883-9026(97)00029-3"
+        },
+        {
+            "shortCite": "Crant (1996)",
+            "peerReviewed": true,
+            "doi": "http://www.sciepub.com/reference/56136"
+        },
+        {
+            "shortCite": "De Clercq et al. (2013)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1177/0266242611432360"
+        },
+        {
+            "shortCite": "Decker et al. (2012)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1108/02683941211205835"
+        },
+        {
+            "shortCite": "Farmer et al. (2009)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1111/j.1540-6520.2009.00358.x"
+        },
+        {
+            "shortCite": "Fellnhofer & Müller (2018)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1142/S021849581850005X"
+        },
+        {
+            "shortCite": "Fitzsimmons & Douglas (2010)",
+            "peerReviewed": true,
+            "doi": "https://www.researchgate.net/publication/27474392_Individual_Intentions_Towards_Entrepreneurship_vs_Intrapreneurship"
+        },
+        {
+            "shortCite": "Forster & Grichnik (2013)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1080/19420676.2013.777358"
+        },
+        {
+            "shortCite": "Goethner et al.(2012)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.joep.2011.12.002"
+        },
+        {
+            "shortCite": "Gorgievski et al. (2017)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1177/1069072717714541"
+        },
+        {
+            "shortCite": "Gupta et al. (2009)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1111/j.1540-6520.2009.00296.x"
+        },
+        {
+            "shortCite": "Herman (2019)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.promfg.2019.02.220"
+        },
+        {
+            "shortCite": "Heuer & Kolvereid (2014)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1108/EJTD-02-2013-0019"
+        },
+        {
+            "shortCite": "Hockerts, K. (2015)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1111/etap.12171"
+        },
+        {
+            "shortCite": "Iakovleva & Kolvereid (2009)",
+            "peerReviewed": true,
+            "doi": "https://econpapers.repec.org/article/idsijbglo/v_3a3_3ay_3a2009_3ai_3a1_3ap_3a66-80.htm"
+        },
+        {
+            "shortCite": "Iakovleva & Solesvik (2014)",
+            "peerReviewed": true,
+            "doi": "https://www.inderscienceonline.com/doi/abs/10.1504/IJESB.2014.057916"
+        },
+        {
+            "shortCite": "Joensuu et al. (2013)",
+            "peerReviewed": true,
+            "doi": "https://www.emerald.com/insight/content/doi/10.1108/ET-06-2013-0084/full/html"
+        },
+        {
+            "shortCite": "Karimi et al. (2014)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1080/00036846.2019.1645287"
+        },
+        {
+            "shortCite": "Kautonen et al. (2013)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1111/etap.12056"
+        },
+        {
+            "shortCite": "Kibler (2013)",
+            "peerReviewed": true,
+            "doi": "https://ssrn.com/abstract=2169277"
+        },
+        {
+            "shortCite": "Kolvereid & Isaksen (2006)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.jbusvent.2005.06.008"
+        },
+        {
+            "shortCite": "Kolvereid (1996)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1177/104225879602100104"
+        },
+        {
+            "shortCite": "Kuckertz & Wagner (2009)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.jbusvent.2009.09.001"
+        },
+        {
+            "shortCite": "Laguía et al. (2018)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.tsc.2018.11.004"
+        },
+        {
+            "shortCite": "Laspita et al. (2012)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.jbusvent.2011.11.006"
+        },
+        {
+            "shortCite": "Lee & Wong (2004)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/S0883-9026(02)00112-X"
+        },
+        {
+            "shortCite": "Lee et al. (2011)",
+            "peerReviewed": true,
+            "doi": "https://econpapers.repec.org/article/eeejbvent/v_3a26_3ay_3a2011_3ai_3a1_3ap_3a124-136.htm"
+        },
+        {
+            "shortCite": "Leffel & Darling (2009)",
+            "peerReviewed": true,
+            "doi": "https://www.abacademies.org/articles/jeevol122009.pdf"
+        },
+        {
+            "shortCite": "Leroy et al. (2009)",
+            "peerReviewed": false,
+            "doi": "NA"
+        },
+        {
+            "shortCite": "Lheureux & Auzoult (2017)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1080/02134748.2017.1291744"
+        },
+        {
+            "shortCite": "Lo et al. (2012)",
+            "peerReviewed": true,
+            "doi": "https://ideas.repec.org/a/ibg/jwejou/y2012i1-2p28-51.html"
+        },
+        {
+            "shortCite": "Maes et al. (2014)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.emj.2014.01.001"
+        },
+        {
+            "shortCite": "Maresch et al. (2016)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.techfore.2015.11.006"
+        },
+        {
+            "shortCite": "McKenna et al. (2016)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.jvb.2016.01.004"
+        },
+        {
+            "shortCite": "Mwiya at al. (2017)",
+            "peerReviewed": true,
+            "doi": "https://www.scirp.org/journal/paperinformation.aspx?paperid=78572"
+        },
+        {
+            "shortCite": "Neneh, B. N. (2019)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.jvb.2019.04.005"
+        },
+        {
+            "shortCite": "Obschonka et al. (2014)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1007/s10869-014-9385-2"
+        },
+        {
+            "shortCite": "Rittippant et al. (2011)",
+            "peerReviewed": false,
+            "doi": "http://www.ppml.url.tw/EPPM/conferences/2011/download/SESSION8/215_226.pdf"
+        },
+        {
+            "shortCite": "Shinnar et al. (2014)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.ijme.2014.09.005"
+        },
+        {
+            "shortCite": "Shirokova et al. (2016)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.emj.2015.12.007"
+        },
+        {
+            "shortCite": "Shook & Bratianu (2008)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1007/s11365-008-0091-2"
+        },
+        {
+            "shortCite": "Solesvik (2013)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1108/00400911311309314"
+        },
+        {
+            "shortCite": "Tkachev & Kolvereid (1999)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1080/089856299283209"
+        },
+        {
+            "shortCite": "Urbig et al. (2012)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.joep.2011.03.003"
+        },
+        {
+            "shortCite": "Van Gelderen et al. (2015)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.jbusvent.2015.01.003"
+        },
+        {
+            "shortCite": "Wang et al. (2002)",
+            "peerReviewed": false,
+            "doi": "NA"
+        },
+        {
+            "shortCite": "Westhead & Solesvik (2016)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1177/0266242615612534"
+        },
+        {
+            "shortCite": "Wilson et al. (2007)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1111/j.1540-6520.2007.00179.x"
+        },
+        {
+            "shortCite": "Wurthmann (2013)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1007/s11365-013-0249-4"
+        },
+        {
+            "shortCite": "Yang (2013)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.2224/sbp.2013.41.3.367"
+        },
+        {
+            "shortCite": "Yordanova & Tarrazon (2010)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1142/S1084946710001543"
+        },
+        {
+            "shortCite": "Zampetakis et al. (2017)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.3389/fpsyg.2017.00451"
+        },
+        {
+            "shortCite": "Zampetakis (2008)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.tsc.2008.07.002"
+        },
+        {
+            "shortCite": "Zellweger et al. (2010)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1016/j.jbusvent.2010.04.001"
+        },
+        {
+            "shortCite": "Zhang et al. (2013)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1007/s11365-012-0246-z"
+        },
+        {
+            "shortCite": "Zhao et al. (2005)",
+            "peerReviewed": true,
+            "doi": "https://doi.org/10.1037/0021-9010.90.6.1265"
+        }
+    ]
+}

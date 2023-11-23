@@ -1,0 +1,375 @@
+{
+	"datensatz" : {
+		"name" : "Response Rates Differences web vs. other",
+		"data_name":"CAMA_Daik",
+		"psychArchivesHandle": "http://dx.doi.org/10.23668/psycharchives.4741",
+		"domain": "Survey methods",
+		"metaanalysis_type": "standard",
+		"moderators" : [{"type":"num","value":"r_year","label": "Year of Data Collection"},
+                    {"type": "cat","value":"t_surveymode1","label": "Comparison Mode" },
+                    {"type": "cat","value":"t_country1","label": "Geographic Region" },
+                    {"type": "cat","value":"t_topic1","label": "Survey Topic" },
+                    {"type": "cat","value":"s_recruit1","label": "Sample Recruitment Strategy" },
+		    {"type": "cat","value":"s_targetpop1","label": "Target Population" }],
+		"effect_strength" : {
+			"label" : "RD",
+			"variable_labels":[
+				{
+					"name":"Response Rate Difference",
+					"data_label_yi":"o_rd",
+					"varianz_label_vi": "o_var_rd"
+				}
+			]
+		},
+		"analysis_levels":["sample_ID","report_ID"]
+	},
+	"dokumentation" : {
+		"title": "Daikeler, J., Bosnjak, M., & Lozar Manfreda, K. (2020): Web versus other survey modes: An updated and extended meta-analysis comparing response rates. Journal of Survey Statistics and Methodology, 8, 513-539.",
+		"doi": "https://doi.org/10.1093/jssam/smz008",
+		"url":"",
+		"dataProvider": "Jessica Daikeler",
+		"license": "CC BY 4.0",
+		"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+		"researchQuestion": "Do web surveys still yield lower response rates compared with other survey modes?",
+		"literatureSelection": "Experimental comparisons (split-sample design) between web and other survey modes reporting response rates",
+		"effectSize": "Response Rate Difference",
+		"hierarchicalStructure": ""
+	},
+	"literatureintraege": [
+		{
+			"shortCite": "",
+			"doi": "",
+			"peerReviewed": ""
+		},
+		{
+			"shortCite": "Bason (2000)",
+			"peerReviewed": false,
+			"doi": "http://www.websm.org/uploadi/editor/1374513977Bason_2000_Comparison_of_telephone_mail_web_and_ivr_surveys_of_drug_and_alcohol_use.pdf"
+		},
+		{
+			"shortCite": "Chatt (2002)",
+			"peerReviewed": false,
+			"doi": "http://www.websm.org/uploadi/editor/1130673305research0105.pdf"
+		},
+		{
+			"shortCite": "Chisolm (1997)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Cobanoglu (2000)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1177%2F147078530104300401"
+		},
+		{
+			"shortCite": "Crawford (2001)",
+			"peerReviewed": false,
+			"doi": "https://doi.org/10.1177%2F089443930101900202"
+		},
+		{
+			"shortCite": "Elder (1999)",
+			"peerReviewed": false,
+			"doi": "https://www.warc.com/fulltext/ESOMAR/49922.htm"
+		},
+		{
+			"shortCite": "Fraze (2002)",
+			"peerReviewed": false,
+			"doi": "https://www.jae-online.org/attachments/article/343/44-02-27.pdf"
+		},
+		{
+			"shortCite": "Fricker (2003)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1093/poq/nfi027"
+		},
+		{
+			"shortCite": "Hayslett (1999)",
+			"peerReviewed": false,
+			"doi": "https://doi.org/10.1016/j.lisr.2003.11.005"
+		},
+		{
+			"shortCite": "Grigorian (2003)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Jones (1997)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1093/occmed/49.8.556"
+		},
+		{
+			"shortCite": "Kaplowitz (2001)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/http://dx.doi.org/10.1093/poq/nfh006"
+		},
+		{
+			"shortCite": "Kerwin (2004)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Knapp (1999)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/S0747-5632(02)00008-0"
+		},
+		{
+			"shortCite": "Kwak (1999)",
+			"peerReviewed": false,
+			"doi": "http://barold.com/www/JOS%20article.pdf"
+		},
+		{
+			"shortCite": "Lesser (1999)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Lozar-Manfreda (2000)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "McNeish (2000)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Miller (2001)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1093/poq/nfr003"
+		},
+		{
+			"shortCite": "Pötschke (2002)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Sax (2001)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1023/A:1024232915870"
+		},
+		{
+			"shortCite": "Vehovar (1999)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1080/10864415.2001.11044230"
+		},
+		{
+			"shortCite": "Weible (1997)",
+			"peerReviewed": true,
+			"doi": "http://www.websm.org/db/12/12230/Bibliography/Cyber%20Research:%20The%20Impact%20of%20the%20Internet%20on%20Data%20Collection/?&cat=355&p1=1123&p2=82&p3=85&p4=517&p5=524&id=524"
+		},
+		{
+			"shortCite": "Wygant (1998)",
+			"doi": "",
+			"peerReviewed": true
+		},
+		{
+			"shortCite": "Al-Subaihi (2008)",
+			"peerReviewed": true,
+			"doi": "https://www.semanticscholar.org/paper/Comparison-of-Web-and-Telephone-Survey-Response-in-Al-Subaihi-Arabia/b21ad82e5a9d6d6fcb7670c3b6a7fb5c6406fdee"
+		},
+		{
+			"shortCite": "Andrew (2015)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Baghal (2015)",
+			"peerReviewed": true,
+			"doi": "http://dx.doi.org/10.1093/poq/nfv023"
+		},
+		{
+			"shortCite": "Beach (2012)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Beach (2008)",
+			"peerReviewed": false,
+			"doi": "http://www.websm.org/db/12/12977/rec/"
+		},
+		{
+			"shortCite": "Bech (2009)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.18148/srm/2009.v3i1.592"
+		},
+		{
+			"shortCite": "Borkan (2009)",
+			"peerReviewed": true,
+			"doi": "http://mr.crossref.org/iPage?doi=10.1177%2F0894439309350698"
+		},
+		{
+			"shortCite": "Grandjean (2009)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Clark (2011)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1177/0163278710397791"
+		},
+		{
+			"shortCite": "Cole (2005)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1177%2F0047287505274655"
+		},
+		{
+			"shortCite": "Croteau (2010)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1109/TPC.2010.2052852"
+		},
+		{
+			"shortCite": "De Leeuw (2012)",
+			"peerReviewed": false,
+			"doi": "http://www.websm.org/db/12/15319/Web%20Survey%20Bibliography/Question_or_Mode_Effects_in_MixedMode_surveys_A_Crosscultural_study_in_the_Netherlands_Germany_and_the_UK/"
+		},
+		{
+			"shortCite": "Hyeyoung (2008)",
+			"doi": "",
+			"peerReviewed": true
+		},
+		{
+			"shortCite": "Edwards (2014)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1093/poq/nfu027"
+		},
+		{
+			"shortCite": "Ellis (2012)",
+			"peerReviewed": false,
+			"doi": "http://www.websm.org/db/12/15277/Web%20Survey%20Bibliography/AddressedBased_Sampling__A_Better_Sample_Exploring_the_Benefits_of_Using_AddressedBased_Sampling_in_a_StateWide_Targeted_SubPopulation/"
+		},
+		{
+			"shortCite": "Blom (2015)",
+			"peerReviewed": false,
+			"doi": "http://www.academia.edu/download/37875387/2015-03.pdf"
+		},
+		{
+			"shortCite": "Auspurg (2013)",
+			"peerReviewed": false,
+			"doi": "http://kops.uni-konstanz.de/bitstream/handle/123456789/26763/Auspurg_267631.pdf?sequence¼2&isAllowed¼y"
+		},
+		{
+			"shortCite": "Allum (2014)",
+			"peerReviewed": false,
+			"doi": "http://www.websm.org/uploadi/editor/1412860905Allum_2014_Understanding_Society_Innovation_Panel_Wave_6.pdf."
+		},
+		{
+			"shortCite": "Fisher (2013)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1177/1532440012456540"
+		},
+		{
+			"shortCite": "Greene (2008)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1111/j.1475-6773.2007.00747.x"
+		},
+		{
+			"shortCite": "Greenlaw (2009)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1177/0193841x09340214"
+		},
+		{
+			"shortCite": "Hardigan (2012)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1007/s10900-011-9455-6"
+		},
+		{
+			"shortCite": "Hsu (2015)",
+			"peerReviewed": false,
+			"doi": "http://www.websm.org/db/12/18125/Web%20Survey%20Bibliography/Mode_Effects_in_MixedMode_Economic_Surveys_Insights_from_a_Randomized_Experiment/?&p1=1123&p2=82&p3=85&page=17"
+		},
+		{
+			"shortCite": "Israel (2012)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1093/poq/nfr003.Smyth"
+		},
+		{
+			"shortCite": "Jacob (2011)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1177/0193841X11399376"
+		},
+		{
+			"shortCite": "Eklund (2015)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Kennedy (2012)",
+			"peerReviewed": false,
+			"doi": "http://www.aapor.org/AAPOR_Main/media/AnnualMeetingProceedings/2012/01_Kennedy_E2.pdf"
+		},
+		{
+			"shortCite": "Kiernan (2005)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/http://dx.doi.org/10.1177/1098214005275826"
+		},
+		{
+			"shortCite": "Klausch (2012)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Lugtig (2011)",
+			"doi": "",
+			"peerReviewed": true
+		},
+		{
+			"shortCite": "McMorris (2009)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1177/0193841X08326463"
+		},
+		{
+			"shortCite": "Messer (2012)",
+			"peerReviewed": true,
+			"doi": "https://research.wsulibs.wsu.edu:8443/xmlui/bitstream/handle/2376/4653/Messer_wsu_0251E_10588.pdf?sequence¼1"
+		},
+		{
+			"shortCite": "Millar (2011)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1093/poq/nfr003"
+		},
+		{
+			"shortCite": "Murphy (2012)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Redline (2015)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Sinclair (2012)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1186/1471-2288-12-132"
+		},
+		{
+			"shortCite": "Smyth (2010)",
+			"doi": "",
+			"peerReviewed": true
+		},
+		{
+			"shortCite": "Szoc (2013)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Turner (2010)",
+			"doi": "",
+			"peerReviewed": false
+		},
+		{
+			"shortCite": "Wolfe (2008)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1111/j.1083-6101.2008.01430.x"
+		},
+		{
+			"shortCite": "Woo (2015)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/http://dx.doi.org/10.1177/0894439314544876"
+		},
+		{
+			"shortCite": "Kirchner (2016)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1002/9781119041702.ch24"
+		}
+	]
+}

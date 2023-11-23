@@ -1,0 +1,42 @@
+{
+	"datensatz" : {
+		    "name": "Traumafilm Paradigma: Reduction",
+    "data_name": "CAMA_TFP_Reduce",
+    "psychArchivesHandle": "",
+    "domain": "Clinical Psychology",
+    "metaanalysis_type": "standard",
+    "moderators": [
+      {"type": "num", "value": "r_year", "label": "Publication year"},
+      {"type": "cat", "value": "r_peer","label": "Peer-reviewed"},
+      {"type": "cat", "value": "t_timepoint_intervention", "label": "Timepoint Intervention"},
+      {"type": "cat", "value": "t_survey_method","label": "Survey Method"},
+      {"type": "num","value": "s_female","label": "Share of females"},
+      {"type": "cat","value": "s_footage_type","label": "Type of film clips"},
+	  {"type": "num","value": "s_footage_n","label": "Number of film clips"},
+      {"type": "cat", "value": "t_clustering-intervention", "label": "Type of intervention"},
+      {"type": "cat", "value": "o_outcome","label": "Outcome measure"},
+      {"type": "cat", "value": "rob_category", "label": "Risk of Bias"}
+    ],
+   "effect_strength": {
+      "label": "SMD",
+      "variable_labels": [
+        {"name": "Hedges_g", "data_label_yi": "o_g", "varianz_label_vi": "o_g_var"}
+      ]
+    },
+    "analysis_levels": ["sample_ID"]
+  },
+  "dokumentation": {
+    "title": "Interventions to reduce the development of intrusions using the traumafilm paradigm",
+    "url": "",
+    "doi": "",
+    "dataProvider": "Sebastian Siehl",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "researchQuestion": "Can we identify certain groups of interventions (e.g. context-based vs. language-based) to reduce intrusive memories using an analoque trauma film paradigm?",
+    "literatureSelection": "see PROSPERO preregistration CRD42021259241: The comparator is a control condition relative to the intervention or manipulation. In addition, we will include time-points as comparators (pre-, peri- and post-intervention), where appropriate. Inclusion criteria for meta-analysis:\n 1) At least two groups of adult and healthy participants 2) At least one between-group comparison 3) At least one measure for intrusion frequency Exclusion criteria for meta-analysis:\n 1) No TFP study 2) No group comparison",
+    "effectSize": "Hedge's g",
+    "hierarchicalStructure": "Some samples consisted of multiple interventions and control groups. An effect size was calculated for each active intervention vs. passive control group."
+  },
+	"literatureintraege": [		
+	]
+}

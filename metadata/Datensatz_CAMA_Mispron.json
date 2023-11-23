@@ -1,0 +1,200 @@
+{
+	"datensatz" : {
+		"name" : "Mispronunciation sensitivity",
+		"data_name":"CAMA_Mispron",
+		"psychArchivesHandle": "http://dx.doi.org/10.23668/psycharchives.4736",
+		"domain": "Cognitive development",
+		"metaanalysis_type": "standard",
+		"moderators" : [{"type": "cat","value":"t_exposure" ,"label": "Pre-Test Exposure" },{"type": "num","value":"s_meanage","label": "Mean Age Sample"  }],
+		"effect_strength" : {
+			"label" : "SMD",
+			"variable_labels":[
+				{
+					"name":"hedges_g",
+					"data_label_yi":"o_g_calc",
+					"varianz_label_vi": "o_g_var_calc"
+				},
+				{
+					"name":"cohens_d",
+					"data_label_yi":"o_d_calc",
+					"varianz_label_vi": "o_d_var_calc"
+				}
+			]
+		},
+		"analysis_levels":["outcome_ID","sample_ID","report_ID"]
+	},
+	"dokumentation" : {
+		"title": "Von Holzen, K., & Bergmann, C. (2018). A Meta-Analysis of Infants' Mispronunciation Sensitivity Development.CogSci ... Annual Conference of the Cognitive Science Society. Cognitive Science Society (U.S.).Conference,2018, 1157–1162.",
+		"doi": "",
+		"url":"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6476320/#__ffn_sectitle",
+		"dataProvider": "http://metalab.stanford.edu/: Bergmann, C., Tsuji, S., Piccinini, P.E., Lewis, M.L., Braginsky, M., Frank, M.C., & Cristia, A. (2018). Promoting replicability in developmental research through meta-analyses: Insights from language acquisition research. Child Development, 89, 1996-2009 . DOI: 10.1111/cdev.13079 [Repository]",
+		"license": "CC BY 4.0",
+		"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+		"researchQuestion": "Can infants distinguish correctly and mispronounced words,like dog and tog?",
+		"literatureSelection": "An item had to report (1) original data; (2) on familiar word recognition after correct pronunciations and mispronunciation; (3) of infants younger than 31 months; (4) in an eye movement experiment",
+		"effectSize": "Hedge’s g, Cohen’s d",
+		"hierarchicalStructure": "Outcome – Sample - Report"
+	},
+	"literatureintraege": [
+		{
+			"shortCite": "Zesiger et al. (2012)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1111/j.1532-7078.2011.00111.x"
+		},
+		{
+			"shortCite": "White & Morgan (2008)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1016/j.jml.2008.03.001"
+		},
+		{
+			"shortCite": "Mani, Coleman, & Plunkett (2008)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1177%2F00238309080510010201"
+		},
+		{
+			"shortCite": "Swingley (2009)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1016/j.jml.2008.11.003"
+		},
+		{
+			"shortCite": "Swingley & Aslin (2000)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/s0010-0277(00)00081-0"
+		},
+		{
+			"shortCite": "Ballem & Plunkett (2005)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1017/s0305000904006567"
+		},
+		{
+			"shortCite": "Mani & Plunkett (2007)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1016/j.jml.2007.03.005"
+		},
+		{
+			"shortCite": "Swingley & Aslin (2002)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1111/1467-9280.00485"
+		},
+		{
+			"shortCite": "Altvater-Mackensen et al. (2014)",
+			"peerReviewed": true,
+			"doi": "https://www.researchgate.net/deref/http://dx.doi.org/10.1080/15475441.2013.808954"
+		},
+		{
+			"shortCite": "Swingley (2016)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1037/dev0000114"
+		},
+		{
+			"shortCite": "Mani & Plunkett (2011)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1017/s0305000910000243"
+		},
+		{
+			"shortCite": "Mani & Plunkett (2010)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1111/j.1532-7078.2009.00027.x"
+		},
+		{
+			"shortCite": "Höhle et al. (2006)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1080/14417040600970614"
+		},
+		{
+			"shortCite": "Swingley (2003)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1177/00238309030460021001"
+		},
+		{
+			"shortCite": "Ramon-Casas et al. (2009)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1016/j.cogpsych.2009.02.002"
+		},
+		{
+			"shortCite": "Ramon-Casas & Bosch (2010)",
+			"peerReviewed": true,
+			"doi": "https://www.researchgate.net/deref/http%3A%2F%2Fdx.doi.org%2F10.13140%2F2.1.4167.0081"
+		},
+		{
+			"shortCite": "Højen et al. (n.d.)",
+			"peerReviewed": false,
+			"doi": ""
+		},
+		{
+			"shortCite": "Tao et al. (2012)",
+			"peerReviewed": true,
+			"doi": "http://doi.org/10.3724/SP.J.1041.2012.01066"
+		},
+		{
+			"shortCite": "Tao & Qinmei (2013)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.3724/SP.J.1041.2013.01111"
+		},
+		{
+			"shortCite": "Skoruppa et al. (2013)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1111/infa.12020"
+		},
+		{
+			"shortCite": "Ren & Morgan (in press)",
+			"peerReviewed": true,
+			"doi": ""
+		},
+		{
+			"shortCite": "van der Feest & Fikkert, (2015)",
+			"peerReviewed": true,
+			"doi": "http://dx.doi.org/10.1017/S0952675715000135"
+		},
+		{
+			"shortCite": "Altvater-Mackensen (2010)",
+			"peerReviewed": false,
+			"doi": "http://hdl.handle.net/11858/00-001M-0000-0013-F4A2-5"
+		},
+		{
+			"shortCite": "White & Aslin (2011)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1111/j.1467-7687.2010.00986.x"
+		},
+		{
+			"shortCite": "Bergelson & Swingley (2017)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1111/cdev.12888"
+		},
+		{
+			"shortCite": "Delle Luche et al. (2015)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1016/j.infbeh.2015.05.005"
+		},
+		{
+			"shortCite": "Durrant et al. (2014)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1017/s0305000914000063"
+		},
+		{
+			"shortCite": "Tamasi (2016)",
+			"peerReviewed": false,
+			"doi": "https://publishup.uni-potsdam.de/opus4-ubp/frontdoor/deliver/index/docId/39595/file/tamasi_diss.pdf"
+		},
+		{
+			"shortCite": "van der Feest & Johnson (2016)",
+			"peerReviewed": true,
+			"doi": "https://psycnet.apa.org/doi/10.1080/10489223.2015.1047096"
+		},
+		{
+			"shortCite": "Wewalaarachchi et al. (2017)",
+			"peerReviewed": true,
+			"doi": "https://doi.org/10.1016/j.jecp.2017.01.009"
+		},
+		{
+			"shortCite": "Bernier & White (2017)",
+			"peerReviewed": false,
+			"doi": ""
+		},
+		{
+			"shortCite": "Zesiger & Jöhr (2011)",
+			"peerReviewed": true,
+			"doi": "https://www.researchgate.net/deref/http%3A%2F%2Fdx.doi.org%2F10.4074%2FS001375451100303x"
+		}
+	]
+}
