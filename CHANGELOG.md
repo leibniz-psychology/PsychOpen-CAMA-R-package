@@ -1,3 +1,9 @@
+
+## Hotfix Release 1.0.5
+### 04.2023
+Bugs:
+* updated Dockerfile for prod image to fix CORS error
+
 ## Release 1.0.4
 ### 03.2023 
 Features:
