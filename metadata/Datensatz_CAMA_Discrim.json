@@ -6,24 +6,24 @@
     "domain": "Health Psychology",
     "metaanalysis_type": "standard",
     "moderators": [
-      {"type": "num", "value": "r_year","label": "Publication Year"},
       {"type": "cat", "value": "r_peer","label": "Peer-reviewed"},
-      {"type": "num", "value": "s_meanage", "label": "Mean Age Sample"},
-      {"type": "num","value": "s_female","label": "Proportion of Females"},
+      {"type": "num","value": "q_DIAD","label": "Overall Study Quality (DIAD Score)"},
+      {"type": "num", "value": "r_year","label": "Publication Year"},
       {"type": "cat","value": "s_region","label": "Region of Data Collection"},
+      {"type": "num", "value": "s_meanage", "label": "Mean Age of Sample"},
+      {"type": "num","value": "s_female","label": "Proportion of Individuals Identifying as Female"},
       {"type": "num","value": "s_ethnicity","label": "Proportion of Individuals Identifying as White"},
       {"type": "cat","value": "s_education","label": "Education Level Sample"},
-      {"type": "cat","value": "s_groupstatus","label": "Relative Status Ingroup"},
       {"type": "cat","value": "o_ivDomain","label": "Intergroup Context of Discrimination"},
-      {"type": "cat","value": "o_ivSetting","label": "Social Setting of Discrimination Manipulation"},
+      {"type": "cat","value": "o_ivSetting","label": "Social Setting of Discrimination"},
+      {"type": "cat","value": "s_groupstatus","label": "Relative Group Status of Ingroup"},
       {"type": "cat","value": "o_ivType","label": "Manipulation Type"},
       {"type": "cat","value": "o_paradigm","label": "Research Paradigm"},
       {"type": "cat","value": "o_exposure","label": "Type of Discrimination Exposure"},
-      {"type": "cat","value": "o_target","label": "Target of induced Discrimination"},
+      {"type": "cat","value": "o_target","label": "Target of Discrimination"},
       {"type": "cat","value": "o_ivCheck","label": "Manipulation Check Reported"},
       {"type": "cat","value": "o_dvDomain","label": "Mental Health Outcome Type"},
-      {"type": "cat","value": "o_measurement.Type","label": "Type of Mental Health Measurement"},
-      {"type": "num","value": "q_DIAD","label": "Overall Study Quality (DIAD Score)"}
+      {"type": "cat","value": "o_measurement.type","label": "Mental Health Outcome Measurement"}
     ],
    "effect_strength": {
       "label": "SMD",
@@ -32,7 +32,7 @@
       ]
     },
     "analysis_levels": [
-      "outcome_ID", "study_ID", "report_ID"
+      "outcome_ID", "report_ID"
     ]
   },
   "dokumentation": {
@@ -45,7 +45,7 @@
     "researchQuestion": "What is the experimental effect of discrimination on mental health?",
     "literatureSelection": "Inclusion and exclusion criteria: Studies had to have an experimental design (i.e., randomized controlled trials with experimental and control groups) with a manipulation of discrimination report quantitative statistics or descriptions of the effect of discrimination using at least one indicator of mental health and be written in English or German.",
     "effectSize": "Hedge's g",
-    "hierarchicalStructure": "Outcome – Study - Manuscript"
+    "hierarchicalStructure": "Outcome - Manuscript"
   },
   "literatureintraege": [
   ]
