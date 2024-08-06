@@ -1,0 +1,35 @@
+{
+	"datensatz" : {
+		    "name": "PTSD: Psychopharmacology",
+    "data_name": "CAMA_Pharma",
+    "psychArchivesHandle": "",
+    "domain": "Clinical Psychology",
+    "metaanalysis_type": "standard",
+    "moderators": [
+      {"type": "num", "value": "r_year", "label": "Publication year"},
+      {"type": "cat", "value": "t_name", "label": "Type of SSRI"},
+      {"type": "cat", "value": "t_type_control1","label": "Type of control group"},
+      {"type": "num","value": "rob_sumscore","label": "Sumscore Risk of Bias rating"},
+      {"type": "cat", "value": "Outcome_Type","label": "Outcome data given"}
+    ],
+   "effect_strength": {
+      "label": "SMD",
+      "variable_labels": [
+        {"name": "Hedges_g", "data_label_yi": "o_g", "varianz_label_vi": "o_g_var"}
+      ]
+    },
+    "analysis_levels": ["sample_ID"]
+  },
+  "dokumentation": {
+    "title": "The treatment effect in randomized control Trials (RCTs) of pharmacological treatments (Selective Serotonin Reuptake Inhibitors (SSRIs)) for patients with posttraumatic stress disorder",
+    "url": "",
+    "doi": "",
+    "dataProvider": "Sebastian Siehl",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "researchQuestion": "Can we identify a significantly larger reduction in PTSD symptomatology in patients diagnosed with PTSD and treated with Selective Serotonin Reuptake Inhibitors (SSRIs) in comparison to control groups treated with placebo (passive control group) or drugs from other substance groups (active control group)?",
+    "literatureSelection": "All Randomized Control Treatments (RCTs) were included investigating the effect of SSRIs vs. at least one control treatment in adults (>18 years of age) and PTSD as main diagnosis.",
+    "effectSize": "Hedge's g",
+    "hierarchicalStructure": "The reported effect sizes per study were subdivided by main intervention vs. active and/or passive control group per timepoint (baseline/pre, post)."
+  }
+}
