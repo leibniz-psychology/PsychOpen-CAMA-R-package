@@ -31,5 +31,6 @@
     "literatureSelection": "All Randomized Control Treatments (RCTs) were included investigating the effect of SSRIs vs. at least one control treatment in adults (>18 years of age) and PTSD as main diagnosis.",
     "effectSize": "Hedge's g",
     "hierarchicalStructure": "The reported effect sizes per study were subdivided by main intervention vs. active and/or passive control group per timepoint (baseline/pre, post)."
-  }
+  },
+  "literatureintraege": []
 }
