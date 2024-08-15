@@ -4,7 +4,6 @@ Bugs:
 * included new dataset CAMA_Pharma
 * added metadata files for new dataset
 
-
 ## Release 1.0.9
 ### 03.2024
 Bugs:
@@ -16,6 +15,16 @@ Bugs:
 Bugs:
 * added new datasets CAMA_TFP_Reduce, CAMA_TFP_Enhance
 * added metadata files for all datasets
+
+## Hotfix Release 1.0.7
+### 04.2023
+Sonstiges:
+* add index html to static folder
+*
+## Hotfix Release 1.0.6
+### 04.2023
+Bugs:
+* updated Dockerfile, removed static ssl files
 
 ## Hotfix Release 1.0.5
 ### 04.2023
