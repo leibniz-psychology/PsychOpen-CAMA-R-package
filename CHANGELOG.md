@@ -1,3 +1,8 @@
+## Release 1.1.0
+### 08.2024
+Bugs:
+* included new dataset CAMA_Pharma
+* added metadata files for new dataset
 
 
 ## Release 1.0.9
