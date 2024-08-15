@@ -1,4 +1,10 @@
 
+
+## Release 1.0.6
+### 08.2024
+Bugs:
+* included new dataset CAMA_Pharma
+
 ## Hotfix Release 1.0.5
 ### 04.2023
 Bugs:
