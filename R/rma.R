@@ -24,7 +24,7 @@ rma <- function(yi,vi,measure,d,effect="Effect") {
   requireNamespace("psych")
 
   #load the in variable d defined dataset from the package
-  dat <- checkData(d)
+  dat <- d
   checkParameter(dat,c(yi,vi))
   dat <- dat[order(dat$r_year),]
 
@@ -37,6 +37,5 @@ rma <- function(yi,vi,measure,d,effect="Effect") {
 
   }else{
     rma_model <- metafor::rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
-
   }
 }
