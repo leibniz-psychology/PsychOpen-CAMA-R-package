@@ -14,8 +14,7 @@
 jsonSummary <- function(d) {
   requireNamespace("jsonlite")
 
-  #load the in variable d defined dataset from the package
-  dat <- checkData(d)
+  dat <- d
 
   val <-jsonlite::toJSON(lapply(dat, function(x){as.list(summary(x))}), pretty = TRUE, auto_unbox = TRUE)
   return(val)
