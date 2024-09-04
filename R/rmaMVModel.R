@@ -17,12 +17,16 @@
 #' @return returns a fitted rma_mv model
 #' @author Robert Studtrucker
 #' @export
+#'
+
 rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
 
   #load needed dependencies
   #library(metafor)
   #library(psych)
   #library(labelVector)
+  library(jsonlite)
+
   requireNamespace("metafor")
   requireNamespace("psych")
   #requireNamespace("labelVector")
@@ -30,7 +34,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
   #load the in variable d defined dataset from the package
   dat <- d
   if(!is.null(nesting)){
-    nesting <- fromJSON(nesting)
+    nesting <- jsonlite::fromJSON(nesting)
   }
 
   heckParameter(dat,c(yi,vi))
