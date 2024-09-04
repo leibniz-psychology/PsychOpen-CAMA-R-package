@@ -37,7 +37,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
     nesting <- jsonlite::fromJSON(nesting)
   }
 
-  heckParameter(dat,c(yi,vi))
+  checkParameter(dat,c(yi,vi))
 
   pred1<-unlist(pred1)
   pred2<-unlist(pred2)
