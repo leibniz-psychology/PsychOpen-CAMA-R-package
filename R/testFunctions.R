@@ -20,3 +20,17 @@ testListParameter <- function(nesting = NULL) {
   nest2 <- list(~1 | outcome_ID, ~1 | sample_ID, ~1 | report_ID)
   print(nest2)
 }
+
+
+testpredParameter<-function(pred1){
+
+
+  # Parse the JSON string into a list
+  pred1<-jsonlite::fromJSON(pred1)
+
+  # Convert the list to a vector
+  pred1 <- unlist(pred1)
+
+    print(pred1)
+  pred1["value"]
+}
