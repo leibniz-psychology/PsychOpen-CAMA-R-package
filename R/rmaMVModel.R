@@ -29,7 +29,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
 
   #load the in variable d defined dataset from the package
   dat <- d
-  checkParameter(dat,c(yi,vi))
+  #checkParameter(dat,c(yi,vi))
 
   pred1<-unlist(pred1)
   pred2<-unlist(pred2)
