@@ -29,7 +29,7 @@ testpredParameter<-function(pred1){
   pred1<-jsonlite::fromJSON(pred1)
 
   # Convert the list to a vector
-  pred1 <- unlist(pred1)
+  #pred1 <- unlist(pred1, use.names = TRUE)
 
     print(pred1)
   pred1["value"]

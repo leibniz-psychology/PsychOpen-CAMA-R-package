@@ -39,16 +39,10 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
   if(!is.null(pred1)){
     # Parse the JSON string into a list
     pred1<-jsonlite::fromJSON(pred1)
-
-    # Convert the list to a vector
-    pred1 <- unlist(pred1)
   }
   if(!is.null(pred2)){
     # Parse the JSON string into a list
     pred2<-jsonlite::fromJSON(pred2)
-
-    # Convert the list to a vector
-    pred2 <- unlist(pred2)
   }
 
   checkParameter(dat,c(yi,vi))
