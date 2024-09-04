@@ -39,8 +39,8 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
 
   checkParameter(dat,c(yi,vi))
 
-  pred1<-unlist(pred1)
-  pred2<-unlist(pred2)
+  pred1<-jsonlite::fromJSON(pred1)
+  pred2<-jsonlite::fromJSON(pred2)
 
   #check if the choosen dataset has a nesting and prepare corresponding rma_mv model input if so
   if(is.null(nesting)){
