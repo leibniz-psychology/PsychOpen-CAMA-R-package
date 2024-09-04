@@ -28,7 +28,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
   #requireNamespace("labelVector")
 
   #load the in variable d defined dataset from the package
-  dat <- checkData(d)
+  dat <- d
   checkParameter(dat,c(yi,vi))
 
   pred1<-unlist(pred1)
