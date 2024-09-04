@@ -29,7 +29,11 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
 
   #load the in variable d defined dataset from the package
   dat <- d
-  #checkParameter(dat,c(yi,vi))
+  if(nesting != NULL){
+    nesting <- fromJSON(nesting)
+  }
+  summary(dat)
+  checkParameter(dat,c(yi,vi))
 
   pred1<-unlist(pred1)
   pred2<-unlist(pred2)
@@ -38,13 +42,13 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
   if(is.null(nesting)){
     nest<-list(~1 | outcome_ID ,~1 | sample_ID ,~1 | report_ID)
   }else{
-    nest<-list()
-    i=1
-    for(p in nesting){
-      nest[i] <-paste("~1 |", p)
-      i=i+1
+    # Initialize an empty list to store the formulas
+    nest <- list()
+    # Iterate over the parsed JSON array and create formulas
+    for (i in seq_along(nesting)) {
+      # Create a formula and assign it to the nest list
+      nest[[i]] <- as.formula(paste("~1 |", nesting[[i]]))
     }
-    nest<-lapply(nest, as.formula)
   }
   # there is no moderator defined
   if( is.null(pred1) && is.null(pred2)){
