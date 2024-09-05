@@ -38,4 +38,6 @@ rma <- function(yi,vi,measure,d,effect="Effect") {
   }else{
     rma_model <- metafor::rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure,slab=paste(dat$r_author, dat$r_year))
   }
+  gc() # Force R to release memory it is no longer using
+  return(rma_model)
 }
