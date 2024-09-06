@@ -34,3 +34,5 @@ testpredParameter<-function(pred1){
     print(pred1)
   pred1["value"]
 }
+
+
