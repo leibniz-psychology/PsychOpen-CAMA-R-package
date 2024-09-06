@@ -5,7 +5,7 @@ importFrom("utils", "str")
 
 export(cumulforest)
 export(forest)
-export(funnelPLot)
+export(funnelPlot)
 export(jsonSummary)
 export(metapower)
 export(netMetaForestplot)

@@ -15,7 +15,7 @@
 #' returns a Funnel plot for the given dataset
 #' @author Robert Studtrucker
 #' @export
-funnelPLot <- function(yi,vi,measure,d,peer="no", effectName="Effect") {
+funnelPlot <- function(yi,vi,measure,d,peer="no", effectName="Effect") {
 
   requireNamespace("metafor")
 
