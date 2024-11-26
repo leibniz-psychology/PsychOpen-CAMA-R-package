@@ -19,10 +19,11 @@ pcurves<-function(yi,vi,measure,d) {
 
 
   #load the in variable d defined dataset from the package
-  dat <- checkData(d)
+  #dat <- checkData(d)
+  dat <- d
   checkParameter(dat,c(yi,vi))
 
-#Filtern auf nur peer reviewed arcticles
+#Filter peer reviewed articles
 dat<-dat[dat$r_peer=="yes",]
 
 # meta-Model
