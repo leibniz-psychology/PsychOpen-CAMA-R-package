@@ -16,7 +16,7 @@
 #' @return returns a power plot
 #' @author Robert Studtrucker
 #' @export
-powersim <- function(yi,vi,measure,d,n,pval=0.05) {
+powersim <- function(d,yi,vi,measure,n,pval=0.05) {
 
   requireNamespace("metafor")
   requireNamespace("pwr")
