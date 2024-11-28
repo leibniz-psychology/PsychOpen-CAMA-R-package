@@ -17,10 +17,8 @@ pcurves<-function(yi,vi,measure,d) {
   requireNamespace("dmetar")
   requireNamespace("meta")
 
+  dat <- checkData(d)
 
-  #load the in variable d defined dataset from the package
-  #dat <- checkData(d)
-  dat <- d
   checkParameter(dat,c(yi,vi))
 
 #Filter peer reviewed articles
@@ -35,3 +33,4 @@ overall.meta <- meta::metagen(TE=dat[,yi], seTE=sqrt(dat[,vi]),data = dat, studl
 dmetar::pcurve(overall.meta)
 
 }
+
