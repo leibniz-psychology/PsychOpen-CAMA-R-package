@@ -17,7 +17,7 @@ pcurves<-function(yi,vi,measure,d) {
   requireNamespace("dmetar")
   requireNamespace("meta")
 
-  dat <- checkData(d)
+  dat <- d
 
   checkParameter(dat,c(yi,vi))
 
