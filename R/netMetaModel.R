@@ -16,7 +16,7 @@ netMetaModel <- function(d,reference="Placebo") {
 
 
   #load the in variable d defined dataset from the package
-  dat <- checkData(d)
+  dat <- d
 
   TE <- dat[,"TE"]
   seTE <- dat[,"seTE"]
