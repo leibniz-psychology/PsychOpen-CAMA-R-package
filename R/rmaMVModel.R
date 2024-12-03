@@ -37,14 +37,14 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
   if(!is.null(nesting)){
     nesting <- jsonlite::fromJSON(nesting)
   }
-  if(!is.null(pred1)){
-    # Parse the JSON string into a list
-    pred1<-jsonlite::fromJSON(pred1)
-  }
-  if(!is.null(pred2)){
-    # Parse the JSON string into a list
-    pred2<-jsonlite::fromJSON(pred2)
-  }
+#  if(!is.null(pred1)){
+#    # Parse the JSON string into a list
+#    pred1<-jsonlite::fromJSON(pred1)
+#  }
+#  if(!is.null(pred2)){
+#    # Parse the JSON string into a list
+#    pred2<-jsonlite::fromJSON(pred2)
+#  }
 
   checkParameter(dat,c(yi,vi))
 
