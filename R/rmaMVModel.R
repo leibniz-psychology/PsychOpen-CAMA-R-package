@@ -17,34 +17,49 @@
 #' @return returns a fitted rma_mv model
 #' @author Robert Studtrucker
 #' @export
+#'
+
 rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
 
   #load needed dependencies
   #library(metafor)
   #library(psych)
   #library(labelVector)
+  library(jsonlite)
+
   requireNamespace("metafor")
   requireNamespace("psych")
   #requireNamespace("labelVector")
 
   #load the in variable d defined dataset from the package
-  dat <- checkData(d)
+  dat <- d
+  #dat <- checkData(d)
+  if(!is.null(nesting)){
+    nesting <- jsonlite::fromJSON(nesting)
+  }
+  if(!is.null(pred1)){
+    # Parse the JSON string into a list
+    pred1<-jsonlite::fromJSON(pred1)
+  }
+  if(!is.null(pred2)){
+    # Parse the JSON string into a list
+    pred2<-jsonlite::fromJSON(pred2)
+  }
+
   checkParameter(dat,c(yi,vi))
 
-  pred1<-unlist(pred1)
-  pred2<-unlist(pred2)
 
   #check if the choosen dataset has a nesting and prepare corresponding rma_mv model input if so
   if(is.null(nesting)){
     nest<-list(~1 | outcome_ID ,~1 | sample_ID ,~1 | report_ID)
   }else{
-    nest<-list()
-    i=1
-    for(p in nesting){
-      nest[i] <-paste("~1 |", p)
-      i=i+1
+    # Initialize an empty list to store the formulas
+    nest <- list()
+    # Iterate over the parsed JSON array and create formulas
+    for (i in seq_along(nesting)) {
+      # Create a formula and assign it to the nest list
+      nest[[i]] <- as.formula(paste("~1 |", nesting[[i]]))
     }
-    nest<-lapply(nest, as.formula)
   }
   # there is no moderator defined
   if( is.null(pred1) && is.null(pred2)){
@@ -95,21 +110,21 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
     moddat<-dat
 
     # Moderatoren transformieren
-    if(pred1["type"]=="num"){
-      mod1<-scale(dat[,pred1["value"]])[,1]
+    if(pred1[["type"]]=="num"){
+      mod1<-scale(dat[,pred1[["value"]]])[,1]
     }else{
-      mod1<-factor(dat[,pred1["value"]])
+      mod1<-factor(dat[,pred1[["value"]]])
     }
 
-    if(pred2["type"]=="num"){
-      mod2<-scale(dat[,pred2["value"]])[,1]
+    if(pred2[["type"]]=="num"){
+      mod2<-scale(dat[,pred2[["value"]]])[,1]
     }else{
-      mod2<-factor(dat[,pred2["value"]])
+      mod2<-factor(dat[,pred2[["value"]]])
     }
 
-    moddat[pred1["value"]]<-mod1
-    moddat[pred2["value"]]<-mod2
-    mods <- paste(c(pred1["value"],pred2["value"]), collapse = "+")
+    moddat[pred1[["value"]]]<-mod1
+    moddat[pred2[["value"]]]<-mod2
+    mods <- paste(c(pred1[["value"]],pred2[["value"]]), collapse = "+")
 
     # calculate model depending on given measure
     if(measure == "COR") {
@@ -153,16 +168,16 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
   if(!is.null(pred1) && is.null(pred2)){
 
     #Moderatoren transformieren
-    if(pred1["type"]=="num"){
-      mod1<-scale(dat[,pred1["value"]])[,1]
+    if(pred1[["type"]]=="num"){
+      mod1<-scale(dat[,pred1[["value"]]])[,1]
       moddat<-dat
-      moddat[pred1["value"]]<-mod1
-      rma_formula <- as.formula(sprintf("%s ~ %s", yi,pred1["value"]))
+      moddat[pred1[["value"]]]<-mod1
+      rma_formula <- as.formula(sprintf("%s ~ %s", yi,pred1[["value"]]))
     }else{
-      mod1<-factor(dat[,pred1["value"]])
+      mod1<-factor(dat[,pred1[["value"]]])
       moddat<-dat
-      moddat[pred1["value"]]<-mod1
-      rma_formula <- as.formula(sprintf("%s ~ %s", yi,pred1["value"]))
+      moddat[pred1[["value"]]]<-mod1
+      rma_formula <- as.formula(sprintf("%s ~ %s", yi,pred1[["value"]]))
     }
 
     # fitting model depending on defined measure
@@ -170,7 +185,7 @@ rmaMVModel <- function(yi,vi,measure,d,pred1=NULL,pred2=NULL,nesting=NULL) {
       # z-standardisierte Daten erstellen
       moddat <- metafor::escalc(measure="ZCOR", ri=moddat[,yi], vi=moddat[,vi], ni=moddat[,"o_ni"], data=moddat, var.names=c("o_zcor","o_zcor_var"))
 
-      rma_formula <- as.formula(sprintf("%s ~ %s", "o_zcor",pred1["value"]))
+      rma_formula <- as.formula(sprintf("%s ~ %s", "o_zcor",pred1[["value"]]))
       rma_mvmodel <- metafor::rma.mv(rma_formula,
                             V=moddat[,"o_zcor_var"],
                             measure="ZCOR",

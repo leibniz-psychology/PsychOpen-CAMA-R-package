@@ -17,7 +17,7 @@ scatterPlot <- function(yi,d,pred1=NULL,pred2=NULL, effectName="Effect") {
   requireNamespace("GGally")
 
   #load the in variable d defined dataset from the package
-  dat <- checkData(d)
+  dat <- d
 
   pred1<-unlist(pred1)
   pred2<-unlist(pred2)
