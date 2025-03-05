@@ -1,3 +1,9 @@
+
+## Release 1.1.1
+### 03.2025
+* Changed how the r functions ingest the data. Former, the data was loaded from the package. 
+* Now data is sent to opencpu server from web app and the r functions use the created data session.
+
 ## Release 1.1.0
 ### 08.2024
 Bugs:
