@@ -16,7 +16,7 @@
 #' @return returns a power plot
 #' @author Robert Studtrucker
 #' @export
-powersim <- function(yi,vi,measure,d,n,pval=0.05) {
+powersim <- function(d,yi,vi,measure,n,pval=0.05) {
 
   requireNamespace("metafor")
   requireNamespace("pwr")
@@ -24,7 +24,8 @@ powersim <- function(yi,vi,measure,d,n,pval=0.05) {
   requireNamespace("jsonlite")
 
   #load the in variable d defined dataset from the package
-  dat <- checkData(d)
+  #dat <- checkData(d)
+  dat <- d
   checkParameter(dat,c(yi,vi))
 
   uni<-metafor::rma.uni(yi=dat[,yi],vi=dat[,vi],measure=measure)

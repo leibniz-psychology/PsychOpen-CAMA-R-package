@@ -12,7 +12,7 @@ netMetagetTRTS <- function(d) {
   requireNamespace("jsonlite")
 
   #load the in variable d defined dataset from the package
-  dat <- checkData(d)
+  dat <- d
 
   combined_treat<-c()
   combined_treat<-c(combined_treat,dat["treat1"],recursive = TRUE,use.names=FALSE)

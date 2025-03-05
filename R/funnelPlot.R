@@ -15,12 +15,12 @@
 #' returns a Funnel plot for the given dataset
 #' @author Robert Studtrucker
 #' @export
-funnelPLot <- function(yi,vi,measure,d,peer="no", effectName="Effect") {
+funnelPlot <- function(yi,vi,measure,d,peer="no", effectName="Effect") {
 
   requireNamespace("metafor")
 
   #load the in variable d defined dataset from the package
-  dat <- checkData(d)
+  dat <- d
   checkParameter(dat,c(yi,vi,"r_peer"))
 
   # Filtern nach veröffentlichten Studien wenn in der Anwendung ausgewählt (peer reviewed yes/no)
