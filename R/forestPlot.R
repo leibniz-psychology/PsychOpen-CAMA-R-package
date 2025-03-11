@@ -25,8 +25,8 @@ forest <- function(yi,vi,measure,d,effect="Effect") {
   requireNamespace("psych")
 
   #load the in variable d defined dataset from the package
-  dat <- checkData(d)
-
+  #dat <- checkData(d)
+  dat <- d
   if(measure == "COR") {
 
     rma_model <- metafor::rma.uni(yi=metafor::transf.rtoz(dat[,yi],dat[,o_ni]), vi=metafor::transf.rtoz(dat[,vi],dat[,o_ni]),measure="ZCOR",slab=paste(dat$r_author, dat$r_year))
