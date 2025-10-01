@@ -1,4 +1,5 @@
 
+
 ## Release 1.1.1
 ### 03.2025
 * Changed how the r functions ingest the data. Former, the data was loaded from the package. 
