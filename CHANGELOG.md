@@ -1,4 +1,6 @@
 
+## Release 1.1.2
+### future
 
 ## Release 1.1.1
 ### 03.2025
@@ -59,6 +61,3 @@ Features:
 Features:
 * Minimal viable product 
 * All functions still need some optimization in the future
-
-
-
