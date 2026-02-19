@@ -1,4 +1,13 @@
 
+## Release 1.1.2
+### future
+
+## Release 1.1.2
+### 02.2026
+* fixed minor problem in createJSON function
+* fixed forest plot and cumul forest plot functions to load data session correctly
+
+
 ## Release 1.1.1
 ### 03.2025
 * Changed how the r functions ingest the data. Former, the data was loaded from the package. 
@@ -58,6 +67,3 @@ Features:
 Features:
 * Minimal viable product 
 * All functions still need some optimization in the future
-
-
-

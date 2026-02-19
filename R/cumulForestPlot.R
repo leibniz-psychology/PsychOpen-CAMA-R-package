@@ -28,7 +28,8 @@ cumulforest <- function(yi,vi,measure,d,effectName="Effect") {
   requireNamespace("jsonlite")
 
   #load the in variable d defined dataset from the package
-  dat <- checkData(d)
+  #dat <- checkData(d)
+  dat <- d
   checkParameter(dat,c(yi,vi))
 
   #order the loaded data depending on the r_year column
